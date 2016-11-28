@@ -1,0 +1,15 @@
+
+Molt bé:
+- M'agrada molt la boleta verda quan selecciones una recepta, bona idea.
+- Espectacular al taula amb les versions (encara l'estic pahint).
+
+Preguntes:
+- La "base de dades" en principi serà un fitxeret o uns quants.
+  Es pot fer una base de dades "real" però això us obligaria a aprendre masses 
+  coses noves (els d'Audiovisuals ho han estudiat específicament).
+
+A millorar?
+- Molts layouts tenen "marc", o sigui una zona blanca al voltant. La pantalla
+  del mòbil és tan petita que no posaria marges, en absolut.
+
+

@@ -15,25 +15,29 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:weightSum="1">
- 
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@android:color/holo_blue_light">
 
-            <Button
-                android:text="A"
+            <ImageButton
+                android:src="@mipmap/ic_launcher"
                 android:layout_width="52dp"
-                android:layout_height="match_parent"
-                android:id="@+id/btn_compa" />
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_share"
+                android:layout_weight="1" />
 
             <TextView
-                android:text="Menú"
+                android:text="MENÚ DEL DIA"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/menu_title"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:textSize="30sp"
+                android:gravity="center_vertical|center_horizontal" />
 
             <Button
                 android:text="B"
@@ -48,10 +52,10 @@
                 android:id="@+id/btn_compr" />
         </LinearLayout>
 
-        <Space
+        <CalendarView
             android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:id="@+id/CALENDAR" />
+            android:layout_height="100dp"
+            android:id="@+id/calendarView3" />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -71,9 +75,10 @@
 
                     <TextView
                         android:text="Esmorzar"
+                        android:textStyle="bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
+                        android:id="@+id/esm_title"
                         android:textSize="20dp"
                         android:clickable="false" />
 
@@ -89,13 +94,13 @@
                         <CheckBox
                             android:layout_width="30dp"
                             android:layout_height="match_parent"
-                            android:id="@+id/checkBox" />
+                            android:id="@+id/esm_check" />
 
                         <TextView
                             android:text="Àpat esmorzar"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView6"
+                            android:id="@+id/esm_recept"
                             android:layout_weight="1"
                             android:textSize="20dp" />
 
@@ -103,6 +108,259 @@
                             android:layout_width="100dp"
                             android:layout_height="match_parent" />
                     </LinearLayout>
+
+                    <TextView
+                        android:text="Mig Matí"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/mig_title"
+                        android:textSize="20dp"
+                        android:clickable="false" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <Space
+                            android:layout_height="match_parent"
+                            android:layout_width="20dp" />
+
+                        <CheckBox
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/mig_check" />
+
+                        <TextView
+                            android:text="Àpat mig matí"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/mig_recept"
+                            android:layout_weight="1"
+                            android:textSize="20dp" />
+
+                        <Space
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:text="Dinar"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/dinar_title"
+                        android:textSize="20dp"
+                        android:clickable="false" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <Space
+                            android:layout_height="match_parent"
+                            android:layout_width="20dp" />
+
+                        <CheckBox
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/dinar_check1" />
+
+                        <TextView
+                            android:text="Primer plat dinar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/dinar_recept1"
+                            android:layout_weight="1"
+                            android:textSize="20dp" />
+
+                        <Space
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <Space
+                            android:layout_height="match_parent"
+                            android:layout_width="20dp" />
+
+                        <CheckBox
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/dinar_check2" />
+
+                        <TextView
+                            android:text="Segon plat dinar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/dinar_recept2"
+                            android:layout_weight="1"
+                            android:textSize="20dp" />
+
+                        <Space
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <Space
+                            android:layout_height="match_parent"
+                            android:layout_width="20dp" />
+
+                        <CheckBox
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/dinar_check3" />
+
+                        <TextView
+                            android:text="Postres dinar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/dinar_recept3"
+                            android:layout_weight="1"
+                            android:textSize="20dp" />
+
+                        <Space
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:text="Berenar"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ber_title"
+                        android:textSize="20dp"
+                        android:clickable="false" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <Space
+                            android:layout_height="match_parent"
+                            android:layout_width="20dp" />
+
+                        <CheckBox
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/ber_check" />
+
+                        <TextView
+                            android:text="Àpat berenar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/ber_recept"
+                            android:layout_weight="1"
+                            android:textSize="20dp" />
+
+                        <Space
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:text="Sopar"
+                        android:textStyle="bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/sopar_title"
+                        android:textSize="20dp"
+                        android:clickable="false" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <Space
+                            android:layout_height="match_parent"
+                            android:layout_width="20dp" />
+
+                        <CheckBox
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/sopar_check1" />
+
+                        <TextView
+                            android:text="Primer plat sopar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/sopar_recept1"
+                            android:layout_weight="1"
+                            android:textSize="20dp" />
+
+                        <Space
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <Space
+                            android:layout_height="match_parent"
+                            android:layout_width="20dp" />
+
+                        <CheckBox
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/sopar_check2" />
+
+                        <TextView
+                            android:text="Segon plat sopar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/sopar_recept2"
+                            android:layout_weight="1"
+                            android:textSize="20dp" />
+
+                        <Space
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
+                        <Space
+                            android:layout_height="match_parent"
+                            android:layout_width="20dp" />
+
+                        <CheckBox
+                            android:layout_width="30dp"
+                            android:layout_height="match_parent"
+                            android:id="@+id/sopar_check3" />
+
+                        <TextView
+                            android:text="Postres sopar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/sopar_recept3"
+                            android:layout_weight="1"
+                            android:textSize="20dp" />
+
+                        <Space
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
+
                 </LinearLayout>
             </ScrollView>
         </FrameLayout>
@@ -138,4 +396,5 @@
                 android:layout_weight="1" />
         </LinearLayout>
     </LinearLayout>
+
 </RelativeLayout>

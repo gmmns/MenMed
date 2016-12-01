@@ -1,0 +1,10 @@
+Pes en punts de la nota de cada versió:
+
+   v.01 -> 2
+   v.02 -> 1.5
+   v.03 -> 1.5
+   v.04 -> 1
+   v.05 -> 1
+   v.06 -> 2
+   v.07 -> 1
+

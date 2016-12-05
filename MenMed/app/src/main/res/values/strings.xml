@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MenMed</string>
+    <array name="Ingredients">Ingredients</array>
 </resources>

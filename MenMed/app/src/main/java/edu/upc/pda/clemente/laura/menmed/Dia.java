@@ -76,8 +76,18 @@ public class Dia {
         };
     }
 
-    public Dia(Plat plat1, Plat plat2, Plat plat3, Plat plat4, Plat plat5, Plat plat6, Plat plat7, Plat plat8, Plat plat9){
+    public void OmplirDia(Plat esm, Plat migmat, Plat dinar1, Plat dinar2, Plat dinar3, Plat ber, Plat sopar1, Plat sopar2, Plat sopar3){
+        this.dia.put(esm, false);
+        this.dia.put(migmat, false);
+        this.dia.put(dinar1, false);
+        this.dia.put(dinar2, false);
+        this.dia.put(dinar3, false);
+        this.dia.put(ber, false);
+        this.dia.put(sopar1, false);
+        this.dia.put(sopar2, false);
+        this.dia.put(sopar3, false);
 
     }
+
 
 }

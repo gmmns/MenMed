@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">MenMed</string>
     <array name="Ingredients">Ingredients</array>
+
+    <array name="all_recipes">
+        <item>Cafè amb llet. Torrades amb oli d'oliva verge i sal.;Iogurt de fruites.;Amanida grega.;Saltxixes de pavo a la planxa amb sofregit de ceba i tomàquet.;Meló.;Bastonets de pa. Suc natural de magrana.;Espaguetis al pesto.;Sardines al forn amb tomàquet rostit.;Carpaccio de pinya.</item>
+        <item>Infusió. Pa de pessic casolà de taronja.;Entrepà de tomàquet i formatge semicurat.;Risotto de bolets.;Mer a la planxa amb amanida de remolatxa.;Troços de sindria amb menta fresca picada.;Llet. Pa amb pernil dolç i oli d'oliva verge.;Crema de pastanaga.;Pollastre a la llimona amb patates forneres.;Iogurt natural.</item>
+        <item>Torrades amb tomàquet i formatge curat. Suc natural de meló.;Iogurt natural amb avellanes.;Sopa de carbassa.;Mitja alberginia farcida de carn picada de pollastre i blat de moro gratinada.;Préssec.;Llet. Muesli.;Mongetes verdes saltejades.;Ou poché sobre llit de carbassó.;Sindria.</item>
+        <item>Cafè amb llet. Biscotes amb oli d'oliva verge. Pinya.;Entrepà de tonyina.;Amanida de mongetes blanques amb bacallà dessalat, ceba, tomàquet i pebrot verd (Empedrat).;Llagostins a la planxa.;Macedònia.;Barreja de fruits secs i fruites dessecades.;Amanida d'alvocat.;Pexuga de pavo a la plancha.;Nectarina.</item>
+        <item>Cafè amb llet. Magdalena casolana de nabius.;Préssec.;Lassanya vegetal.;Ou ferrat.;Prunes.;Pa d'olives amb formatge semicurat.;Espaguetis amb crema de roquefort.;Bonitol amb ceba.;Iogurt amb pipes de carbassa.</item>
+        <item>Cafè amb llet. Biscotes amb mermelada de prunes.;Aperitiu: olives, ametlles salades i gambes cuites.;Gaspatxo.;Guatlla al forn amb rodantxes gruixudes de carbassó.;Sindria.;Quallada amb mel.;Parrillada de verdures.;Llom de porc a la planxa.;Albercocs.</item>
+        <item>Batut de gerds. Pa amb oli d'oliva verge, all i orenga.;Aperitiu: surtit de formatges amb torrades.;Crudités de verdures amb puré de cigrons (Hummus).;Xai guisat amb prunes i ceba.;Broxeta de fruites fresques.;Iogurt natural de pinyons.;Amanida de tomaquet i orenga.;Truita de patates.;Plàtan.</item>
+    </array>
 </resources>

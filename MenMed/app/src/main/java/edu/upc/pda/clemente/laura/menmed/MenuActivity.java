@@ -3,19 +3,43 @@ package edu.upc.pda.clemente.laura.menmed;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.content.res.Resources;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
-
 import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 
-public class MenuActivity extends AppCompatActivity {
+
+public class MenuActivity extends AppCompatActivity{
+    private String[] all_recipes;
+    private int ids_recipes[] = {
+            R.id.esm_recept, R.id.mig_recept, R.id.dinar_recept1, R.id.dinar_recept2, R.id.dinar_recept3, R.id.ber_recept, R.id.sopar_recept1, R.id.sopar_recept2, R.id.sopar_recept3
+    };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_menu);
+        all_recipes = getResources().getStringArray(R.array.all_recipes);
+
+    private void showMenu() {
+        String r = all_recipes[0];
+        String[] parts = r.split(";");
+
+        for (int i=-1; i<ids_recipes.length; i++){
+            TextView rec = (TextView) findViewById(ids_recipes[i]);
+            rec.setText(parts[i]);
+        }
+    }
+}
+
+
+/*public class MenuActivity extends AppCompatActivity {
 
     //ATRIBUTS que s'utilitzen en el programa
     private Recepta esmorzar = new Recepta("Torrades amb mermelada");
@@ -113,6 +137,7 @@ public class MenuActivity extends AppCompatActivity {
 
         dia1.OmplirDia(esm,mig,din1,din2,din3,ber,sop1,sop2,sop3);
 
+
     }
 
     protected void onStop() {
@@ -150,7 +175,7 @@ public class MenuActivity extends AppCompatActivity {
 
 
 }
-
+*/
 
 
 

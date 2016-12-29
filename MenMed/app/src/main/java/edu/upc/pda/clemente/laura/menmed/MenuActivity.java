@@ -1,7 +1,9 @@
 package edu.upc.pda.clemente.laura.menmed;
 
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.content.res.Resources;
 import android.util.Log;
@@ -9,9 +11,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import org.w3c.dom.Text;
 import java.util.ArrayList;
+
+
 
 
 
@@ -26,14 +32,16 @@ public class MenuActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         all_recipes = getResources().getStringArray(R.array.all_recipes);
+        showMenu();
+    }
 
     private void showMenu() {
-        String r = all_recipes[0];
-        String[] parts = r.split(";");
+        String r = all_recipes[0]; //de moment posem 0, perquè ens mostri el 1er ítem; després ja pensarem com relacionar l'ítem amb el calendari.
+        String[] parts = r.split(";"); //separarem l'ítem en receptes (separades entre elles per ';').
 
-        for (int i=-1; i<ids_recipes.length; i++){
-            TextView rec = (TextView) findViewById(ids_recipes[i]);
-            rec.setText(parts[i]);
+        for (int i=0; i<ids_recipes.length; i++){
+            TextView recept_text = (TextView) findViewById(ids_recipes[i]);
+            recept_text.setText(parts[i]);
         }
     }
 }
@@ -176,6 +184,4 @@ public class MenuActivity extends AppCompatActivity{
 
 }
 */
-
-
 

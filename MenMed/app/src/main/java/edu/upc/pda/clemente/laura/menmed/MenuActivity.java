@@ -34,23 +34,13 @@ public class MenuActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         all_recipes = getResources().getStringArray(R.array.all_recipes);
-        showMenu();
-        showDay(dia);
+        addMenu();
+        showDay(menu.getMenu()[1]);
     }
 
-    private void showMenu() {
-        String r = all_recipes[0]; //de moment posem 0, perquè ens mostri el 1er ítem; després ja pensarem com relacionar l'ítem amb el calendari.
-        String[] parts = r.split(";"); //separarem l'ítem en receptes (separades entre elles per ';').
-        this.dia = new Dia(parts);
-        /*for (int i=0; i<ids_recipes.length; i++){
-            TextView recept_text = (TextView) findViewById(ids_recipes[i]);
-            recept_text.setText(parts[i]);
-        }*/
-    }
-
-   /* private void addMenu(){
+    private void addMenu(){
         this.menu = new Menu(all_recipes);
-    }*/
+    }
 
     private void showDay(Dia dia) {
         for (int i=0; i<ids_recipes.length; i++){

@@ -10,13 +10,15 @@ public class Dia {
         public int getAaaammdd() {return aaaammdd;}
         public void setAaaammdd(int aaaammdd) {this.aaaammdd = aaaammdd;}
 
+    private String[] s_dia;
+        public String[] getS_dia(){return s_dia;}
+        public void setS_dia(String[] s_dia) {this.s_dia = s_dia;}
+
     private TreeMap<Plat, Boolean> dia;
         public TreeMap<Plat, Boolean> getDia() {return dia;}
         public void setDia(TreeMap<Plat, Boolean> dia) {this.dia = dia;}
 
-    private String[] s_dia;
-        public String[] getS_dia(){return s_dia;}
-        public void setS_dia(String[] s_dia) {this.s_dia = s_dia;}
+
 
     //CONSTRUCTOR
     public Dia(int aaaammdd, TreeMap<Plat, Boolean> dia) {
@@ -64,11 +66,20 @@ public class Dia {
         };
     }
 
-    public Dia(String[] plats){
+    public Dia(String[] plats) {
         this.aaaammdd = 0;
         this.s_dia = new String[plats.length];
-        for(int i=0; i<plats.length;i++){
-            this.s_dia[i] = plats[i];
+        for (int i = 0; i < plats.length; i++) {
+            s_dia[i] = plats[i];
+        }
+        //afegirAMap(plats);
+    }
+
+    public void afegirAMap (String[] plats) {
+        this.dia = new TreeMap<Plat, Boolean>();
+        for (int i=0; i<plats.length; i++){
+            Plat plat = new Plat(plats[i]);
+            this.dia.put(plat, false);
         }
     }
 

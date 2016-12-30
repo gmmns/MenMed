@@ -1,22 +1,16 @@
 package edu.upc.pda.clemente.laura.menmed;
 
 
+import android.widget.TextView;
+
 import java.util.TreeMap;
 
 public class Menu {
-    /*ATRIBUTS
-    - TAULA DE DIES
-     */
-    private Dia[] menu;
-    public Dia[] getMenu() {return menu;}
-    public void setMenu(Dia[] menu) {this.menu = menu;}
 
+    private Dia[] menu;
+        public Dia[] getMenu() {return menu;}
+        public void setMenu(Dia[] menu) {this.menu = menu;}
     private int dies = 7;
-	/*CONSTRUCTORS
-	- Constructor buit
-	- Constructor còpia
-	- Constructor omplir
-	 */
 
     public Menu() {
         this.menu = new Dia[dies];
@@ -27,26 +21,24 @@ public class Menu {
     }
 
     public Menu(Menu m) {
-        this.menu = m.menu;
-    }
+        this.menu = m.menu;}
 
-    public Menu(Dia dia1, Dia dia2, Dia dia3, Dia dia4, Dia dia5, Dia dia6, Dia dia7) {
-        this.menu = new Dia[dies];
 
-        this.menu[0].setAaaammdd(dia1.getAaaammdd());
-        this.menu[0].setDia(new TreeMap<Plat, Boolean>(dia1.getDia()));
-        this.menu[1].setAaaammdd(dia2.getAaaammdd());
-        this.menu[1].setDia(new TreeMap <Plat, Boolean>(dia2.getDia()));
-        this.menu[2].setAaaammdd(dia3.getAaaammdd());
-        this.menu[2].setDia(new TreeMap <Plat, Boolean>(dia3.getDia()));
-        this.menu[3].setAaaammdd(dia4.getAaaammdd());
-        this.menu[3].setDia(new TreeMap <Plat, Boolean>(dia4.getDia()));
-        this.menu[4].setAaaammdd(dia5.getAaaammdd());
-        this.menu[4].setDia(new TreeMap <Plat, Boolean>(dia5.getDia()));
-        this.menu[5].setAaaammdd(dia6.getAaaammdd());
-        this.menu[5].setDia(new TreeMap <Plat, Boolean>(dia6.getDia()));
-        this.menu[6].setAaaammdd(dia7.getAaaammdd());
-        this.menu[6].setDia(new TreeMap <Plat, Boolean>(dia7.getDia()));
+    public Menu(String[] all_recipes) {
+        this.menu = new Dia[7];
+        String r = all_recipes[0]; //de moment posem 0, perquè ens mostri el 1er ítem; després ja pensarem com relacionar l'ítem amb el calendari.
+        String[] parts = r.split(";"); //separarem l'ítem en receptes (separades entre elles per ';').
+
+        this.menu[0] = new Dia(parts);
+
+        /*for (int dia=0; dia<7; dia++){
+            this.menu[dia] = new Dia();
+            this.menu[dia].setAaaammdd(dia+4);
+            String r = all_recipes[dia]; //de moment posem 0, perquè ens mostri el 1er ítem; després ja pensarem com relacionar l'ítem amb el calendari.
+            String[] parts = r.split(";"); //separarem l'ítem en receptes (separades entre elles per ';').
+            this.menu[dia].OmplirDia(parts);
+        }*/
+
     }
 
 }

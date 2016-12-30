@@ -100,10 +100,12 @@
                         <TextView
                             android:text="Àpat esmorzar"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:id="@+id/esm_recept"
                             android:layout_weight="1"
-                            android:textSize="20dp" />
+                            android:textSize="20dp"
+                            android:textAlignment="textStart"
+                            android:gravity="center_vertical" />
 
                         <Space
                             android:layout_width="100dp"
@@ -136,10 +138,11 @@
                         <TextView
                             android:text="Àpat mig matí"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:id="@+id/mig_recept"
                             android:layout_weight="1"
-                            android:textSize="20dp" />
+                            android:textSize="20dp"
+                            android:gravity="center_vertical" />
 
                         <Space
                             android:layout_width="100dp"
@@ -172,10 +175,11 @@
                         <TextView
                             android:text="Primer plat dinar"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:id="@+id/dinar_recept1"
                             android:layout_weight="1"
-                            android:textSize="20dp" />
+                            android:textSize="20dp"
+                            android:gravity="center_vertical" />
 
                         <Space
                             android:layout_width="100dp"
@@ -199,10 +203,11 @@
                         <TextView
                             android:text="Segon plat dinar"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:id="@+id/dinar_recept2"
                             android:layout_weight="1"
-                            android:textSize="20dp" />
+                            android:textSize="20dp"
+                            android:gravity="center_vertical" />
 
                         <Space
                             android:layout_width="100dp"
@@ -226,10 +231,11 @@
                         <TextView
                             android:text="Postres dinar"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:id="@+id/dinar_recept3"
                             android:layout_weight="1"
-                            android:textSize="20dp" />
+                            android:textSize="20dp"
+                            android:gravity="center_vertical" />
 
                         <Space
                             android:layout_width="100dp"
@@ -262,10 +268,11 @@
                         <TextView
                             android:text="Àpat berenar"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:id="@+id/ber_recept"
                             android:layout_weight="1"
-                            android:textSize="20dp" />
+                            android:textSize="20dp"
+                            android:gravity="center_vertical" />
 
                         <Space
                             android:layout_width="100dp"
@@ -298,10 +305,11 @@
                         <TextView
                             android:text="Primer plat sopar"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:id="@+id/sopar_recept1"
                             android:layout_weight="1"
-                            android:textSize="20dp" />
+                            android:textSize="20dp"
+                            android:gravity="center_vertical" />
 
                         <Space
                             android:layout_width="100dp"
@@ -325,10 +333,11 @@
                         <TextView
                             android:text="Segon plat sopar"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:id="@+id/sopar_recept2"
                             android:layout_weight="1"
-                            android:textSize="20dp" />
+                            android:textSize="20dp"
+                            android:gravity="center_vertical" />
 
                         <Space
                             android:layout_width="100dp"
@@ -352,10 +361,11 @@
                         <TextView
                             android:text="Postres sopar"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:id="@+id/sopar_recept3"
                             android:layout_weight="1"
-                            android:textSize="20dp" />
+                            android:textSize="20dp"
+                            android:gravity="center_vertical" />
 
                         <Space
                             android:layout_width="100dp"

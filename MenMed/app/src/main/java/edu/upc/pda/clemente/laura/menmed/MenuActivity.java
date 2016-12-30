@@ -16,16 +16,18 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import org.w3c.dom.Text;
 import java.util.ArrayList;
-
-
-
+import java.util.Map;
+import java.util.Set;
 
 
 public class MenuActivity extends AppCompatActivity{
+    //ATRIBUTS
     private String[] all_recipes;
     private int ids_recipes[] = {
             R.id.esm_recept, R.id.mig_recept, R.id.dinar_recept1, R.id.dinar_recept2, R.id.dinar_recept3, R.id.ber_recept, R.id.sopar_recept1, R.id.sopar_recept2, R.id.sopar_recept3
     };
+    private Menu menu;
+    private Dia dia;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,15 +35,27 @@ public class MenuActivity extends AppCompatActivity{
         setContentView(R.layout.activity_menu);
         all_recipes = getResources().getStringArray(R.array.all_recipes);
         showMenu();
+        showDay(dia);
     }
 
     private void showMenu() {
         String r = all_recipes[0]; //de moment posem 0, perquè ens mostri el 1er ítem; després ja pensarem com relacionar l'ítem amb el calendari.
         String[] parts = r.split(";"); //separarem l'ítem en receptes (separades entre elles per ';').
-
-        for (int i=0; i<ids_recipes.length; i++){
+        this.dia = new Dia(parts);
+        /*for (int i=0; i<ids_recipes.length; i++){
             TextView recept_text = (TextView) findViewById(ids_recipes[i]);
             recept_text.setText(parts[i]);
+        }*/
+    }
+
+   /* private void addMenu(){
+        this.menu = new Menu(all_recipes);
+    }*/
+
+    private void showDay(Dia dia) {
+        for (int i=0; i<ids_recipes.length; i++){
+            TextView recept_text = (TextView) findViewById(ids_recipes[i]);
+            recept_text.setText(dia.getS_dia()[i]);
         }
     }
 }

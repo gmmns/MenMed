@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">MenMed</string>
-    <array name="Ingredients">Ingredients</array>
+    <string name="confirm_erase">Vols esborrar l'ingredient?</string>
+    <string name="confirm_message">Segur que vols esborrar l'ingredient?</string>
+    <string name="erase">Esborra</string>
 
     <array name="all_recipes">
         <item>"Cafè amb llet. Torrades amb oli d'oliva verge i sal.";"Iogurt de fruites.";"Amanida grega.";"Saltxixes de pavo a la planxa amb sofregit de ceba i tomàquet.";"Meló.";"Bastonets de pa. Suc natural de magrana.";"Espaguetis al pesto.";"Sardines al forn amb tomàquet rostit.";"Carpaccio de pinya."</item>
@@ -12,7 +14,22 @@
         <item>"Batut de gerds. Pa amb oli d'oliva verge, all i orenga.";"Aperitiu: surtit de formatges amb torrades.";"Crudités de verdures amb puré de cigrons (Hummus).";"Xai guisat amb prunes i ceba.";"Broxeta de fruites fresques.";"Iogurt natural de pinyons.";"Amanida de tomaquet i orenga.";"Truita de patates.";"Plàtan."</item>
     </array>
 
-
+    <array name="Ingredients">
+        <item>Patates</item>
+        <item>Cols</item>
+        <item>Mongetes</item>
+        <item>Tomàquets</item>
+        <item>Pasta</item>
+        <item>Pollastre</item>
+        <item>Croquetes</item>
+        <item>Sopa</item>
+        <item>Torrons</item>
+        <item>Cava</item>
+        <item>Neules</item>
+        <item>Capó</item>
+        <item>Prunes</item>
+        <item>Olives</item>
+    </array>
 
 
 

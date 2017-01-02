@@ -88,45 +88,6 @@ public class MenuActivity extends AppCompatActivity{
 
     private Dia dia1;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
-
-        //BUTTON
-        ImageButton btn_share = (ImageButton) findViewById(R.id.btn_share);
-            btn_share.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Log.i("clicks", "S'ha apretat el botó 'share'");
-                }
-            });
-        Button btn_compr = (Button) findViewById(R.id.btn_compr);
-            btn_compr.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Log.i("clicks", "El botó envia a la llista de la Compra");}
-            });
-        Button btn_list = (Button) findViewById(R.id.btn_list);
-            btn_list.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Log.i("clicks", "El botó canvia a l'activitat'Llista'");
-                }
-            });
-        Button btn_menu = (Button) findViewById(R.id.btn_menu);
-            btn_menu.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Log.i("clicks", "El botó canvia a l'activitat 'Menú'");
-                }
-            });
-        Button btn_esb = (Button) findViewById(R.id.btn_esb);
-            btn_esb.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Log.i("clicks", "Esborra tots els indicadors");
-                }
-            });
 
         //TEXT VIEW
         TextView esm_recept = (TextView) findViewById(R.id.esm_recept);

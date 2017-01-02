@@ -15,5 +15,4 @@ public class Ingredient {
         this.unitats = unitats;
     }
 
-
 }

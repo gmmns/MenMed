@@ -36,6 +36,7 @@ public class MenuActivity extends AppCompatActivity{
         all_recipes = getResources().getStringArray(R.array.all_recipes);
         addMenu();
         showDay(menu.getMenu()[1]);
+
     }
 
     private void addMenu(){

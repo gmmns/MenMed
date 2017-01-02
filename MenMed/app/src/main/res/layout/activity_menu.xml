@@ -1,62 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_menu"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="edu.upc.pda.clemente.laura.menmed.MenuActivity">
 
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/menu_grid"
+        android:weightSum="1"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:weightSum="1">
+        android:background="@android:color/white">
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@android:color/holo_blue_light">
+            android:background="@color/DietMed_prin">
 
             <ImageButton
-                android:layout_height="match_parent"
                 android:id="@+id/btn_share"
-                android:layout_weight="1"
-                android:background="@drawable/ic_share"
                 android:adjustViewBounds="false"
-                android:layout_width="wrap_content" />
+                android:layout_height="match_parent"
+                android:text="Round Button"
+                android:background="@drawable/ic_share_05"
+                android:contextClickable="true"
+                android:layout_width="50dp" />
+
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="match_parent" />
 
             <TextView
-                android:text="MENÚ DEL DIA"
+                android:text="Menú del dia"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:id="@+id/menu_title"
                 android:layout_weight="1"
-                android:textSize="30sp"
-                android:gravity="center_vertical|center_horizontal" />
+                android:gravity="center_vertical|center_horizontal"
+                android:textSize="20dp"
+                android:textColor="@android:color/white" />
 
-            <Button
-                android:text="B"
+            <ImageButton
                 android:layout_width="48dp"
                 android:layout_height="match_parent"
-                android:id="@+id/btn_esb" />
+                android:id="@+id/btn_esb"
+                android:background="@drawable/ic_delete_indicators_07" />
 
-            <Button
-                android:text="C"
+            <ImageButton
                 android:layout_width="52dp"
                 android:layout_height="match_parent"
-                android:id="@+id/btn_compr" />
+                android:id="@+id/btn_compr"
+                android:background="@drawable/ic_send_to_shopping_list2_08" />
         </LinearLayout>
 
         <CalendarView
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:id="@+id/calendarView3" />
+            android:id="@+id/calendarView3"
+            android:minDate="01/01/2016"
+            android:maxDate="12/31/2017"
+            android:minHeight="80dp"
+            android:layout_weight="0"
+            android:keepScreenOn="false"
+            android:nestedScrollingEnabled="false"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:scrollIndicators="left|right" />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -107,9 +125,61 @@
                             android:textAlignment="textStart"
                             android:gravity="center_vertical" />
 
+                        <Button
+                            android:text="-"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/btn_less"
+                            android:layout_weight="0"
+                            android:background="@color/DietMed_sec"
+                            android:minHeight="18dp"
+                            android:minWidth="18dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:textColor="@android:color/white"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_comensals_06"
+                            android:id="@+id/imageView"
+                            android:layout_gravity="center" />
+
+                        <TextView
+                            android:text="n"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/text_comen"
+                            android:layout_weight="0"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:background="@color/GreyLight"
+                            android:textColor="#767676"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
+
+                        <Button
+                            android:text="+"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/btn_more"
+                            android:layout_weight="0"
+                            android:background="@color/DietMed_sec"
+                            android:minHeight="20dp"
+                            android:minWidth="20dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:textColor="@android:color/white"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
+
                         <Space
-                            android:layout_width="100dp"
-                            android:layout_height="match_parent" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:layout_width="10dp" />
+
                     </LinearLayout>
 
                     <TextView
@@ -147,6 +217,7 @@
                         <Space
                             android:layout_width="100dp"
                             android:layout_height="match_parent" />
+
                     </LinearLayout>
 
                     <TextView
@@ -382,24 +453,33 @@
             android:layout_height="50dp"
             android:id="@+id/change_act"
             android:layout_alignParentBottom="true"
-            android:background="@android:color/holo_blue_light">
+            android:background="@color/DietMed_prin">
 
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
-            <Button
+            <ImageButton
                 android:text="List"
-                android:layout_width="60dp"
                 android:layout_height="match_parent"
-                android:id="@+id/btn_list" />
+                android:id="@+id/btn_list"
+                android:background="@drawable/ic_shopping_list_03"
+                android:layout_width="50dp" />
 
-            <Button
+            <Space
+                android:layout_height="wrap_content"
+                android:layout_width="50dp"/>
+
+
+            <ImageButton
                 android:text="Menu"
-                android:layout_width="60dp"
                 android:layout_height="match_parent"
-                android:id="@+id/btn_menu" />
+                android:id="@+id/btn_menu"
+                android:background="@drawable/ic_menu_04"
+                android:layout_width="50dp" />
+
+
 
             <Space
                 android:layout_width="wrap_content"

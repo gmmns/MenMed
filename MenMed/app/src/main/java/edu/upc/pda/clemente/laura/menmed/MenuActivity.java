@@ -30,7 +30,6 @@ public class MenuActivity extends AppCompatActivity{
     };
     private Menu menu;
     private ImageButton btn_list;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

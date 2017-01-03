@@ -32,7 +32,8 @@
                 android:text="Round Button"
                 android:background="@drawable/ic_share_05"
                 android:contextClickable="true"
-                android:layout_width="50dp" />
+                android:layout_width="50dp"
+                style="@style/Widget.AppCompat.ImageButton" />
 
             <Space
                 android:layout_width="50dp"
@@ -53,13 +54,17 @@
                 android:layout_width="48dp"
                 android:layout_height="match_parent"
                 android:id="@+id/btn_esb"
-                android:background="@drawable/ic_delete_indicators_07" />
+                android:src="@drawable/ic_delete_indicators_07"
+                android:background="?attr/selectableItemBackgroundBorderless" />
 
             <ImageButton
                 android:layout_width="52dp"
                 android:layout_height="match_parent"
                 android:id="@+id/btn_compr"
-                android:background="@drawable/ic_send_to_shopping_list2_08" />
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_send_to_shopping_list2_08"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                style="@style/Widget.AppCompat.ImageButton" />
         </LinearLayout>
 
         <CalendarView
@@ -75,6 +80,13 @@
             android:scaleX="1"
             android:scaleY="1"
             android:scrollIndicators="left|right" />
+
+        <!--<noman.weekcalendar.WeekCalendar
+            android:id="@+id/weekCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="@color/colorPrimary"
+            android:layout_weight="0.14" />-->
 
         <FrameLayout
             android:layout_width="match_parent"

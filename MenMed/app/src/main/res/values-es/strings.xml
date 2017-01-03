@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MenMed</string>
+    <string name="breakfast_plate">Plato desayuno</string>
+    <string name="breakfast_title">Desayuno</string>
+    <string name="confirm_erase">¿Quieres borrar el ingrediente?</string>
+    <string name="confirm_message">¿Seguro que quieres borrar el ingrediente?</string>
+    <string name="dinner_plate1">Primer plato cena</string>
+    <string name="dinner_plate2">Segundo plato cena</string>
+    <string name="dinner_plate3">Postres cena</string>
+    <string name="dinner_title">Cena</string>
+    <string name="elevenses_plate">Plato almuerzo</string>
+    <string name="elevenses_title">Almuerzo</string>
+    <string name="erase">Elimina</string>
+    <string name="lunch_plate1">Primer plato comida</string>
+    <string name="lunch_plate2">Segundo plato comida</string>
+    <string name="lunch_plate3">Postres comida</string>
+    <string name="lunch_title">Comida</string>
+    <string name="snack_plate">Plato merienda</string>
+    <string name="snack_title">Merienda</string>
+    <string name="today_menu">Menú del día</string>
+
+
+</resources>

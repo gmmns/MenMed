@@ -29,7 +29,6 @@
                 android:id="@+id/btn_share"
                 android:adjustViewBounds="false"
                 android:layout_height="match_parent"
-                android:text="Round Button"
                 android:background="@drawable/ic_share_05"
                 android:contextClickable="true"
                 android:layout_width="50dp"
@@ -40,7 +39,7 @@
                 android:layout_height="match_parent" />
 
             <TextView
-                android:text="Menú del dia"
+                android:text="@string/today_menu"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -111,7 +110,7 @@
                     android:orientation="vertical" >
 
                     <TextView
-                        android:text="Esmorzar"
+                        android:text="@string/breakfast_title"
                         android:textStyle="bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -134,7 +133,7 @@
                             android:id="@+id/esm_check" />
 
                         <TextView
-                            android:text="Àpat esmorzar"
+                            android:text="@string/breakfast_plate"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:id="@+id/esm_recept"
@@ -202,7 +201,7 @@
                     </LinearLayout>
 
                     <TextView
-                        android:text="Mig Matí"
+                        android:text="@string/elevenses_title"
                         android:textStyle="bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -225,7 +224,7 @@
                             android:id="@+id/mig_check" />
 
                         <TextView
-                            android:text="Àpat mig matí"
+                            android:text="@string/elevenses_plate"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:id="@+id/mig_recept"
@@ -240,7 +239,7 @@
                     </LinearLayout>
 
                     <TextView
-                        android:text="Dinar"
+                        android:text="@string/lunch_title"
                         android:textStyle="bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -263,7 +262,7 @@
                             android:id="@+id/dinar_check1" />
 
                         <TextView
-                            android:text="Primer plat dinar"
+                            android:text="@string/lunch_plate1"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:id="@+id/dinar_recept1"
@@ -291,7 +290,7 @@
                             android:id="@+id/dinar_check2" />
 
                         <TextView
-                            android:text="Segon plat dinar"
+                            android:text="@string/lunch_plate2"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:id="@+id/dinar_recept2"
@@ -319,7 +318,7 @@
                             android:id="@+id/dinar_check3" />
 
                         <TextView
-                            android:text="Postres dinar"
+                            android:text="@string/lunch_plate3"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:id="@+id/dinar_recept3"
@@ -333,7 +332,7 @@
                     </LinearLayout>
 
                     <TextView
-                        android:text="Berenar"
+                        android:text="@string/snack_title"
                         android:textStyle="bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -356,7 +355,7 @@
                             android:id="@+id/ber_check" />
 
                         <TextView
-                            android:text="Àpat berenar"
+                            android:text="@string/snack_plate"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:id="@+id/ber_recept"
@@ -370,7 +369,7 @@
                     </LinearLayout>
 
                     <TextView
-                        android:text="Sopar"
+                        android:text="@string/dinner_title"
                         android:textStyle="bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -393,7 +392,7 @@
                             android:id="@+id/sopar_check1" />
 
                         <TextView
-                            android:text="Primer plat sopar"
+                            android:text="@string/dinner_plate1"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:id="@+id/sopar_recept1"
@@ -421,7 +420,7 @@
                             android:id="@+id/sopar_check2" />
 
                         <TextView
-                            android:text="Segon plat sopar"
+                            android:text="@string/dinner_plate2"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:id="@+id/sopar_recept2"
@@ -449,7 +448,7 @@
                             android:id="@+id/sopar_check3" />
 
                         <TextView
-                            android:text="Postres sopar"
+                            android:text="@string/dinner_plate3"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:id="@+id/sopar_recept3"
@@ -480,7 +479,6 @@
                 android:layout_weight="1" />
 
             <ImageButton
-                android:text="List"
                 android:layout_height="match_parent"
                 android:id="@+id/btn_list"
                 android:background="@drawable/ic_shopping_list_03"
@@ -492,7 +490,6 @@
 
 
             <ImageButton
-                android:text="Menu"
                 android:layout_height="match_parent"
                 android:id="@+id/btn_menu"
                 android:background="@drawable/ic_menu_04"

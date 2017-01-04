@@ -91,34 +91,15 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
 
         Bundle args = new Bundle();
 
-       /*Should add this attribute if you adding  the NOW_BACKGROUND or DATE_SELECTOR_BACKGROUND Attribute*/
-        args.putString(RWeekCalendar.PACKAGENAME, getApplicationContext().getPackageName());
-        args.putInt(RWeekCalendar.CALENDER_TYPE, RWeekCalendar.NORMAL_CALENDER);
-
-       /* IMPORTANT: Customization for the calender commenting or un commenting any of the attribute below will reflect change in calender*/
-        //set Calender type you want if you don't set any normal calender will be set
-        /*if (getIntent().getExtras().getInt(RWeekCalendar.CALENDER_TYPE) == RWeekCalendar.FDF_CALENDER) {
-            /** Set Calender type to FIRSTDAYFIRST (FDF_CALENDER)here
-             * the week days will start as current day as first entry
-             * eg if current day is friday calender start with fri,sat,etc
-             *
-            args.putInt(RWeekCalendar.CALENDER_TYPE, RWeekCalendar.FDF_CALENDER);
-        } else {
-
-            /**
-             * set Calender type to normal here the week days will
-             * start as normal  be like Sun,Mon etc
-             *
+            /*Should add this attribute if you adding  the NOW_BACKGROUND or DATE_SELECTOR_BACKGROUND Attribute*/
+            args.putString(RWeekCalendar.PACKAGENAME, getApplicationContext().getPackageName());
             args.putInt(RWeekCalendar.CALENDER_TYPE, RWeekCalendar.NORMAL_CALENDER);
-        }*/
-
-
-//      args.putInt(RWeekCalender.CALENDER_BACKGROUND, ContextCompat.getColor(this,R.color.md_pink_700));//set background color to calender
-        args.putString(RWeekCalendar.DATE_SELECTOR_BACKGROUND, "bg_select");//set background to the selected dates
-//      args.putString(RWeekCalender.NOW_BACKGROUND,"bg_now");//set background to nowView
-//      args.putInt(RWeekCalender.CURRENT_DATE_BACKGROUND,ContextCompat.getColor(this,R.color.md_black_1000));//set color to the currentdate
-//      args.putInt(RWeekCalender.PRIMARY_BACKGROUND, ContextCompat.getColor(this,R.color.md_white_1000));//Set color to the primary views (Month name and dates)
-//      args.putInt(RWeekCalender.SECONDARY_BACKGROUND, ContextCompat.getColor(this,R.color.md_green_500));//Set color to the secondary views (now view and week names)
+    //      args.putInt(RWeekCalender.CALENDER_BACKGROUND, ContextCompat.getColor(this,R.color.md_pink_700));//set background color to calender
+            args.putString(RWeekCalendar.DATE_SELECTOR_BACKGROUND, "bg_select");//set background to the selected dates
+            args.putString(RWeekCalendar.NOW_BACKGROUND,"bg_now");//set background to nowView
+    //      args.putInt(RWeekCalendar.CURRENT_DATE_BACKGROUND,ContextCompat.getColor(this,R.color.md_black_1000));//set color to the currentdate
+    //      args.putInt(RWeekCalender.PRIMARY_BACKGROUND, ContextCompat.getColor(this,R.color.md_white_1000));//Set color to the primary views (Month name and dates)
+    //      args.putInt(RWeekCalender.SECONDARY_BACKGROUND, ContextCompat.getColor(this,R.color.md_green_500));//Set color to the secondary views (now view and week names)
 
         rCalendarFragment.setArguments(args);
 
@@ -131,7 +112,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
             @Override
             public void onSelectPicker() {
                 //User can use any type of pickers here the below picker is only Just a example
-                //DatePickerDialog.newInstance(Sample.this, Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH)).show(getFragmentManager(), "datePicker");
+                DatePickerDialog.newInstance(MenuActivity.this, Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH)).show(getFragmentManager(), "datePicker");
             }
 
             @Override
@@ -149,7 +130,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
     @Override
     public void onDateSet(DatePickerDialog dialog, int year, int monthOfYear, int dayOfMonth) {
 
-//This is the call back from picker used in the sample you can use custom or any other picker
+        //This is the call back from picker used in the sample you can use custom or any other picker
 
         //IMPORTANT: get the year,month and date from picker you using and call setDateWeek method
         Calendar calendar = Calendar.getInstance();

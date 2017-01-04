@@ -163,22 +163,22 @@ public class WeekFragment extends Fragment {
 
         /*if the selected week is the current week indicates the current day*/
         if(datePosition==RWeekCalendar.CURRENT_WEEK_POSITION)
-       {
+        {
 
 
-           for(int i=0;i<7;i++)
-           {
+            for(int i=0;i<7;i++)
+            {
 
 
-               if(Calendar.getInstance().get(Calendar.DAY_OF_MONTH)==dateInWeekArray.get(i).getDayOfMonth())
-               {
-                   textViewArray[i].setTextColor(currentDateIndicatorValue);
-                   textViewArray[i].setBackgroundResource(selectorDateIndicatorValue);
-                   mDateSelectedBackground(i);
-               }
-           }
+                if(Calendar.getInstance().get(Calendar.DAY_OF_MONTH)==dateInWeekArray.get(i).getDayOfMonth())
+                {
+                    textViewArray[i].setTextColor(currentDateIndicatorValue);
+                    textViewArray[i].setBackgroundResource(selectorDateIndicatorValue);
+                    mDateSelectedBackground(i);
+                }
+            }
 
-       }
+        }
 
         /**
          * Click listener of all week days with the indicator change and passing listener info.
@@ -332,7 +332,7 @@ public class WeekFragment extends Fragment {
             if(position!=i)
             {
 
-                    textViewArray[i].setBackgroundColor(Color.TRANSPARENT);
+                textViewArray[i].setBackgroundColor(Color.TRANSPARENT);
 
 
 

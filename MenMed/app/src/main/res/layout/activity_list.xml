@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_list"
     android:layout_width="match_parent"
@@ -28,10 +29,11 @@
                 android:id="@+id/btn_share"
                 android:adjustViewBounds="false"
                 android:layout_height="match_parent"
-                android:text="Round Button"
-                android:background="@drawable/ic_share_05"
+                android:src="@drawable/ic_share"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:contextClickable="true"
-                android:layout_width="50dp" />
+                android:layout_width="52dp"
+                android:scaleType="centerInside" />
 
             <Space
                 android:layout_width="50dp"
@@ -49,51 +51,71 @@
                 android:textColor="@android:color/white" />
 
             <ImageButton
-                android:layout_width="48dp"
+                android:layout_width="52dp"
                 android:layout_height="match_parent"
-                android:id="@+id/btn_esb"
-                android:background="@drawable/ic_delete_indicators_07" />
+                android:id="@+id/btn_edit"
+                android:src="@drawable/ic_edit"
+                android:background="?attr/selectableItemBackgroundBorderless"  />
 
             <ImageButton
                 android:layout_width="52dp"
                 android:layout_height="match_parent"
-                android:id="@+id/btn_compr"
-                android:background="@drawable/ic_send_to_shopping_list2_08" />
+                android:id="@+id/btn_shopping_done"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_shopping_done"
+                android:background="?attr/selectableItemBackgroundBorderless" />
         </LinearLayout>
 
-        <FrameLayout
+        <RelativeLayout
+            android:id="@+id/list_background"
+            android:layout_above="@+id/change_act"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp">
-            <ScrollView
+            android:layout_height="503dp">
+
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="25dp"
+                android:text="+"
+                android:layout_above="@+id/list"
+                android:accessibilityLiveRegion="none"
+                android:src="@drawable/ic_add"
+                app:fabSize="normal"
+                android:id="@+id/btn_add"
+                app:backgroundTint="@color/DietMed_sec" />
+
+
+           <!-- <ImageButton
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:background="@drawable/oval"
+                android:src="@drawable/oval"
+                android:id="@+id/btn_add"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="25dp"
+                android:text="+"
+                android:layout_above="@+id/list"
+                android:accessibilityLiveRegion="none" />-->
+
+            <ListView
+                android:id="@+id/list"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scrollbars="none"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+        </RelativeLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" >
-
-                    <ListView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/list"
-                        android:layout_below="@+id/nou_ingr"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginTop="10dp" />
-
-                </LinearLayout>
-
-
-            </ScrollView>
-
-
-        </FrameLayout>
-
-        <LinearLayout
+        <!--<LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -130,13 +152,14 @@
                 android:layout_height="wrap_content"
                 android:layout_width="35dp" />
 
-        </LinearLayout>
+        </LinearLayout>-->
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:id="@+id/change_act"
+            android:layout_alignParentBottom="true"
             android:background="@color/DietMed_prin">
 
             <Space

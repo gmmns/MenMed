@@ -18,6 +18,7 @@
     <string name="dinner_plate1">Primer plat sopar</string>
     <string name="dinner_plate2">Segon plat sopar</string>
     <string name="dinner_plate3">Postres sopar</string>
+    <string name="product_name">Nom producte</string>
 
     <array name="all_recipes">
         <item>"Cafè amb llet. Torrades amb oli d'oliva verge i sal.";"Iogurt de fruites.";"Amanida grega.";"Saltxixes de pavo a la planxa amb sofregit de ceba i tomàquet.";"Meló.";"Bastonets de pa. Suc natural de magrana.";"Espaguetis al pesto.";"Sardines al forn amb tomàquet rostit.";"Carpaccio de pinya."</item>

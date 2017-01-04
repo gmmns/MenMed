@@ -105,7 +105,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
 
         // Attach to the activity
         FragmentTransaction t = getSupportFragmentManager().beginTransaction();
-        t.replace(R.id.calendar, rCalendarFragment);
+        //t.replace(R.id.calendar, rCalendarFragment);
         t.commit();
 
         CalenderListener listener = new CalenderListener() {
@@ -134,7 +134,6 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
 
         //IMPORTANT: get the year,month and date from picker you using and call setDateWeek method
         Calendar calendar = Calendar.getInstance();
-
         calendar.set(year, monthOfYear, dayOfMonth);
         rCalendarFragment.setDateWeek(calendar);//Sets the selected date from Picker
 

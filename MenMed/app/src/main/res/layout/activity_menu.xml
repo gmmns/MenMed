@@ -65,14 +65,14 @@
                 android:src="@drawable/ic_add_to_list"
                 android:background="?attr/selectableItemBackgroundBorderless" />
         </LinearLayout>
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:orientation="vertical"
             android:id="@+id/calendar"
-            android:layout_weight="0.09"></LinearLayout>
+            android:layout_weight="0.09"></LinearLayout>-->
 
-        <!--<CalendarView
+        <CalendarView
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:id="@+id/calendarView3"
@@ -84,21 +84,14 @@
             android:nestedScrollingEnabled="false"
             android:scaleX="1"
             android:scaleY="1"
-            android:scrollIndicators="left|right" />-->
-
-        <!--<noman.weekcalendar.WeekCalendar
-            android:id="@+id/weekCalendar"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:background="@color/colorPrimary"
-            android:layout_weight="0.14" />-->
+            android:scrollIndicators="left|right" />
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="320dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_weight="4.50">
+            android:layout_weight="1">
 
             <ScrollView
                 android:layout_width="match_parent"

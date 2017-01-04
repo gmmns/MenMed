@@ -29,10 +29,11 @@
                 android:id="@+id/btn_share"
                 android:adjustViewBounds="false"
                 android:layout_height="match_parent"
-                android:background="@drawable/ic_share_05"
+                android:src="@drawable/ic_share"
+                android:background="?attr/selectableItemBackgroundBorderless"
                 android:contextClickable="true"
-                android:layout_width="50dp"
-                style="@style/Widget.AppCompat.ImageButton" />
+                android:layout_width="52dp"
+                android:scaleType="centerInside" />
 
             <Space
                 android:layout_width="50dp"
@@ -50,10 +51,10 @@
                 android:textColor="@android:color/white" />
 
             <ImageButton
-                android:layout_width="48dp"
+                android:layout_width="52dp"
                 android:layout_height="match_parent"
                 android:id="@+id/btn_esb"
-                android:src="@drawable/ic_delete_indicators_07"
+                android:src="@drawable/ic_delete_indicators"
                 android:background="?attr/selectableItemBackgroundBorderless" />
 
             <ImageButton
@@ -61,9 +62,8 @@
                 android:layout_height="match_parent"
                 android:id="@+id/btn_compr"
                 android:scaleType="centerInside"
-                android:src="@drawable/ic_send_to_shopping_list2_08"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                style="@style/Widget.AppCompat.ImageButton" />
+                android:src="@drawable/ic_add_to_list"
+                android:background="?attr/selectableItemBackgroundBorderless" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -115,8 +115,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/esm_title"
-                        android:textSize="20dp"
-                        android:clickable="false" />
+                        android:clickable="false"
+                        android:textSize="18dp" />
 
                     <LinearLayout
                         android:orientation="horizontal"
@@ -130,7 +130,8 @@
                         <CheckBox
                             android:layout_width="30dp"
                             android:layout_height="match_parent"
-                            android:id="@+id/esm_check" />
+                            android:id="@+id/esm_check"
+                            android:textColorLink="@color/DietMed_sec" />
 
                         <TextView
                             android:text="@string/breakfast_plate"
@@ -138,28 +139,26 @@
                             android:layout_height="match_parent"
                             android:id="@+id/esm_recept"
                             android:layout_weight="1"
-                            android:textSize="20dp"
-                            android:textAlignment="textStart"
-                            android:gravity="center_vertical" />
+                            android:gravity="center_vertical"
+                            android:textSize="16dp" />
 
-                        <Button
+                        <ImageButton
                             android:text="-"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
                             android:id="@+id/btn_less"
                             android:layout_weight="0"
-                            android:background="@color/DietMed_sec"
                             android:minHeight="18dp"
                             android:minWidth="18dp"
-                            android:paddingLeft="10dp"
-                            android:paddingRight="10dp"
                             android:textColor="@android:color/white"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_less2"
                             android:layout_gravity="center"
                             android:textSize="20dp" />
 
                         <ImageView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="25dp"
                             app:srcCompat="@drawable/ic_comensals_06"
                             android:id="@+id/imageView"
                             android:layout_gravity="center"
@@ -168,7 +167,6 @@
                         <TextView
                             android:text="n"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
                             android:id="@+id/text_comen"
                             android:layout_weight="0"
                             android:paddingLeft="10dp"
@@ -176,19 +174,20 @@
                             android:background="@color/GreyLight"
                             android:textColor="#767676"
                             android:layout_gravity="center"
-                            android:textSize="20dp" />
+                            android:layout_height="25dp"
+                            android:textSize="16dp"
+                            android:foregroundGravity="center" />
 
-                        <Button
+                        <ImageButton
                             android:text="+"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
                             android:id="@+id/btn_more"
                             android:layout_weight="0"
-                            android:background="@color/DietMed_sec"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_more2"
                             android:minHeight="20dp"
                             android:minWidth="20dp"
-                            android:paddingLeft="10dp"
-                            android:paddingRight="10dp"
                             android:textColor="@android:color/white"
                             android:layout_gravity="center"
                             android:textSize="20dp" />
@@ -206,8 +205,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/mig_title"
-                        android:textSize="20dp"
-                        android:clickable="false" />
+                        android:clickable="false"
+                        android:textSize="18dp" />
 
                     <LinearLayout
                         android:orientation="horizontal"
@@ -229,12 +228,64 @@
                             android:layout_height="match_parent"
                             android:id="@+id/mig_recept"
                             android:layout_weight="1"
-                            android:textSize="20dp"
-                            android:gravity="center_vertical" />
+                            android:gravity="center_vertical"
+                            android:textSize="16dp" />
+
+                        <ImageButton
+                            android:text="-"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/btn_less"
+                            android:layout_weight="0"
+                            android:minHeight="18dp"
+                            android:minWidth="18dp"
+                            android:textColor="@android:color/white"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_less2"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            app:srcCompat="@drawable/ic_comensals_06"
+                            android:id="@+id/imageView"
+                            android:layout_gravity="center"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            android:text="n"
+                            android:layout_width="wrap_content"
+                            android:id="@+id/text_comen"
+                            android:layout_weight="0"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:background="@color/GreyLight"
+                            android:textColor="#767676"
+                            android:layout_gravity="center"
+                            android:layout_height="25dp"
+                            android:textSize="16dp"
+                            android:foregroundGravity="center" />
+
+                        <ImageButton
+                            android:text="+"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/btn_more"
+                            android:layout_weight="0"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_more2"
+                            android:minHeight="20dp"
+                            android:minWidth="20dp"
+                            android:textColor="@android:color/white"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
 
                         <Space
-                            android:layout_width="100dp"
-                            android:layout_height="match_parent" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:layout_width="10dp" />
+
 
                     </LinearLayout>
 
@@ -244,8 +295,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/dinar_title"
-                        android:textSize="20dp"
-                        android:clickable="false" />
+                        android:clickable="false"
+                        android:textSize="18dp" />
 
                     <LinearLayout
                         android:orientation="horizontal"
@@ -267,12 +318,64 @@
                             android:layout_height="match_parent"
                             android:id="@+id/dinar_recept1"
                             android:layout_weight="1"
-                            android:textSize="20dp"
-                            android:gravity="center_vertical" />
+                            android:gravity="center_vertical"
+                            android:textSize="16dp" />
+
+                        <ImageButton
+                            android:text="-"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/btn_less"
+                            android:layout_weight="0"
+                            android:minHeight="18dp"
+                            android:minWidth="18dp"
+                            android:textColor="@android:color/white"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_less2"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            app:srcCompat="@drawable/ic_comensals_06"
+                            android:id="@+id/imageView"
+                            android:layout_gravity="center"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            android:text="n"
+                            android:layout_width="wrap_content"
+                            android:id="@+id/text_comen"
+                            android:layout_weight="0"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:background="@color/GreyLight"
+                            android:textColor="#767676"
+                            android:layout_gravity="center"
+                            android:layout_height="25dp"
+                            android:textSize="16dp"
+                            android:foregroundGravity="center" />
+
+                        <ImageButton
+                            android:text="+"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/btn_more"
+                            android:layout_weight="0"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_more2"
+                            android:minHeight="20dp"
+                            android:minWidth="20dp"
+                            android:textColor="@android:color/white"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
 
                         <Space
-                            android:layout_width="100dp"
-                            android:layout_height="match_parent" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:layout_width="10dp" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -295,12 +398,64 @@
                             android:layout_height="match_parent"
                             android:id="@+id/dinar_recept2"
                             android:layout_weight="1"
-                            android:textSize="20dp"
-                            android:gravity="center_vertical" />
+                            android:gravity="center_vertical"
+                            android:textSize="16dp" />
+
+                        <ImageButton
+                            android:text="-"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/btn_less"
+                            android:layout_weight="0"
+                            android:minHeight="18dp"
+                            android:minWidth="18dp"
+                            android:textColor="@android:color/white"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_less2"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            app:srcCompat="@drawable/ic_comensals_06"
+                            android:id="@+id/imageView"
+                            android:layout_gravity="center"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            android:text="n"
+                            android:layout_width="wrap_content"
+                            android:id="@+id/text_comen"
+                            android:layout_weight="0"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:background="@color/GreyLight"
+                            android:textColor="#767676"
+                            android:layout_gravity="center"
+                            android:layout_height="25dp"
+                            android:textSize="16dp"
+                            android:foregroundGravity="center" />
+
+                        <ImageButton
+                            android:text="+"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/btn_more"
+                            android:layout_weight="0"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_more2"
+                            android:minHeight="20dp"
+                            android:minWidth="20dp"
+                            android:textColor="@android:color/white"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
 
                         <Space
-                            android:layout_width="100dp"
-                            android:layout_height="match_parent" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:layout_width="10dp" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -323,12 +478,64 @@
                             android:layout_height="match_parent"
                             android:id="@+id/dinar_recept3"
                             android:layout_weight="1"
-                            android:textSize="20dp"
-                            android:gravity="center_vertical" />
+                            android:gravity="center_vertical"
+                            android:textSize="16dp" />
+
+                        <ImageButton
+                            android:text="-"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/btn_less"
+                            android:layout_weight="0"
+                            android:minHeight="18dp"
+                            android:minWidth="18dp"
+                            android:textColor="@android:color/white"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_less2"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            app:srcCompat="@drawable/ic_comensals_06"
+                            android:id="@+id/imageView"
+                            android:layout_gravity="center"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            android:text="n"
+                            android:layout_width="wrap_content"
+                            android:id="@+id/text_comen"
+                            android:layout_weight="0"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:background="@color/GreyLight"
+                            android:textColor="#767676"
+                            android:layout_gravity="center"
+                            android:layout_height="25dp"
+                            android:textSize="16dp"
+                            android:foregroundGravity="center" />
+
+                        <ImageButton
+                            android:text="+"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/btn_more"
+                            android:layout_weight="0"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_more2"
+                            android:minHeight="20dp"
+                            android:minWidth="20dp"
+                            android:textColor="@android:color/white"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
 
                         <Space
-                            android:layout_width="100dp"
-                            android:layout_height="match_parent" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:layout_width="10dp" />
+
                     </LinearLayout>
 
                     <TextView
@@ -337,7 +544,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/ber_title"
-                        android:textSize="20dp"
+                        android:textSize="18dp"
                         android:clickable="false" />
 
                     <LinearLayout
@@ -360,12 +567,64 @@
                             android:layout_height="match_parent"
                             android:id="@+id/ber_recept"
                             android:layout_weight="1"
-                            android:textSize="20dp"
+                            android:textSize="16dp"
                             android:gravity="center_vertical" />
 
+                        <ImageButton
+                            android:text="-"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/btn_less"
+                            android:layout_weight="0"
+                            android:minHeight="18dp"
+                            android:minWidth="18dp"
+                            android:textColor="@android:color/white"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_less2"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            app:srcCompat="@drawable/ic_comensals_06"
+                            android:id="@+id/imageView"
+                            android:layout_gravity="center"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            android:text="n"
+                            android:layout_width="wrap_content"
+                            android:id="@+id/text_comen"
+                            android:layout_weight="0"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:background="@color/GreyLight"
+                            android:textColor="#767676"
+                            android:layout_gravity="center"
+                            android:layout_height="25dp"
+                            android:textSize="16dp"
+                            android:foregroundGravity="center" />
+
+                        <ImageButton
+                            android:text="+"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/btn_more"
+                            android:layout_weight="0"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_more2"
+                            android:minHeight="20dp"
+                            android:minWidth="20dp"
+                            android:textColor="@android:color/white"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
+
                         <Space
-                            android:layout_width="100dp"
-                            android:layout_height="match_parent" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:layout_width="10dp" />
+
                     </LinearLayout>
 
                     <TextView
@@ -374,7 +633,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/sopar_title"
-                        android:textSize="20dp"
+                        android:textSize="18dp"
                         android:clickable="false" />
 
                     <LinearLayout
@@ -397,12 +656,64 @@
                             android:layout_height="match_parent"
                             android:id="@+id/sopar_recept1"
                             android:layout_weight="1"
-                            android:textSize="20dp"
+                            android:textSize="16dp"
                             android:gravity="center_vertical" />
 
+                        <ImageButton
+                            android:text="-"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/btn_less"
+                            android:layout_weight="0"
+                            android:minHeight="18dp"
+                            android:minWidth="18dp"
+                            android:textColor="@android:color/white"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_less2"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            app:srcCompat="@drawable/ic_comensals_06"
+                            android:id="@+id/imageView"
+                            android:layout_gravity="center"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            android:text="n"
+                            android:layout_width="wrap_content"
+                            android:id="@+id/text_comen"
+                            android:layout_weight="0"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:background="@color/GreyLight"
+                            android:textColor="#767676"
+                            android:layout_gravity="center"
+                            android:layout_height="25dp"
+                            android:textSize="16dp"
+                            android:foregroundGravity="center" />
+
+                        <ImageButton
+                            android:text="+"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/btn_more"
+                            android:layout_weight="0"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_more2"
+                            android:minHeight="20dp"
+                            android:minWidth="20dp"
+                            android:textColor="@android:color/white"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
+
                         <Space
-                            android:layout_width="100dp"
-                            android:layout_height="match_parent" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:layout_width="10dp" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -425,12 +736,64 @@
                             android:layout_height="match_parent"
                             android:id="@+id/sopar_recept2"
                             android:layout_weight="1"
-                            android:textSize="20dp"
+                            android:textSize="16dp"
                             android:gravity="center_vertical" />
 
+                        <ImageButton
+                            android:text="-"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/btn_less"
+                            android:layout_weight="0"
+                            android:minHeight="18dp"
+                            android:minWidth="18dp"
+                            android:textColor="@android:color/white"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_less2"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            app:srcCompat="@drawable/ic_comensals_06"
+                            android:id="@+id/imageView"
+                            android:layout_gravity="center"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            android:text="n"
+                            android:layout_width="wrap_content"
+                            android:id="@+id/text_comen"
+                            android:layout_weight="0"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:background="@color/GreyLight"
+                            android:textColor="#767676"
+                            android:layout_gravity="center"
+                            android:layout_height="25dp"
+                            android:textSize="16dp"
+                            android:foregroundGravity="center" />
+
+                        <ImageButton
+                            android:text="+"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/btn_more"
+                            android:layout_weight="0"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_more2"
+                            android:minHeight="20dp"
+                            android:minWidth="20dp"
+                            android:textColor="@android:color/white"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
+
                         <Space
-                            android:layout_width="100dp"
-                            android:layout_height="match_parent" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:layout_width="10dp" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -453,12 +816,64 @@
                             android:layout_height="match_parent"
                             android:id="@+id/sopar_recept3"
                             android:layout_weight="1"
-                            android:textSize="20dp"
+                            android:textSize="16dp"
                             android:gravity="center_vertical" />
 
+                        <ImageButton
+                            android:text="-"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/btn_less"
+                            android:layout_weight="0"
+                            android:minHeight="18dp"
+                            android:minWidth="18dp"
+                            android:textColor="@android:color/white"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_less2"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="25dp"
+                            app:srcCompat="@drawable/ic_comensals_06"
+                            android:id="@+id/imageView"
+                            android:layout_gravity="center"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <TextView
+                            android:text="n"
+                            android:layout_width="wrap_content"
+                            android:id="@+id/text_comen"
+                            android:layout_weight="0"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:background="@color/GreyLight"
+                            android:textColor="#767676"
+                            android:layout_gravity="center"
+                            android:layout_height="25dp"
+                            android:textSize="16dp"
+                            android:foregroundGravity="center" />
+
+                        <ImageButton
+                            android:text="+"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/btn_more"
+                            android:layout_weight="0"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_more2"
+                            android:minHeight="20dp"
+                            android:minWidth="20dp"
+                            android:textColor="@android:color/white"
+                            android:layout_gravity="center"
+                            android:textSize="20dp" />
+
                         <Space
-                            android:layout_width="100dp"
-                            android:layout_height="match_parent" />
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:layout_width="10dp" />
+
                     </LinearLayout>
 
                 </LinearLayout>
@@ -481,8 +896,10 @@
             <ImageButton
                 android:layout_height="match_parent"
                 android:id="@+id/btn_list"
-                android:background="@drawable/ic_shopping_list_03"
-                android:layout_width="50dp" />
+                android:src="@drawable/ic_list_activity"
+                android:layout_width="52dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="centerInside" />
 
             <Space
                 android:layout_height="wrap_content"
@@ -492,8 +909,10 @@
             <ImageButton
                 android:layout_height="match_parent"
                 android:id="@+id/btn_menu"
-                android:background="@drawable/ic_menu_04"
-                android:layout_width="50dp" />
+                android:src="@drawable/ic_menu_activity"
+                android:layout_width="52dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="centerInside" />
 
 
 

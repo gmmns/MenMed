@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MenMed</string>
-    <string name="confirm_erase">Vols esborrar l'ingredient?</string>
-    <string name="confirm_message">Segur que vols esborrar l'ingredient?</string>
+    <string name="confirm_erase">"Vols esborrar l'ingredient?"</string>
+    <string name="confirm_message">"Segur que vols esborrar l'ingredient?"</string>
     <string name="erase">Esborra</string>
     <string name="breakfast_title" >Esmorzar</string>
     <string name="today_menu">Menú del dia</string>

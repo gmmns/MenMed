@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.UserManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.content.res.Resources;
@@ -92,20 +93,20 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         Bundle args = new Bundle();
 
             /*Should add this attribute if you adding  the NOW_BACKGROUND or DATE_SELECTOR_BACKGROUND Attribute*/
-            args.putString(RWeekCalendar.PACKAGENAME, getApplicationContext().getPackageName());
+            //args.putString(RWeekCalendar.PACKAGENAME, getApplicationContext().getPackageName());
             args.putInt(RWeekCalendar.CALENDER_TYPE, RWeekCalendar.NORMAL_CALENDER);
-    //      args.putInt(RWeekCalender.CALENDER_BACKGROUND, ContextCompat.getColor(this,R.color.md_pink_700));//set background color to calender
-            args.putString(RWeekCalendar.DATE_SELECTOR_BACKGROUND, "bg_select");//set background to the selected dates
-            args.putString(RWeekCalendar.NOW_BACKGROUND,"bg_now");//set background to nowView
-    //      args.putInt(RWeekCalendar.CURRENT_DATE_BACKGROUND,ContextCompat.getColor(this,R.color.md_black_1000));//set color to the currentdate
-    //      args.putInt(RWeekCalender.PRIMARY_BACKGROUND, ContextCompat.getColor(this,R.color.md_white_1000));//Set color to the primary views (Month name and dates)
-    //      args.putInt(RWeekCalender.SECONDARY_BACKGROUND, ContextCompat.getColor(this,R.color.md_green_500));//Set color to the secondary views (now view and week names)
+            //args.putInt(RWeekCalendar.CALENDER_BACKGROUND, ContextCompat.getColor(this,R.color.GreyLight));//set background color to calender
+            //args.putString(RWeekCalendar.DATE_SELECTOR_BACKGROUND, "bg_select");//set background to the selected dates
+            //args.putString(RWeekCalendar.NOW_BACKGROUND,"bg_now");//set background to nowView
+            //args.putInt(RWeekCalendar.CURRENT_DATE_BACKGROUND,ContextCompat.getColor(this,R.color.DietMed_prin));//set color to the currentdate
+            //args.putInt(RWeekCalendar.PRIMARY_BACKGROUND, ContextCompat.getColor(this,R.color.Grey));//Set color to the primary views (Month name and dates)
+            //args.putInt(RWeekCalendar.SECONDARY_BACKGROUND, ContextCompat.getColor(this,R.color.dark_gray));//Set color to the secondary views (now view and week names)
 
         rCalendarFragment.setArguments(args);
 
         // Attach to the activity
         FragmentTransaction t = getSupportFragmentManager().beginTransaction();
-        //t.replace(R.id.calendar, rCalendarFragment);
+        t.replace(R.id.calendar, rCalendarFragment);
         t.commit();
 
         CalenderListener listener = new CalenderListener() {

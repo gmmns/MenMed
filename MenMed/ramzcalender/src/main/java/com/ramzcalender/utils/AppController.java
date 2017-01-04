@@ -5,16 +5,10 @@ import android.app.Application;
 
 import org.joda.time.LocalDateTime;
 
-
 public class AppController extends Application {
 
-	public static final String TAG = AppController.class
-			.getSimpleName();
-
-
-
+	public static final String TAG = AppController.class.getSimpleName();
     private static AppController mInstance;
-
     public LocalDateTime setDate,selectedDate;
 
 
@@ -22,16 +16,11 @@ public class AppController extends Application {
 	public void onCreate() {
 		super.onCreate();
 		mInstance = this;
-
 	}
 
-	public static synchronized AppController getInstance() {
-		return mInstance;
-	}
-
+	public static synchronized AppController getInstance() {return mInstance;}
     /**
      * Set the current week date
-     *
      * @param setDate
      */
     public void setDate(LocalDateTime setDate)
@@ -46,7 +35,6 @@ public class AppController extends Application {
     }
 
     /*getting the selected week*/
-
     public LocalDateTime getSelected()
     {
         return selectedDate;

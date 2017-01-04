@@ -52,7 +52,6 @@ public class RWeekCalendar extends Fragment {
 
 
     //Declaring Variables
-
     LocalDateTime mStartDate= new LocalDateTime();
     LocalDateTime selectedDate = new LocalDateTime();
 
@@ -107,7 +106,6 @@ public class RWeekCalendar extends Fragment {
         super.onCreate(savedInstanceState);
 
         //initializing instance
-
         mInstance = this;
 
     }
@@ -156,22 +154,12 @@ public class RWeekCalendar extends Fragment {
         }
 
         if (getArguments().containsKey(CURRENT_DATE_BACKGROUND)) {
-
             currentDateIndicatorValue = getArguments().getInt(CURRENT_DATE_BACKGROUND);
-
         }
-
-        if (getArguments().containsKey(CALENDER_TYPE)) {
-
-            calenderType = getArguments().getInt(CALENDER_TYPE);
-        }
-
+        if (getArguments().containsKey(CALENDER_TYPE)) {calenderType = getArguments().getInt(CALENDER_TYPE);}
         if (getArguments().containsKey(PRIMARY_BACKGROUND)) {
-
             monthView.setTextColor(getArguments().getInt(PRIMARY_BACKGROUND));
-            primaryTextColor = getArguments().getInt(PRIMARY_BACKGROUND);
-
-        }
+            primaryTextColor = getArguments().getInt(PRIMARY_BACKGROUND);}
 
         if (getArguments().containsKey(SECONDARY_BACKGROUND)) {
 

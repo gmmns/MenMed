@@ -170,7 +170,7 @@ public class WeekFragment extends Fragment {
             {
 
 
-                if(Calendar.getInstance().get(Calendar.DAY_OF_MONTH)==dateInWeekArray.get(i).getDayOfMonth())
+                if(Calendar.getInstance().get(Calendar.DAY_OF_MONTH)== dateInWeekArray.get(i).getDayOfMonth())
                 {
                     textViewArray[i].setTextColor(currentDateIndicatorValue);
                     textViewArray[i].setBackgroundResource(selectorDateIndicatorValue);
@@ -187,66 +187,41 @@ public class WeekFragment extends Fragment {
         sundayTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-
                 mSelectedDateInfo(0);
                 sundayTV.setBackgroundResource(selectorDateIndicatorValue);
                 mDateSelectedBackground(0);
-
-
             }
         });
-
         mondayTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 mSelectedDateInfo(1);
                 mondayTv.setBackgroundResource(selectorDateIndicatorValue);
                 mDateSelectedBackground(1);
-
-
-
             }
         });
-
         tuesdayTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mSelectedDateInfo(2);
                 tuesdayTv.setBackgroundResource(selectorDateIndicatorValue);
                 mDateSelectedBackground(2);
-
-
-
             }
         });
-
-
         wednesdayTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mSelectedDateInfo(3);
                 wednesdayTv.setBackgroundResource(selectorDateIndicatorValue);
                 mDateSelectedBackground(3);
-
-
-
             }
         });
-
-
         thursdayTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mSelectedDateInfo(4);
                 thursdayTv.setBackgroundResource(selectorDateIndicatorValue);
                 mDateSelectedBackground(4);
-
-
-
             }
         });
 
@@ -257,9 +232,6 @@ public class WeekFragment extends Fragment {
                 mSelectedDateInfo(5);
                 fridayTv.setBackgroundResource(selectorDateIndicatorValue);
                 mDateSelectedBackground(5);
-
-
-
             }
         });
 
@@ -270,10 +242,6 @@ public class WeekFragment extends Fragment {
                 mSelectedDateInfo(6);
                 saturdayTv.setBackgroundResource(selectorDateIndicatorValue);
                 mDateSelectedBackground(6);
-
-
-
-
             }
         });
 

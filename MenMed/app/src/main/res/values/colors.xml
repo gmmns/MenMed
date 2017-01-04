@@ -2,8 +2,9 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#153d3c</color>
     <color name="DietMed_prin">#035d64</color>
     <color name="DietMed_sec">#3fa1a1</color>
     <color name="GreyLight">#efefef</color>
+    <color name="Grey">#949494</color>
 </resources>

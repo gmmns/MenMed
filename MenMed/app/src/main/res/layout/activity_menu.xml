@@ -65,26 +65,11 @@
                 android:src="@drawable/ic_add_to_list"
                 android:background="?attr/selectableItemBackgroundBorderless" />
         </LinearLayout>
-        <!--<LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:orientation="vertical"
-            android:id="@+id/calendar"
-            android:layout_weight="0.09"></LinearLayout>-->
-
-        <CalendarView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:id="@+id/calendarView3"
-            android:minDate="01/01/2016"
-            android:maxDate="12/31/2017"
-            android:minHeight="80dp"
-            android:layout_weight="0"
-            android:keepScreenOn="false"
-            android:nestedScrollingEnabled="false"
-            android:scaleX="1"
-            android:scaleY="1"
-            android:scrollIndicators="left|right" />
+            android:orientation="vertical"
+            android:id="@+id/calendar"></LinearLayout>
 
         <FrameLayout
             android:layout_width="match_parent"

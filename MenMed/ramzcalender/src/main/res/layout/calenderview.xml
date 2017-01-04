@@ -2,12 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3fa1a1"
+    android:background="@color/GreyLight"
     android:id="@+id/background"
     >
 <RelativeLayout
     android:layout_width="match_parent"
-
     android:layout_height="40dp">
 
 
@@ -16,7 +15,7 @@
         android:layout_height="35dp"
         android:textSize="20sp"
         android:layout_centerInParent="true"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:text=""
         android:id="@+id/monthTv"
         android:gravity="center"
@@ -27,7 +26,7 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:textSize="15sp"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
 
         android:src="@drawable/down"
         android:layout_toRightOf="@+id/monthTv"
@@ -47,10 +46,10 @@
         android:layout_centerInParent="true"
         android:textColor="@android:color/white"
 
-        android:background="#035d64"
+        android:background="@color/DietMed_prin"
         android:layout_toRightOf="@+id/arrow"
         android:layout_marginLeft="10dp"
-        android:text="Now"
+        android:text="@string/today"
         android:id="@+id/nowTv"
         android:gravity="center"
         android:layout_marginBottom="5dp"
@@ -64,7 +63,7 @@
     android:layout_width="match_parent"
     android:layout_height="1dp"
 
-    android:background="@android:color/white"/>
+    android:background="@android:color/black"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -84,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
                 android:layout_centerInParent="true"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:id="@+id/week_sunday"
                 android:text="Dg"
                 />
@@ -101,7 +100,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
                 android:layout_centerInParent="true"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:id="@+id/week_monday"
 
                 android:text="Dll"
@@ -119,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
                 android:layout_centerInParent="true"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:id="@+id/week_tuesday"
 
 
@@ -139,7 +138,7 @@
                 android:textSize="15sp"
 
                 android:layout_centerInParent="true"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:id="@+id/week_wednesday"
 
                 android:text="Dc"
@@ -157,7 +156,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
                 android:layout_centerInParent="true"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:id="@+id/week_thursday"
 
                 android:text="Dj"
@@ -175,7 +174,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
                 android:layout_centerInParent="true"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:id="@+id/week_friday"
 
                 android:text="Dv"
@@ -197,7 +196,7 @@
                 android:layout_centerInParent="true"
                 android:id="@+id/week_saturday"
 
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:text="Dss"
                 />
         </RelativeLayout>

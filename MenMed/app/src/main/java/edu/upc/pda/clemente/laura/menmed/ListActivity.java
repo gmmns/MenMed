@@ -32,7 +32,7 @@ public class ListActivity extends AppCompatActivity {
 
     private void dataChanged() {
         adapter.notifyDataSetChanged();
-        saveToFile();
+        //saveToFile();
     }
 
     @Override
@@ -41,34 +41,14 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
         init();
 
-        llista = (ListView) findViewById(R.id.list);
-        nou_item = (EditText) findViewById(R.id.nou_item);
-        nou_item.setText("");
+    }
 
-        try {
-            restoreFromFile();
-        } catch (IOException e) {
-            items = new ArrayList<Ingredient>();
-            items.add(new Ingredient("Patates"));
-            items.add(new Ingredient("Caixa de Llet"));
-        }
-
-        adapter = new IngredientAdapter(this, R.layout.ingredient, items);
-        llista.setAdapter(adapter);
-
-        llista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    protected void init() {
+        menu_btn = (ImageButton) findViewById(R.id.btn_menu);
+        menu_btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
-                items.get(pos).toggleChecked();
-                dataChanged();
-            }
-        });
-
-        llista.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View v, int pos, long id) {
-                //removeItem(pos);
-                return true;
+            public void onClick(View view) {
+                finish();
             }
         });
     }
@@ -86,7 +66,7 @@ public class ListActivity extends AppCompatActivity {
         });
         builder.setNegativeButton(android.R.string.cancel, null);
         builder.create().show();
-    }*/
+    }
 
     public void onAddItem(View view) {
         String new_item_name = nou_item.getText().toString();
@@ -127,14 +107,7 @@ public class ListActivity extends AppCompatActivity {
     }
 
 
-    protected void init(){
-        menu_btn = (ImageButton) findViewById(R.id.btn_menu);
-        menu_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-    }
-}
 
+    }*/
+
+}

@@ -87,13 +87,13 @@ public class RWeekCalendar extends Fragment {
 
     String selectorDateIndicatorValue = "bg_red";
     int currentDateIndicatorValue = Color.BLACK;
-    int primaryTextColor = Color.WHITE;
+    int primaryTextColor = Color.GRAY;
+    int DietMed_prin = R.color.DietMed_prin;
 
     public static String PAKAGENAMEVALUE = "com.ramzcalender";
 
     //Current weekpostion of current day
-    public static int CURRENT_WEEK_POSITION = 0;
-
+    public static int CURRENT_WEEK_POSITION = 1;
     public static int calenderType = NORMAL_CALENDER;
 
     //Default will the current date
@@ -136,31 +136,14 @@ public class RWeekCalendar extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         nowView.setVisibility(View.GONE);
-
-        /**
-         * Checking for any customization values
-         */
-
-        if (getArguments().containsKey(CALENDER_BACKGROUND)) {
-
-            mBackground.setBackgroundColor(getArguments().getInt(CALENDER_BACKGROUND));
-
-        }
-
-        if (getArguments().containsKey(DATE_SELECTOR_BACKGROUND)) {
-
-            selectorDateIndicatorValue = getArguments().getString(DATE_SELECTOR_BACKGROUND);
-
-        }
-
-        if (getArguments().containsKey(CURRENT_DATE_BACKGROUND)) {
-            currentDateIndicatorValue = getArguments().getInt(CURRENT_DATE_BACKGROUND);
-        }
+        /*** Checking for any customization values*/
+        if (getArguments().containsKey(CALENDER_BACKGROUND)) {mBackground.setBackgroundColor(getArguments().getInt(CALENDER_BACKGROUND));}
+        if (getArguments().containsKey(DATE_SELECTOR_BACKGROUND)) {selectorDateIndicatorValue = getArguments().getString(DATE_SELECTOR_BACKGROUND);}
+        if (getArguments().containsKey(CURRENT_DATE_BACKGROUND)) {currentDateIndicatorValue = getArguments().getInt(CURRENT_DATE_BACKGROUND);}
         if (getArguments().containsKey(CALENDER_TYPE)) {calenderType = getArguments().getInt(CALENDER_TYPE);}
         if (getArguments().containsKey(PRIMARY_BACKGROUND)) {
             monthView.setTextColor(getArguments().getInt(PRIMARY_BACKGROUND));
             primaryTextColor = getArguments().getInt(PRIMARY_BACKGROUND);}
-
         if (getArguments().containsKey(SECONDARY_BACKGROUND)) {
 
             nowView.setTextColor(getArguments().getInt(SECONDARY_BACKGROUND));
@@ -198,63 +181,63 @@ public class RWeekCalendar extends Fragment {
             int startingDate = new LocalDateTime().dayOfWeek().get();
             if (startingDate == 1) {
 
-                sundayTv.setText("Mon");
-                mondayTv.setText("Tue");
-                tuesdayTv.setText("Wed");
-                wednesdayTv.setText("Thu");
-                thursdayTv.setText("Fri");
-                fridayTv.setText("Sat");
-                saturdayTv.setText("Sun");
+                sundayTv.setText("Dll");
+                mondayTv.setText("Dm");
+                tuesdayTv.setText("Dc");
+                wednesdayTv.setText("Dj");
+                thursdayTv.setText("Dv");
+                fridayTv.setText("Ds");
+                saturdayTv.setText("Dg");
 
             } else if (startingDate == 2) {
 
-                sundayTv.setText("Tue");
-                mondayTv.setText("Wed");
-                tuesdayTv.setText("Thu");
-                wednesdayTv.setText("Fri");
-                thursdayTv.setText("Sat");
-                fridayTv.setText("Sun");
-                saturdayTv.setText("Mon");
+                sundayTv.setText("Dm");
+                mondayTv.setText("Dc");
+                tuesdayTv.setText("Dj");
+                wednesdayTv.setText("Dv");
+                thursdayTv.setText("Ds");
+                fridayTv.setText("Dg");
+                saturdayTv.setText("Dll");
 
             } else if (startingDate == 3) {
 
-                sundayTv.setText("Wed");
-                mondayTv.setText("Thu");
-                tuesdayTv.setText("Fri");
-                wednesdayTv.setText("Sat");
-                thursdayTv.setText("Sun");
-                fridayTv.setText("Mon");
-                saturdayTv.setText("Tue");
+                sundayTv.setText("Dc");
+                mondayTv.setText("Dj");
+                tuesdayTv.setText("Dv");
+                wednesdayTv.setText("Ds");
+                thursdayTv.setText("Dg");
+                fridayTv.setText("Dll");
+                saturdayTv.setText("Dm");
 
             } else if (startingDate == 4) {
 
-                sundayTv.setText("Thu");
-                mondayTv.setText("Fri");
-                tuesdayTv.setText("Sat");
-                wednesdayTv.setText("Sun");
-                thursdayTv.setText("Mon");
-                fridayTv.setText("Tue");
-                saturdayTv.setText("Wed");
+                sundayTv.setText("Dj");
+                mondayTv.setText("Dv");
+                tuesdayTv.setText("Ds");
+                wednesdayTv.setText("Dg");
+                thursdayTv.setText("Dll");
+                fridayTv.setText("Dm");
+                saturdayTv.setText("Dc");
 
             } else if (startingDate == 5) {
 
-                sundayTv.setText("Fri");
-                mondayTv.setText("Sat");
-                tuesdayTv.setText("Sun");
-                wednesdayTv.setText("Mon");
-                thursdayTv.setText("Tue");
-                fridayTv.setText("Wed");
-                saturdayTv.setText("Thu");
+                sundayTv.setText("Dv");
+                mondayTv.setText("Ds");
+                tuesdayTv.setText("Dg");
+                wednesdayTv.setText("Dll");
+                thursdayTv.setText("Dm");
+                fridayTv.setText("Dc");
+                saturdayTv.setText("Dj");
 
             } else if (startingDate == 6) {
 
-                sundayTv.setText("Sat");
-                mondayTv.setText("Sun");
-                tuesdayTv.setText("Mon");
-                wednesdayTv.setText("Tue");
-                thursdayTv.setText("Wed");
-                fridayTv.setText("Thu");
-                saturdayTv.setText("Fri");
+                sundayTv.setText("Ds");
+                mondayTv.setText("Dg");
+                tuesdayTv.setText("Dll");
+                wednesdayTv.setText("Dm");
+                thursdayTv.setText("Dc");
+                fridayTv.setText("Dj");
+                saturdayTv.setText("Dv");
 
             }
         }
@@ -269,13 +252,12 @@ public class RWeekCalendar extends Fragment {
        /*CalUtil is called*/
 
         CalUtil mCal = new CalUtil();
-        //date calculation called according to the typr
+        //date calculation called according to the typw
         if (calenderType != NORMAL_CALENDER) {
             mCal.calculate(mStartDate, FDF_CALENDER);
         } else {
             mCal.calculate(mStartDate, NORMAL_CALENDER);
         }
-
         mStartDate = mCal.getStartDate();//sets start date from CalUtil
 
         //Setting the month name and selected date listener
@@ -286,60 +268,36 @@ public class RWeekCalendar extends Fragment {
 
         pager.setCurrentItem(CURRENT_WEEK_POSITION);
         /*Week change Listener*/
-
         pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-
-            }
-
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
             @Override
             public void onPageSelected(int weekNumber) {
-
                 int addDays = weekNumber * 7;
-
                 selectedDate = mStartDate.plusDays(addDays); //add 7 days to the selected date
-
-
                 monthView.setText(selectedDate.monthOfYear().getAsShortText() + "-" + selectedDate.year().getAsShortText().toUpperCase());
-
                 if (weekNumber == CURRENT_WEEK_POSITION) {
-
                     //the first week comes to view
                     nowView.setVisibility(View.GONE);
-
-
                 } else {
-
                     //the first week goes from view nowView set visible for Quick return to first week
-
                     nowView.setVisibility(View.VISIBLE);
                 }
-
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
+            public void onPageScrollStateChanged(int state) {}
         });
 
 
         /**
          * Change view to  the date of the current week
          */
-
         nowView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 calenderListener.onSelectDate(new LocalDateTime());
-
                 pager.setCurrentItem(CURRENT_WEEK_POSITION);
-
-
             }
         });
 
@@ -348,12 +306,7 @@ public class RWeekCalendar extends Fragment {
          */
         monthView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-
-                calenderListener.onSelectPicker();
-
-
-            }
+            public void onClick(View view) {calenderListener.onSelectPicker();}
         });
 
 

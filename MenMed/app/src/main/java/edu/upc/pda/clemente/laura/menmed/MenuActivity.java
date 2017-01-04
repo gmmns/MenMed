@@ -54,13 +54,14 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         setContentView(R.layout.activity_menu);
         all_recipes = getResources().getStringArray(R.array.all_recipes);
         addMenu();
-        showDay(menu.getMenu()[1]);
         init();
         calendar();
     }
 
     private void addMenu(){
         this.menu = new Menu(all_recipes);
+        showDay(menu.getMenu()[2]);
+
     }
 
     private void showDay(Dia dia) {
@@ -86,21 +87,20 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
     protected void calendar(){
 
         rCalendarFragment = new RWeekCalendar();
-
         rCalendarFragment.startDate(2017, 1, 1);
         rCalendarFragment.endDate(2017, 12, 31);
 
         Bundle args = new Bundle();
 
             /*Should add this attribute if you adding  the NOW_BACKGROUND or DATE_SELECTOR_BACKGROUND Attribute*/
-            //args.putString(RWeekCalendar.PACKAGENAME, getApplicationContext().getPackageName());
-            args.putInt(RWeekCalendar.CALENDER_TYPE, RWeekCalendar.NORMAL_CALENDER);
-            //args.putInt(RWeekCalendar.CALENDER_BACKGROUND, ContextCompat.getColor(this,R.color.GreyLight));//set background color to calender
-            //args.putString(RWeekCalendar.DATE_SELECTOR_BACKGROUND, "bg_select");//set background to the selected dates
-            //args.putString(RWeekCalendar.NOW_BACKGROUND,"bg_now");//set background to nowView
-            //args.putInt(RWeekCalendar.CURRENT_DATE_BACKGROUND,ContextCompat.getColor(this,R.color.DietMed_prin));//set color to the currentdate
-            //args.putInt(RWeekCalendar.PRIMARY_BACKGROUND, ContextCompat.getColor(this,R.color.Grey));//Set color to the primary views (Month name and dates)
-            //args.putInt(RWeekCalendar.SECONDARY_BACKGROUND, ContextCompat.getColor(this,R.color.dark_gray));//Set color to the secondary views (now view and week names)
+            args.putString(RWeekCalendar.PACKAGENAME, getApplicationContext().getPackageName());
+            args.putInt(RWeekCalendar.CALENDER_TYPE, RWeekCalendar.FDF_CALENDER);
+            args.putInt(RWeekCalendar.CALENDER_BACKGROUND, ContextCompat.getColor(this,R.color.GreyLight));//set background color to calender
+            args.putString(RWeekCalendar.DATE_SELECTOR_BACKGROUND, "bg_select");//set background to the selected dates
+            args.putString(RWeekCalendar.NOW_BACKGROUND,"bg_now");//set background to nowView
+            args.putInt(RWeekCalendar.CURRENT_DATE_BACKGROUND,ContextCompat.getColor(this,R.color.DietMed_prin));//set color to the currentdate
+            args.putInt(RWeekCalendar.PRIMARY_BACKGROUND, ContextCompat.getColor(this,R.color.Grey));//Set color to the primary views (Month name and dates)
+            args.putInt(RWeekCalendar.SECONDARY_BACKGROUND, ContextCompat.getColor(this,R.color.dark_gray));//Set color to the secondary views (now view and week names)
 
         rCalendarFragment.setArguments(args);
 
@@ -119,7 +119,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
             @Override
             public void onSelectDate(LocalDateTime mSelectedDate) {
                 //callback when a date is selcted
-
+                showDay(menu.getMenu()[mSelectedDate.getDayOfYear()]);
             }
         };
 

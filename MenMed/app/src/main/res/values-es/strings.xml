@@ -20,5 +20,14 @@
     <string name="snack_title">Merienda</string>
     <string name="today_menu">Menú del día</string>
 
+    <string name="fri">Vie</string>
+    <string name="mon">Lun</string>
+    <string name="sat">Sab</string>
+    <string name="sun">Dom</string>
+    <string name="thu">Jue</string>
+    <string name="today">Hoy</string>
+    <string name="tue">Mar</string>
+    <string name="wed">Mie</string>
+
 
 </resources>

@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="today">today</string>
+    <string name="today">Avui</string>
+    <string name="sun">Dg</string>
+    <string name="mon">Dll</string>
+    <string name="tue">Dm</string>
+    <string name="wed">Dc</string>
+    <string name="thu">Dj</string>
+    <string name="fri">Dv</string>
+    <string name="sat">Dss</string>
 </resources>

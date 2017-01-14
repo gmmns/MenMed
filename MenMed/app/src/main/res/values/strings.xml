@@ -29,6 +29,9 @@
     <string name="fri">Dv</string>
     <string name="sat">Dss</string>
     <string name="product">Producte</string>
+    <string name="confirm">Confirmation</string>
+    <string name="remove">Remove</string>
+    <string name="confirm_remove">Are you want to remove \'%1$s\'?</string>
 
     <array name="all_menu">
         <item>"Cafè amb llet. Torrades amb oli d'oliva verge i sal.";"Iogurt de fruites.";"Amanida grega.";"Saltxixes de pavo a la planxa amb sofregit de ceba i tomàquet.";"Meló.";"Bastonets de pa. Suc natural de magrana.";"Espaguetis al pesto.";"Sardines al forn amb tomàquet rostit.";"Carpaccio de pinya."</item>

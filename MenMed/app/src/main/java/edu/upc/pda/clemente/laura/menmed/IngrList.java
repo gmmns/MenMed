@@ -35,6 +35,13 @@ public class IngrList {
         this.quant = quant;
     }
 
+    //Crear Ingredient enviant-lo des de menú
+    public IngrList(String nom, String unitats, Double quant){
+        this.nom = nom;
+        this.unitats = unitats;
+        this.checked = false;
+        this.quant = quant;
+    }
 
     //MÈTODES
     public String toString(){

@@ -85,7 +85,7 @@ public class ListActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
             }
         });
-        /*
+
         list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View v, int pos, long id) {
@@ -93,7 +93,7 @@ public class ListActivity extends AppCompatActivity {
                 return true;
             }
         });
-        */
+
     }
 
 
@@ -109,12 +109,12 @@ public class ListActivity extends AppCompatActivity {
         });
     }
 
-    /*
+
     private void maybeRemoveItem(final int pos) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.confirm);
         String msg = getResources().getString(R.string.confirm_remove);
-        builder.setMessage(String.format(msg, itemList.get(pos)));
+        builder.setMessage(String.format(msg,itemList.get(pos).getNom()));
         builder.setPositiveButton(R.string.remove, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -125,7 +125,7 @@ public class ListActivity extends AppCompatActivity {
         builder.setNegativeButton(android.R.string.cancel, null);
         builder.create().show();
     }
-    */
+
 
     /*
     private void addItem() {

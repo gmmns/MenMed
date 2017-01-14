@@ -10,27 +10,7 @@ public class Plat {
         public int getComensals() {return comensals;}
         public void setComensals(int comensals) {this.comensals = comensals;}
 
-    //CONSTRUCTOR
-    public Plat(){
-        super();
-        this.recepta = new Recepta();
-        this.comensals = 0;
-    }
-    public Plat(String nom){
-        super();
-        this.recepta = new Recepta(nom);
-        this.comensals = 0;
-    }
-    public Plat(Recepta recepta, int comensals) {
-        super();
-        this.recepta = recepta;
-        this.comensals = comensals;
-    }
-    public Plat(Recepta r){
-        super();
-        this.recepta = r;
-        this.comensals = 0;
-    }
-
-
+    private boolean check_plat;
+        public boolean getCheckPlat(){return check_plat;}
+        public void setCheckPlat(boolean check_plat){this.check_plat = check_plat;}
 }

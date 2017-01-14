@@ -121,7 +121,6 @@
                             android:textSize="16dp" />
 
                         <ImageButton
-                            android:text="-"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:id="@+id/esm_less"
@@ -157,7 +156,6 @@
                             android:foregroundGravity="center" />
 
                         <ImageButton
-                            android:text="+"
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:id="@+id/esm_more"

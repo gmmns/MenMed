@@ -40,6 +40,7 @@ public class ListActivityAdapter extends ArrayAdapter<IngrList> {
         product.setText(item.getNom());
         quantity.setText(item.getQuant().toString());
         units.setText(item.getUnitats());
+        prod_check.setChecked(item.isChecked());
 
         return result;
     }

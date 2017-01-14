@@ -2,6 +2,7 @@ package edu.upc.pda.clemente.laura.menmed;
 
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,7 +24,7 @@ public class ListActivity extends AppCompatActivity {
     private ListActivityAdapter adapter;
 
     private ListView list;
-    private ImageButton btn_list;
+    private ImageButton btn_menu;
     /*
     private EditText edit_item;
     private Button btn_add;
@@ -34,10 +35,18 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+        init();
 
         itemList = new ArrayList<IngrList>();
         itemList.add(new IngrList("Patates","u",false,10.0));
         itemList.add(new IngrList("Paper WC","u",true,20.0));
+        itemList.add(new IngrList("Patates","u",false,10.0));
+        itemList.add(new IngrList("Paper WC","u",false,20.0));
+        itemList.add(new IngrList("Patates","u",false,10.0));
+        itemList.add(new IngrList("Paper WC","u",false,20.0));
+        itemList.add(new IngrList("Patates","u",false,10.0));
+        itemList.add(new IngrList("Paper WC","u",false,20.0));
+
 
         adapter = new ListActivityAdapter(
                 this,
@@ -69,6 +78,13 @@ public class ListActivity extends AppCompatActivity {
         });
         */
 
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
+                itemList.get(pos).toggleChecked();
+                adapter.notifyDataSetChanged();
+            }
+        });
         /*
         list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
@@ -78,6 +94,19 @@ public class ListActivity extends AppCompatActivity {
             }
         });
         */
+    }
+
+
+    //MÈTODE QUE PERMET CANVIAR D'ACTIVITAT
+    protected void init(){
+        btn_menu = (ImageButton) findViewById(R.id.btn_menu);
+        btn_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent in = new Intent(ListActivity.this, MenuActivity.class);
+                startActivity(in);
+            }
+        });
     }
 
     /*

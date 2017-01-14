@@ -56,4 +56,13 @@ public class Recepta {
         this.ingr_list = new ArrayList<Ingredient>(){};
     }
 
+
+    //MÈTODES
+    public String toString(){
+        String s = "Nom:\n" + nom + "\nElaboració:\n" + elaboracio + "\nIngredients:";
+        for(int x=0;x<ingr_list.size();x++) {
+            s = s + "\n- " + ingr_list.get(x).getQuant() + " de " + ingr_list.get(x).getNom();
+        }
+        return s;
+    }
 }

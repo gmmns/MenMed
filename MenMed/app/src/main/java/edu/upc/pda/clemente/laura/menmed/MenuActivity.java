@@ -36,6 +36,7 @@ import org.joda.time.ReadWritableDateTime;
 import org.joda.time.Weeks;
 
 import java.util.Calendar;
+import java.util.TreeMap;
 
 public class MenuActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     //ATRIBUTS
@@ -43,9 +44,9 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
     private Recepta[] receptes;
         public Recepta[] getReceptes() {return receptes;}
         public void setReceptes(Recepta[] receptes) {this.receptes = receptes;}
-    private List<IngrList> llistaingr = new ArrayList<IngrList>();
-        public List<IngrList> getLlistaingr() {return llistaingr;}
-        public void setLlistaingr (List<IngrList> llistaingr) {this.llistaingr = llistaingr;}
+    private Map<String, IngrList> mapingr = new TreeMap<String, IngrList>();
+        public Map<String, IngrList> getMapingr() {return mapingr;}
+        public void setMapingr (Map<String, IngrList> mapingr) {this.mapingr = mapingr;}
     private int ids_recipes[] = {R.id.esm_recept, R.id.mig_recept, R.id.dinar_recept1, R.id.dinar_recept2, R.id.dinar_recept3, R.id.ber_recept, R.id.sopar_recept1, R.id.sopar_recept2, R.id.sopar_recept3};
 
     private ImageButton btn_list;
@@ -70,7 +71,8 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         init();
         calendar();
         mostrarLlista();
-        mostrarRecepta();
+        //mostrarRecepta();
+        //EP!!! NO TANCA AMB EL BOTÓ "OFF", S'HA DE FER
     }
 
     //MÈTODES
@@ -88,11 +90,12 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         }
     }
     private void crearLlista(){
-        this.llistaingr = new ArrayList<IngrList>();
+        this.mapingr = new TreeMap<String, IngrList>();
         for (int i=0; i<all_ingr.length; i++){
             String r = this.all_ingr[i];
             String[] parts = r.split(";");
-            llistaingr.add(new IngrList(parts));
+            IngrList ingr = new IngrList(parts);
+            mapingr.put(ingr.getNom(), ingr);
         }
     }
 
@@ -172,18 +175,19 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
 
 
     private void mostrarRecepta(){
-        System.out.println("Nom: ");
-        System.out.println(this.receptes[0].getNom());
-        System.out.println("Elaboració: ");
-        System.out.println(this.receptes[0].getElaboracio());
-        System.out.println("Ingredients: ");
-        List<Ingredient> llista = this.receptes[0].getIngr_list();
-        for(int x=0;x<llista.size();x++) {
-            System.out.println("- " + llista.get(x).getNom() + "> Quant: " + llista.get(x).getQuant());
-        }
+        System.out.println(this.receptes[0].toString());
     }
     private void mostrarLlista(){
+        for(IngrList i: mapingr.values()){
+            System.out.println("- " + i.toString());
+        }
+    }
 
+    private String unitats(Ingredient ingr){
+        if(!mapingr.containsKey(ingr.getNom())){
+            return mapingr.get(ingr.getNom()).getUnitats();
+        }
+        return null;
     }
 }
 

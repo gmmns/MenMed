@@ -31,8 +31,13 @@ public class IngrList {
     public IngrList(String nom, String unitats, Boolean checked, Double quant){
         this.nom = nom;
         this.unitats = unitats;
-        this.checked = true;
+        this.checked = checked;
         this.quant = quant;
     }
 
+
+    //MÈTODES
+    public String toString(){
+        return nom + "[" + quant + " " + unitats + "]";
+    }
 }

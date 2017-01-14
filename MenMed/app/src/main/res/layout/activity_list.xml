@@ -70,7 +70,7 @@
             android:id="@+id/list_background"
             android:layout_above="@+id/change_act"
             android:layout_width="match_parent"
-            android:layout_height="503dp">
+            android:layout_height="420dp">
 
             <android.support.design.widget.FloatingActionButton
                 android:layout_width="65dp"

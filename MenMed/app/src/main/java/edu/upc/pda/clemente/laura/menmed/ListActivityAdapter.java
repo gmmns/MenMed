@@ -16,7 +16,7 @@ import java.util.zip.Inflater;
  * Created by Laura on 14/1/2017.
  */
 
-public class ListActivityAdapter extends ArrayAdapter<String> {
+public class ListActivityAdapter extends ArrayAdapter<IngrList> {
     public ListActivityAdapter(Context context, int resource, List objects) {
         super(context, resource, objects);
     }
@@ -32,16 +32,15 @@ public class ListActivityAdapter extends ArrayAdapter<String> {
 
         CheckBox prod_check = (CheckBox) result.findViewById(R.id.prod_check);
         TextView product = (TextView) result.findViewById(R.id.product);
-        //TextView quantity = (TextView) result.findViewById(R.id.quantity);
-        //TextView units = (TextView) result.findViewById(R.id.units);
+        TextView quantity = (TextView) result.findViewById(R.id.quantity);
+        TextView units = (TextView) result.findViewById(R.id.units);
 
-        String item_text = getItem(position);
-        //String item_quant = getItem(position);
-        //String item_unit = getItem(position);
+        IngrList item = getItem(position);
 
-        product.setText(item_text);
-        //quantity.setText(item_quant);
-        //units.setText(item_unit);
+        product.setText(item.getNom());
+        quantity.setText(item.getQuant().toString());
+        units.setText(item.getUnitats());
+        prod_check.setChecked(item.isChecked());
 
         return result;
     }

@@ -14,41 +14,48 @@
             android:layout_height="?attr/listPreferredItemHeight"
             android:id="@+id/prod_check"
             android:textSize="16dp"
-            android:textColorLink="@color/DietMed_sec"/>
+            android:textColorLink="@color/DietMed_sec"
+            android:clickable="false"
+            android:focusable="false"/>
 
         <TextView
             android:text="@string/product"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="?attr/listPreferredItemHeight"
             android:id="@+id/product"
             android:gravity="center_vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/prod_check"
-            android:layout_alignBaseline="@+id/prod_check"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:textSize="16dp" />
+            android:layout_toEndOf="@+id/prod_check"
+            android:textSize="20dp" />
 
         <TextView
             android:text="num"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="?attr/listPreferredItemHeight"
             android:id="@+id/quantity"
-            android:padding="10dp"
             android:gravity="center_vertical"
-            android:layout_alignBaseline="@+id/prod_check"
-            android:layout_toRightOf="@+id/product" />
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/units"
+            android:textStyle="bold"
+            android:textSize="20dp" />
 
         <TextView
             android:text="unitats"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="?attr/listPreferredItemHeight"
             android:id="@+id/units"
-            android:layout_alignParentRight="false"
             android:gravity="center_vertical"
-            android:textSize="16dp"
-            android:padding="10dp"
-            android:layout_alignBaseline="@+id/prod_check"
-            android:layout_toRightOf="@+id/quantity" />
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true" />
 
     </RelativeLayout>
 

@@ -33,10 +33,12 @@ public class Recepta {
         this.nom = parts[0];
         this.elaboracio = parts[1];
         this.ingr_list = new ArrayList<Ingredient>();
-        for (int i = 0; i < parts.length; i++) {
-            String r = parts[i];
-            String[] ingr = r.split("-");
-            //ingr_list.add(new Ingredient(ingr));
+        String r = parts[2];
+        String[] ingr = r.split("-");
+        for(int i=0; i<ingr.length; i++){
+            String s = ingr[i];
+            String[] part = s.split("/");
+            ingr_list.add(new Ingredient(part));
         }
     }
     public Recepta(String nom){

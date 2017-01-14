@@ -47,6 +47,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         public List<IngrList> getLlistaingr() {return llistaingr;}
         public void setLlistaingr (List<IngrList> llistaingr) {this.llistaingr = llistaingr;}
     private int ids_recipes[] = {R.id.esm_recept, R.id.mig_recept, R.id.dinar_recept1, R.id.dinar_recept2, R.id.dinar_recept3, R.id.ber_recept, R.id.sopar_recept1, R.id.sopar_recept2, R.id.sopar_recept3};
+
     private ImageButton btn_list;
 
     private RWeekCalendar rCalendarFragment;
@@ -68,9 +69,9 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         crearLlista();
         init();
         calendar();
+        mostrarLlista();
+        mostrarRecepta();
     }
-
-
 
     //MÈTODES
     //Llegir recursos i obtenir la informació
@@ -169,6 +170,21 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         }
     }
 
+
+    private void mostrarRecepta(){
+        System.out.println("Nom: ");
+        System.out.println(this.receptes[0].getNom());
+        System.out.println("Elaboració: ");
+        System.out.println(this.receptes[0].getElaboracio());
+        System.out.println("Ingredients: ");
+        List<Ingredient> llista = this.receptes[0].getIngr_list();
+        for(int x=0;x<llista.size();x++) {
+            System.out.println("- " + llista.get(x).getNom() + "> Quant: " + llista.get(x).getQuant());
+        }
+    }
+    private void mostrarLlista(){
+
+    }
 }
 
 

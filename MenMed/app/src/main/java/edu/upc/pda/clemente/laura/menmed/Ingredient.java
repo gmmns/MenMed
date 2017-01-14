@@ -14,15 +14,9 @@ public class Ingredient implements Serializable {
         public void setQuant(Double quant){this.quant = quant;}
 
     //CONSTRUCTOR
-    public Ingredient(String[] parts){
-        String[] ingr = new String[parts.length];
-        for (int i = 0; i < parts.length; i++) {
-            String r = parts[i];
-            ingr = r.split("/");
-        }
-        //this.quant = Double.valueOf(ingr[0]).doubleValue();
+    public Ingredient(String[] ingr){
+        this.quant = Double.parseDouble(ingr[0]);
         this.nom = ingr[1];
-
     }
 
 

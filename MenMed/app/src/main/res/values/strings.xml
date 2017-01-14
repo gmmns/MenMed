@@ -30,7 +30,7 @@
     <string name="sat">Dss</string>
     <string name="product">Producte</string>
 
-    <array name="all_recipes">
+    <array name="all_menu">
         <item>"Cafè amb llet. Torrades amb oli d'oliva verge i sal.";"Iogurt de fruites.";"Amanida grega.";"Saltxixes de pavo a la planxa amb sofregit de ceba i tomàquet.";"Meló.";"Bastonets de pa. Suc natural de magrana.";"Espaguetis al pesto.";"Sardines al forn amb tomàquet rostit.";"Carpaccio de pinya."</item>
         <item>"Infusió. Pa de pessic casolà de taronja.";"Entrepà de tomàquet i formatge semicurat.";"Risotto de bolets.";"Mer a la planxa amb amanida de remolatxa.";"Troços de sindria amb menta fresca picada.";"Llet. Pa amb pernil dolç i oli d'oliva verge.";"Crema de pastanaga.";"Pollastre a la llimona amb patates forneres.";"Iogurt natural."</item>
         <item>"Torrades amb tomàquet i formatge curat. Suc natural de meló.";"Iogurt natural amb avellanes.";"Sopa de carbassa.";"Mitja alberginia farcida de carn picada de pollastre i blat de moro gratinada.";"Préssec.";"Llet. Muesli.";"Mongetes verdes saltejades.";"Torrades de bolets saltats amb ou poché.";"Sindria."</item>
@@ -69,71 +69,63 @@
         <item>"Batut de gerds. Pa amb oli d'oliva verge, all i orenga.";"Aperitiu: surtit de formatges amb torrades.";"Crudités de verdures amb puré de cigrons (Hummus).";"Xai guisat amb prunes i ceba.";"Broxeta de fruites fresques.";"Iogurt natural de pinyons.";"Amanida de tomaquet i orenga.";"Truita de patates.";"Plàtan."</item>
     </array>
 
-
-    <array name="recipes_day3">
-        <!--recepta per a 1 persones.-->
-        <item>"Torrades amb tomàquet i formatge curat. Suc natural de meló.";"-";"100*pa-1*tomàquet-10*oli-20*formatge curat-50*meló"</item>
-        <!--recepta per a 1 persones.-->
-        <item>"Iogurt natural amb avellanes.";"-";"1*iogurt-10*avellanes"</item>
-        <!--recepta per a 3 persones.-->
-        <item>"Sopa de carbassa.";
-              "Posem al foc una olla amb aigua i una mica de sal. Mentre l'aigua s'escalfa i arrencar a bullir, pelem i rentem les patates. Després, les tallem en varis trossos (de mida mitjana) i reservem. Ara, fem el mateix amb els porros. A continuació toca eliminar l'escorça de la carbassa, que és ben dura. Un cop hem pelat la carbassa, tallem la polpa a daus de mida mitjana. El següent pas és comprovar que l'aigua de l'olla ja bull i, si és així, posar-hi els porros, les patates i la carbassa i deixar que coguin durant almenys 30 minuts. El temps de cocció pot variar segons la mida dels trossos de les verdures. Després colem les verdures i les posem de nou a l'olla. Afegim la nata líquida i una mica de nou moscada. Triturem les verdures amb la batedora elèctrica fins que no quedi cap tros ni cap grumoll. Ha de tenir una textura cremosa.";
-              "0,5*carbassa-2*porros-2*patates-200*nata liquida-10*sal-10*pebre-10*nou moscada"</item>
-        <!--recepta per a 1 persones.-->
-        <item>"Mitja alberginia farcida de carn picada de pollastre i blat de moro gratinada.";
-              "Encenem el forn al màxim. Mentre s'escalfa partim l'albergínia de dalt a baix. En traiem part de la polpa amb un ganivet, anem resseguint la pell i només en deixem un gruix com de mig centímetre. Tallem aquesta polpa a daus petits. Pelem la ceba i la ratllem. En una paella hi posem una mica d'oli i la carn picada a foc baix. Un cop veiem que ja no és de color vermell hi posem la ceba ratllada i els daus d'albergínia. Ho amanim amb una mica de sal i d'orenga. Al cap d'uns 7 minuts, quan veiem tot plegat ben cuit, veureu que ha reduit de volum i que està ben tou, hi afegim el tomàquet i una mica de sal i sucre. Un cop el tomàquet ja és cuit, ho veurem perquè ha agafat un color més ataronjat i l'oli ja sura per sobre, hi posem la crema de llet. Farcim les albergínies amb tot això i les posem al forn a 150º durant mitja hora. Hi podem posar una mica de formatge ratllat per sobre si volem. Ja veureu que encara que l'albergínia sencera s'hagi de coure, com que te un gruix primet es fa en aquesta mitja hora i queda la mar de bé.";
-              "1*albergínia-75*carn picada-1*ceba petita-200*tomàquet triturat-100*crema de llet-10*orenga-10*oli-10*sal"</item>
-        <!--recepta per a 1 persones.-->
-        <item>"Préssec.";"-";"1*préssec"</item>
-        <!--recepta per a 1 persones.-->
-        <item>"Llet. Muesli.";"-";"100*llet-50*muesli"</item>
-        <!--recepta per a 4 persones.-->
-        <item>"Mongetes verdes saltejades.";
-              "Bullim les mongetes amb força aigua i sal, i les escorrem. Posem oli i mantega en una paella i saltegem el pernil que haurem tallat a trossos petits. Afegirem les mongetes i ho deixarem 4 o 5 minutets que es cogui tot junt";
-              "1*mongeta tendre-200*pernil-100*mantega-10*sal-50*oli*</item>
-        <!--recepta per a 4 persones.-->
-        <item>"Torrades de bolets saltats amb ou poché.";
-              "";
-              "250*bolets variats-2*all-2*ceba tendra-10*herbes fresques-50*oli-50*vi negre-10*sal-10*pebre-4*ou-400*pa integral-1*cibulet"</item>
-        <!--recepta per a 1 persones.-->
-        <item>"Sindria.";"-";"100*sindria"</item>
+    <array name="all_recipes">
+        <!--recepta per a 1 persones.--><item>"Torrades amb tomàquet i formatge curat. Suc natural de meló.";"-";
+                                        "100/pa-1/tomàquet-10/oli-20/formatge curat-50/meló"</item>
+        <!--recepta per a 1 persones.--><item>"Iogurt natural amb avellanes.";"-";
+                                        "1/iogurt-10/avellanes"</item>
+        <!--recepta per a 3 persones.--><item>"Sopa de carbassa.";"Posem al foc una olla amb aigua i una mica de sal. Mentre l'aigua s'escalfa i arrencar a bullir, pelem i rentem les patates. Després, les tallem en varis trossos (de mida mitjana) i reservem. Ara, fem el mateix amb els porros. A continuació toca eliminar l'escorça de la carbassa, que és ben dura. Un cop hem pelat la carbassa, tallem la polpa a daus de mida mitjana. El següent pas és comprovar que l'aigua de l'olla ja bull i, si és així, posar-hi els porros, les patates i la carbassa i deixar que coguin durant almenys 30 minuts. El temps de cocció pot variar segons la mida dels trossos de les verdures. Després colem les verdures i les posem de nou a l'olla. Afegim la nata líquida i una mica de nou moscada. Triturem les verdures amb la batedora elèctrica fins que no quedi cap tros ni cap grumoll. Ha de tenir una textura cremosa.";
+                                        "0,5/carbassa-2/porros-2/patates-200/nata liquida-10/sal-10/pebre-10/nou moscada"</item>
+        <!--recepta per a 1 persones.--><item>"Mitja alberginia farcida de carn picada de pollastre i blat de moro gratinada.";"Encenem el forn al màxim. Mentre s'escalfa partim l'albergínia de dalt a baix. En traiem part de la polpa amb un ganivet, anem resseguint la pell i només en deixem un gruix com de mig centímetre. Tallem aquesta polpa a daus petits. Pelem la ceba i la ratllem. En una paella hi posem una mica d'oli i la carn picada a foc baix. Un cop veiem que ja no és de color vermell hi posem la ceba ratllada i els daus d'albergínia. Ho amanim amb una mica de sal i d'orenga. Al cap d'uns 7 minuts, quan veiem tot plegat ben cuit, veureu que ha reduit de volum i que està ben tou, hi afegim el tomàquet i una mica de sal i sucre. Un cop el tomàquet ja és cuit, ho veurem perquè ha agafat un color més ataronjat i l'oli ja sura per sobre, hi posem la crema de llet. Farcim les albergínies amb tot això i les posem al forn a 150º durant mitja hora. Hi podem posar una mica de formatge ratllat per sobre si volem. Ja veureu que encara que l'albergínia sencera s'hagi de coure, com que te un gruix primet es fa en aquesta mitja hora i queda la mar de bé.";
+                                        "1/albergínia-75/carn picada-1/ceba petita-200/tomàquet triturat-100/crema de llet-10/orenga-10/oli-10/sal"</item>
+        <!--recepta per a 1 persones.--><item>"Préssec.";"-";
+                                        "1/préssec"</item>
+        <!--recepta per a 1 persones.--><item>"Llet. Muesli.";"-";
+                                        "100/llet-50/muesli"</item>
+        <!--recepta per a 4 persones.--><item>"Mongetes verdes saltejades.";"Bullim les mongetes amb força aigua i sal, i les escorrem. Posem oli i mantega en una paella i saltegem el pernil que haurem tallat a trossos petits. Afegirem les mongetes i ho deixarem 4 o 5 minutets que es cogui tot junt";
+                                        "1/mongeta tendre-200/pernil-100/mantega-10/sal-50/oli</item>
+        <!--recepta per a 4 persones.--><item>"Torrades de bolets saltats amb ou poché.";"";
+                                        "250/bolets variats-2/all-2/ceba tendra-10/herbes fresques-50/oli-50/vi negre-10/sal-10/pebre-4/ou-400/pa integral-1/cibulet"</item>
+        <!--recepta per a 1 persones.--><item>"Sindria.";"-";
+                                        "100/síndria"</item>
     </array>
 
-    <array name="Ingredients">
-        <item>pa</item>
-        <item>tomàquet</item>
-        <item>formatge curat</item>
-        <item>oli</item>
-        <item>meló</item>
-        <item>iogurt</item>
-        <item>avellanes</item>
-        <item>carbassa</item>
-        <item>porros</item>
-        <item>patates</item>
-        <item>nata liquida</item>
-        <item>sal</item>
-        <item>pebre</item>
-        <item>nou moscada</item>
-        <item>alberginia</item>
-        <item>carn picada</item>
-        <item>ceba petita</item>
-        <item>tomàquet triturat</item>
-        <item>crema de llet</item>
-        <item>orenga</item>
-        <item>préssec</item>
-        <item>llet</item>
-        <item>muesli</item>
-        <item>mongeta tendre</item>
-        <item>pernil</item>
-        <item>mantega</item>
-        <item>bolets variats</item>
-        <item>ceba tendra</item>
-        <item>herbes fresques</item>
-        <item>vi negre</item>
-        <item>ou</item>
-        <item>pa integral</item>
-        <item>cibulet</item>
-        <item>sindria</item>
+    <array name="all_ingr">
+        <item>"pa";"g"</item>
+        <item>"all";"u"</item>
+        <item>"tomàquet";"u"</item>
+        <item>"formatge curat";"g"</item>
+        <item>"oli";"mL"</item>
+        <item>"meló";"g"</item>
+        <item>"iogurt";"u"</item>
+        <item>"avellanes";"g"</item>
+        <item>"carbassa";"u"</item>
+        <item>"porros";"u"</item>
+        <item>"patates";"u"</item>
+        <item>"nata liquida";"mL"</item>
+        <item>"sal";"g"</item>
+        <item>"pebre";"g"</item>
+        <item>"nou moscada";"g"</item>
+        <item>"alberginia";"g</item>
+        <item>"carn picada";"g"</item>
+        <item>"ceba";"u"</item>
+        <item>"tomàquet triturat";"g"</item>
+        <item>"crema de llet","g"</item>
+        <item>"orenga","g"</item>
+        <item>"préssec";"g"</item>
+        <item>"llet";"L"</item>
+        <item>"muesli";"g"</item>
+        <item>"mongeta tendre";"g"</item>
+        <item>"pernil";"g"</item>
+        <item>"mantega";"g"</item>
+        <item>"bolets variats";"g"</item>
+        <item>"ceba tendra";"u"</item>
+        <item>"herbes fresques";"g"</item>
+        <item>"vi negre";"mL"</item>
+        <item>"ou";"u"</item>
+        <item>"pa integral";"g"</item>
+        <item>"cibulet";"u"</item>
+        <item>"síndria";"g"</item>
     </array>
 
 

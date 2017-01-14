@@ -20,6 +20,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import org.w3c.dom.Text;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -38,36 +39,59 @@ import java.util.Calendar;
 
 public class MenuActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     //ATRIBUTS
-    private String[] all_recipes;
-    private int ids_recipes[] = {
-            R.id.esm_recept, R.id.mig_recept, R.id.dinar_recept1, R.id.dinar_recept2, R.id.dinar_recept3, R.id.ber_recept, R.id.sopar_recept1, R.id.sopar_recept2, R.id.sopar_recept3
-    };
     private Menu menu;
+    private Recepta[] receptes;
+        public Recepta[] getReceptes() {return receptes;}
+        public void setReceptes(Recepta[] receptes) {this.receptes = receptes;}
+    private List<IngrList> llistaingr = new ArrayList<IngrList>();
+        public List<IngrList> getLlistaingr() {return llistaingr;}
+        public void setLlistaingr (List<IngrList> llistaingr) {this.llistaingr = llistaingr;}
+    private int ids_recipes[] = {R.id.esm_recept, R.id.mig_recept, R.id.dinar_recept1, R.id.dinar_recept2, R.id.dinar_recept3, R.id.ber_recept, R.id.sopar_recept1, R.id.sopar_recept2, R.id.sopar_recept3};
     private ImageButton btn_list;
 
     private RWeekCalendar rCalendarFragment;
+        //ATRIBUTS PER LLEGIR RECURSOS
+    private String[] all_menu;
+    private String[] all_recipes;
+    private String[] all_ingr;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        all_menu = getResources().getStringArray(R.array.all_menu);
         all_recipes = getResources().getStringArray(R.array.all_recipes);
-        addMenu();
+        all_ingr = getResources().getStringArray(R.array.all_ingr);
+        crearMenu();
+        crearReceptari();
+        crearLlista();
         init();
         calendar();
     }
 
-    private void addMenu(){
-        this.menu = new Menu(all_recipes);
+
+
+    //MÈTODES
+    //Llegir recursos i obtenir la informació
+    private void crearMenu(){
+        this.menu = new Menu(all_menu);
         showDay(menu.getMenu()[2]);
-
     }
-
-    private void showDay(Dia dia) {
-        for (int i=0; i<ids_recipes.length; i++){
-            TextView recept_text = (TextView) findViewById(ids_recipes[i]);
-            recept_text.setText(dia.getS_dia()[i]);
+    private void crearReceptari(){
+        this.receptes = new Recepta[all_recipes.length];
+        for (int i=0; i<all_recipes.length; i++){
+            String r = all_recipes[i];
+            String[] parts = r.split(";");
+            this.receptes[i] = new Recepta(parts);
+        }
+    }
+    private void crearLlista(){
+        this.llistaingr = new ArrayList<IngrList>();
+        for (int i=0; i<all_ingr.length; i++){
+            String r = this.all_ingr[i];
+            String[] parts = r.split(";");
+            llistaingr.add(new IngrList(parts));
         }
     }
 
@@ -119,7 +143,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
             @Override
             public void onSelectDate(LocalDateTime mSelectedDate) {
                 //callback when a date is selcted
-                showDay(menu.getMenu()[mSelectedDate.getDayOfYear()]);
+                showDay(menu.getMenu()[mSelectedDate.getDayOfMonth()]);
             }
         };
 
@@ -127,12 +151,8 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         rCalendarFragment.setCalenderListener(listener);
 
     }
-
-    @Override
     public void onDateSet(DatePickerDialog dialog, int year, int monthOfYear, int dayOfMonth) {
-
         //This is the call back from picker used in the sample you can use custom or any other picker
-
         //IMPORTANT: get the year,month and date from picker you using and call setDateWeek method
         Calendar calendar = Calendar.getInstance();
         calendar.set(year, monthOfYear, dayOfMonth);
@@ -140,6 +160,15 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
 
 
     }
+
+    //MÈTODES
+    private void showDay(Dia dia){
+        for (int i=0; i<ids_recipes.length; i++){
+            TextView recept_text = (TextView) findViewById(ids_recipes[i]);
+            recept_text.setText(dia.getDia()[i]);
+        }
+    }
+
 }
 
 

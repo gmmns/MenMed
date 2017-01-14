@@ -94,7 +94,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         for (int i=0; i<all_ingr.length; i++){
             String r = this.all_ingr[i];
             String[] parts = r.split(";");
-            IngrList ingr = new IngrList(parts);
+            IngrList ingr = new IngrList(parts[0], parts[1]);
             mapingr.put(ingr.getNom(), ingr);
         }
     }

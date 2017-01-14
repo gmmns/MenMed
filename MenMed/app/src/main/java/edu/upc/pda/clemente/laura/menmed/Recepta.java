@@ -65,4 +65,12 @@ public class Recepta {
         }
         return s;
     }
+
+    public String toStringIngr(){
+        String s = "";
+        for(int x=0;x<ingr_list.size();x++) {
+            s = s + "\n- " + ingr_list.get(x).getQuant() + " de " + ingr_list.get(x).getNom();
+        }
+        return s;
+    }
 }

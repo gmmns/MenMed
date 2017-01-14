@@ -118,7 +118,8 @@
                             android:layout_weight="1"
                             android:id="@+id/esm_recept"
                             android:gravity="center_vertical"
-                            android:textSize="16dp" />
+                            android:textSize="16dp"
+                            android:clickable="true" />
 
                         <ImageButton
                             android:layout_width="25dp"

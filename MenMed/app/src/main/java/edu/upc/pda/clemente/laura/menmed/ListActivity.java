@@ -17,10 +17,13 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class ListActivity extends AppCompatActivity {
 
-    private ArrayList<IngrList> itemList;
+    private String[] all_ingr;
+    private ArrayList<IngrList> itemList = new ArrayList<IngrList>();
     private ListActivityAdapter adapter;
 
     private ListView list;
@@ -36,8 +39,12 @@ public class ListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
         init();
+        all_ingr = getResources().getStringArray(R.array.all_ingr);
+        crearLlista();
 
-        itemList = new ArrayList<IngrList>();
+
+        /*itemList = new ArrayList<IngrList>();
+
         itemList.add(new IngrList("Patates","u",false,10.0));
         itemList.add(new IngrList("Paper WC","u",true,20.0));
         itemList.add(new IngrList("Patates","u",false,10.0));
@@ -45,7 +52,7 @@ public class ListActivity extends AppCompatActivity {
         itemList.add(new IngrList("Patates","u",false,10.0));
         itemList.add(new IngrList("Paper WC","u",false,20.0));
         itemList.add(new IngrList("Patates","u",false,10.0));
-        itemList.add(new IngrList("Paper WC","u",false,20.0));
+        itemList.add(new IngrList("Paper WC","u",false,20.0));*/
 
 
         adapter = new ListActivityAdapter(
@@ -107,6 +114,16 @@ public class ListActivity extends AppCompatActivity {
                 startActivity(in);
             }
         });
+    }
+
+    private void crearLlista(){
+        this.itemList = new ArrayList<IngrList>();
+        for (int i=0; i<all_ingr.length; i++){
+            String r = this.all_ingr[i];
+            String[] parts = r.split(";");
+            IngrList ingr = new IngrList(parts[0], parts[1]);
+            itemList.add(ingr);
+        }
     }
 
     /*

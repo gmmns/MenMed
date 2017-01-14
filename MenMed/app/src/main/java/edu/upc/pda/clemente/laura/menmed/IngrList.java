@@ -26,7 +26,6 @@ public class IngrList {
         this.checked = false;
         this.quant = 0.0;
     }
-
     //Crear Ingredient introduïnt-lo
     public IngrList(String nom, String unitats, Boolean checked, Double quant){
         this.nom = nom;
@@ -38,6 +37,6 @@ public class IngrList {
 
     //MÈTODES
     public String toString(){
-        return nom + "[" + quant + " " + unitats + "]";
+        return this.nom + "[" + this.quant + " " + this.unitats + "]";
     }
 }

@@ -106,14 +106,14 @@
         <item>"sal";"g"</item>
         <item>"pebre";"g"</item>
         <item>"nou moscada";"g"</item>
-        <item>"alberginia";"g</item>
+        <item>"alberginia";"g"</item>
         <item>"carn picada";"g"</item>
         <item>"ceba";"u"</item>
         <item>"tomàquet triturat";"g"</item>
         <item>"crema de llet";"g"</item>
         <item>"orenga";"g"</item>
         <item>"préssec";"g"</item>
-        <item>"llet";"L"</item>
+        <item>"llet";"mL"</item>
         <item>"muesli";"g"</item>
         <item>"mongeta tendre";"g"</item>
         <item>"pernil";"g"</item>
@@ -125,7 +125,7 @@
         <item>"ou";"u"</item>
         <item>"pa integral";"g"</item>
         <item>"cibulet";"u"</item>
-        <item>"síndria";"g"</item>
+        <item>"síndria;"g"</item>
     </array>
 
 

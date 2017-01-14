@@ -6,23 +6,23 @@ public class Ingredient implements Serializable {
 
     private static final long serialVersionUID = 0L;
 
+    //ATRIBUTS
     private String nom;
         public String getNom() {return nom;}
-    private boolean checked = false;
-        public boolean isChecked()     { return checked; }
-        public void    toggleChecked() { checked = !checked; }
-    private String unitats;
-        public String getUnitats() {return unitats;}
-        public void setUnitats(String unitats) {this.unitats = unitats;}
+    private Double quant;
+        public Double getQuant() {return quant;}
+        public void setQuant(Double quant){this.quant = quant;}
 
-    public Ingredient(String nom) {
-        this.nom = nom;
-    }
+    //CONSTRUCTOR
+    public Ingredient(String[] parts){
+        String[] ingr = new String[parts.length];
+        for (int i = 0; i < parts.length; i++) {
+            String r = parts[i];
+            ingr = r.split("/");
+        }
+        this.quant = Double.valueOf(ingr[0]).doubleValue();
+        this.nom = ingr[1];
 
-    public Ingredient(String nom, String unitats) {
-        super();
-        this.nom = nom;
-        this.unitats = unitats;
     }
 
 

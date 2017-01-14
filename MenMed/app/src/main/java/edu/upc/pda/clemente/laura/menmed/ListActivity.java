@@ -28,12 +28,12 @@ public class ListActivity extends AppCompatActivity {
     private EditText nou_item;
     private ListView llista;
     private ArrayList<Ingredient> items;
-    private IngredientAdapter adapter;
+    //private IngredientAdapter adapter;
 
-    private void dataChanged() {
+    /*private void dataChanged() {
         adapter.notifyDataSetChanged();
         //saveToFile();
-    }
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

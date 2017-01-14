@@ -36,7 +36,7 @@ public class Recepta {
         for (int i = 0; i < parts.length; i++) {
             String r = parts[i];
             String[] ingr = r.split("-");
-            ingr_list.add(new Ingredient(ingr));
+            //ingr_list.add(new Ingredient(ingr));
         }
     }
     public Recepta(String nom){

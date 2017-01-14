@@ -62,6 +62,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         setContentView(R.layout.activity_menu);
         all_menu = getResources().getStringArray(R.array.all_menu);
         all_recipes = getResources().getStringArray(R.array.all_recipes);
+        all_ingr = getResources().getStringArray(R.array.all_ingr);
         crearMenu();
         crearReceptari();
         crearLlista();
@@ -88,7 +89,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
     private void crearLlista(){
         this.llistaingr = new ArrayList<IngrList>();
         for (int i=0; i<all_ingr.length; i++){
-            String r = all_ingr[i];
+            String r = this.all_ingr[i];
             String[] parts = r.split(";");
             llistaingr.add(new IngrList(parts));
         }

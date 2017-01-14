@@ -20,7 +20,7 @@ public class Ingredient implements Serializable {
             String r = parts[i];
             ingr = r.split("/");
         }
-        this.quant = Double.valueOf(ingr[0]).doubleValue();
+        //this.quant = Double.valueOf(ingr[0]).doubleValue();
         this.nom = ingr[1];
 
     }

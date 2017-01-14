@@ -20,14 +20,9 @@ public class IngrList {
 
     //CONSTRUCTORS
     //Crear Ingredient a partir de la llista emmagatzemada
-    public IngrList(String[] parts){
-        String[] ingr = new String[parts.length];
-        for (int i = 0; i < parts.length; i++) {
-            String r = parts[i];
-            ingr = r.split(";");
-        }
+    public IngrList(String[] ingr){
         this.nom = ingr[0];
-        this.unitats = ingr[1];
+        //this.unitats = ingr[1];
         this.checked = false;
         this.quant = 0.0;
     }

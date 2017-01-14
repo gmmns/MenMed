@@ -89,7 +89,7 @@
                                         "100/síndria"</item>
     </array>
 
-    <array name="Ingredients">
+    <array name="all_ingr">
         <item>"pa";"g"</item>
         <item>"all";"u"</item>
         <item>"tomàquet";"u"</item>

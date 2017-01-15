@@ -19,6 +19,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import org.w3c.dom.Text;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -76,6 +78,10 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         mostrarLlista();
         //mostrarRecepta();
         //EP!!! NO TANCA AMB EL BOTÓ "OFF", S'HA DE FER
+
+        Intent intent = new Intent(this, ListActivity.class);
+        intent.putExtra("receptari", receptes);
+        //startActivity(intent);
     }
 
     //MÈTODES
@@ -114,40 +120,6 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         });
     }
 
-    //MÈTODE QUE PERMET ENVIAR ELS PLATS A LA LLISTA
-    protected void send_to_list(){
-        btn_compr = (ImageButton) findViewById(R.id.btn_compr);
-        btn_compr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (find_concidence()==null){
-
-                }
-                else {
-
-                    //IngrList(find_concidence().getNom(),find_concidence().getIngr_list(){
-
-                    }
-                }
-
-            }
-        });
-    }
-
-    protected Recepta find_concidence() {
-        for (int i = 0; i < ids_checkbox.length; i++) {
-            CheckBox check = (CheckBox) findViewById(ids_checkbox[i]);
-            if (check.isChecked() == true) {
-                TextView rec = (TextView) findViewById(ids_recipes[i]);
-                for (int j = 0; j < all_recipes.length; j++) {
-                    if (rec.getText().equals(receptes[j].getNom())) {
-                        return receptes[j];
-                    };
-                }
-            }
-            return null;
-        }
-    }
 
     //CALENDARI SUPERIOR
     protected void calendar(){

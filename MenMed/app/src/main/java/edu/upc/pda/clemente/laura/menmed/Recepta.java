@@ -23,9 +23,9 @@ public class Recepta {
     private String elaboracio;
         public String getElaboracio() {return elaboracio;}
         public void setElaboracio(String elaboracio) {this.elaboracio = elaboracio;}
-    private List<Ingredient> ingr_list = new ArrayList<Ingredient>();
-        public List<Ingredient> getIngr_list(){return ingr_list;}
-        public void setIngr_list(List<Ingredient> ingr_list) {this.ingr_list = ingr_list;}
+    private ArrayList<Ingredient> ingr_list = new ArrayList<Ingredient>();
+        public ArrayList<Ingredient> getIngr_list(){return ingr_list;}
+        public void setIngr_list(ArrayList<Ingredient> ingr_list) {this.ingr_list = ingr_list;}
 
 
     //CONSTRUCTORS

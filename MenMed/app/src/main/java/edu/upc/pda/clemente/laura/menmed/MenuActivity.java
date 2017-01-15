@@ -22,6 +22,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import org.w3c.dom.Text;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -52,7 +54,11 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         public void setMapingr (Map<String, IngrList> mapingr) {this.mapingr = mapingr;}
     private int ids_recipes[] = {R.id.esm_recept, R.id.mig_recept, R.id.dinar_recept1, R.id.dinar_recept2, R.id.dinar_recept3, R.id.ber_recept, R.id.sopar_recept1, R.id.sopar_recept2, R.id.sopar_recept3};
     private TextView TVEsm, TVMig, TVDin1, TVDin2, TVDin3, TVBer, TVSop1, TVSop2, TVSop3;
+    private int ids_checkbox[] = {R.id.esm_check, R.id.mig_check, R.id.dinar_check1, R.id.dinar_check2, R.id.dinar_check3, R.id.ber_check, R.id.sopar_check1, R.id.sopar_check2, R.id.sopar_check3};
+    private int ids_comensals[] = {R.id.esm_com, R.id.mig_com, R.id.dinar_com1, R.id.dinar_com2, R.id.dinar_com3, R.id.ber_com, R.id.sopar_com1, R.id.sopar_com1, R.id.sopar_com1};
+
     private ImageButton btn_list;
+    private ImageButton btn_compr;
 
     private RWeekCalendar rCalendarFragment;
         //ATRIBUTS PER LLEGIR RECURSOS
@@ -123,6 +129,10 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
             @Override
             public void onClick(View view) {mostrarRecepta(trobarRecepta(TVSop3.getText().toString()));}
         });
+
+        Intent intent = new Intent(this, ListActivity.class);
+        intent.putExtra("receptari", receptes);
+        //startActivity(intent);
     }
 
     //MÈTODES
@@ -160,6 +170,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
             }
         });
     }
+
 
     //CALENDARI SUPERIOR
     protected void calendar(){

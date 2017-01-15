@@ -11,10 +11,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -33,6 +35,16 @@ public class ListActivity extends AppCompatActivity {
     private Button btn_add;
     */
 
+    private int ids_checkbox[] = {R.id.esm_check, R.id.mig_check, R.id.dinar_check1, R.id.dinar_check2, R.id.dinar_check3, R.id.ber_check, R.id.sopar_check1, R.id.sopar_check2, R.id.sopar_check3};
+    private int ids_recipes[] = {R.id.esm_recept, R.id.mig_recept, R.id.dinar_recept1, R.id.dinar_recept2, R.id.dinar_recept3, R.id.ber_recept, R.id.sopar_recept1, R.id.sopar_recept2, R.id.sopar_recept3};
+
+    private String[] all_menu;
+    private String[] all_ingr;
+    private String[] all_recipes;
+    private ImageButton btn_list;
+    private ImageButton btn_compr;
+    Recepta[] receptari;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +53,18 @@ public class ListActivity extends AppCompatActivity {
         init();
         all_ingr = getResources().getStringArray(R.array.all_ingr);
         crearLlista();
+        all_menu = getResources().getStringArray(R.array.all_menu);
+        all_recipes = getResources().getStringArray(R.array.all_recipes);
+        all_ingr = getResources().getStringArray(R.array.all_ingr);
+
+        Intent intent = new Intent(getBaseContext(), MenuActivity.class);
+
+        this.receptari = (Recepta[]) getIntent().getSerializableExtra("receptari");
+        //send_to_list();
 
 
-        /*itemList = new ArrayList<IngrList>();
+
+        itemList = new ArrayList<IngrList>();
 
         itemList.add(new IngrList("Patates","u",false,10.0));
         itemList.add(new IngrList("Paper WC","u",true,20.0));
@@ -52,7 +73,8 @@ public class ListActivity extends AppCompatActivity {
         itemList.add(new IngrList("Patates","u",false,10.0));
         itemList.add(new IngrList("Paper WC","u",false,20.0));
         itemList.add(new IngrList("Patates","u",false,10.0));
-        itemList.add(new IngrList("Paper WC","u",false,20.0));*/
+        itemList.add(new IngrList("Paper WC","u",false,20.0));
+
 
 
         adapter = new ListActivityAdapter(
@@ -103,6 +125,50 @@ public class ListActivity extends AppCompatActivity {
         */
     }
 
+
+
+    //MÈTODE QUE PERMET ENVIAR ELS PLATS A LA LLISTA
+    protected void send_to_list(){
+        btn_compr = (ImageButton) findViewById(R.id.btn_compr);
+        btn_compr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (find_concidence()==null){
+                    Toast.makeText(ListActivity.this, "No has sel·leccionat cap recepta", Toast.LENGTH_LONG).show();
+                } else {
+                    omplirLlista(find_concidence());
+                    //IngrList(find_concidence().getNom(),find_concidence().getIngr_list(){
+
+                }
+            }
+
+        });
+    }
+
+
+
+    protected void omplirLlista(ArrayList<Ingredient> llista) {
+        this.itemList = new ArrayList<IngrList>();
+        for(int i=0; i<llista.size(); i++){
+            IngrList ingr = new IngrList(llista.get(i).getNom(), "u", false, llista.get(i).getQuant());
+            itemList.add(ingr);
+        }
+    }
+    //Mètode que em troba la recepta que està clicada
+    protected ArrayList<Ingredient> find_concidence() {
+        for (int i = 0; i < ids_checkbox.length; i++) {
+            CheckBox check = (CheckBox) findViewById(ids_checkbox[i]);
+            if (check.isChecked() == true) {
+                TextView rec = (TextView) findViewById(ids_recipes[i]);
+                for (int j = 0; j < all_recipes.length; j++) {
+                    if (rec.getText().equals(receptari[j].getNom())) {
+                        return receptari[j].getIngr_list();
+                    };
+                }
+            }
+        }
+        return null;
+    }
 
     //MÈTODE QUE PERMET CANVIAR D'ACTIVITAT
     protected void init(){

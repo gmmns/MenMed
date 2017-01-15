@@ -24,7 +24,6 @@ import java.util.TreeMap;
 
 public class ListActivity extends AppCompatActivity {
 
-    private String[] all_ingr;
     private ArrayList<IngrList> itemList = new ArrayList<IngrList>();
     private ListActivityAdapter adapter;
 
@@ -59,6 +58,7 @@ public class ListActivity extends AppCompatActivity {
 
         Intent intent = new Intent(getBaseContext(), MenuActivity.class);
 
+        itemList = new ArrayList<IngrList>();
         this.receptari = (Recepta[]) getIntent().getSerializableExtra("receptari");
         //send_to_list();
 
@@ -73,6 +73,7 @@ public class ListActivity extends AppCompatActivity {
         itemList.add(new IngrList("Patates","u",false,10.0));
         itemList.add(new IngrList("Paper WC","u",false,20.0));
         itemList.add(new IngrList("Patates","u",false,10.0));
+        itemList.add(new IngrList("Paper WC","u",false,20.0));
         itemList.add(new IngrList("Paper WC","u",false,20.0));
 
 

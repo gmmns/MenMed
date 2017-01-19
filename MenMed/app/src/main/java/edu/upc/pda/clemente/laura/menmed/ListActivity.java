@@ -32,7 +32,10 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
     private static final String FILENAME = "shopping_list.txt";
     private static final int MAX_BYTES = 10000;
 
-    private ArrayList<IngrList> itemList = new ArrayList<IngrList>();
+    private ArrayList<Ingredient> itemList = new ArrayList<>();
+    private IngrList llista_ingr;
+    private IngrList tots_ingr;
+
     private ListActivityAdapter adapter;
 
     private ListView list;
@@ -96,8 +99,6 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
     private EditText add_prod;
     private EditText add_quant;
     private Spinner add_units;
-    Recepta[] receptari;
-
 
     /*
     @Override
@@ -113,7 +114,6 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_list);
         init();
         all_ingr = getResources().getStringArray(R.array.all_ingr);
-        crearLlista();
         all_menu = getResources().getStringArray(R.array.all_menu);
         all_recipes = getResources().getStringArray(R.array.all_recipes);
         all_ingr = getResources().getStringArray(R.array.all_ingr);
@@ -121,33 +121,15 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         add_quant = (EditText) findViewById(R.id.add_quant);
         add_units = (Spinner) findViewById(R.id.add_units);
 
+        tots_ingr = (IngrList) getIntent().getExtras().getSerializable("tots_ingr");
+        llista_ingr = (IngrList) getIntent().getExtras().getSerializable("llista_ingr");
+            mostrarLlista();
+            //omplirLlista(llista_ingr);
         ArrayAdapter<CharSequence> adapt_spin = ArrayAdapter.createFromResource(this,R.array.all_units, android.R.layout.simple_spinner_item);
         adapt_spin.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         add_units.setAdapter(adapt_spin);
-
-
-        /*Intent intent = new Intent(getBaseContext(), MenuActivity.class);
-
-        itemList = new ArrayList<IngrList>();
-        this.receptari = (Recepta[]) getIntent().getSerializableExtra("receptari");
-        */
-
-        //send_to_list();
-
-
         //readItemList();
 
-        itemList = new ArrayList<IngrList>();
-
-        itemList.add(new IngrList("Patates","Kg",false,10.0));
-        itemList.add(new IngrList("Paper WC","u",true,12.0));
-        itemList.add(new IngrList("Aigua","L",false,14.0));
-        itemList.add(new IngrList("Pebrot verd","g",false,500.0));
-        itemList.add(new IngrList("Pomes","Kg",false,3.5));
-        itemList.add(new IngrList("Arròs","Kg",false,2.0));
-        itemList.add(new IngrList("Tomàquets","Kg",false,1.5));
-        itemList.add(new IngrList("Iogurts naturals","u",false,6.0));
-        itemList.add(new IngrList("Maduixes","g",false,800.0));
 
 
 
@@ -183,14 +165,12 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
         btn_add = (FloatingActionButton) findViewById(R.id.btn_add);
-
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 addItem();
             }
         });
-
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -210,48 +190,23 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         */
     }
 
-
-
-    //MÈTODE QUE PERMET ENVIAR ELS PLATS A LA LLISTA
-    protected void send_to_list(){
-        btn_compr = (ImageButton) findViewById(R.id.btn_compr);
-        btn_compr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (find_concidence()==null){
-                    Toast.makeText(ListActivity.this, "No has sel·leccionat cap recepta", Toast.LENGTH_LONG).show();
-                } else {
-                    omplirLlista(find_concidence());
-                    //IngrList(find_concidence().getNom(),find_concidence().getIngr_list(){
-
-                }
-            }
-
-        });
+    protected void mostrarLlista() {
+        itemList.add(new Ingredient("Patates","Kg",false,10.0));
+        itemList.add(new Ingredient("Paper WC","u",true,12.0));
+        itemList.add(new Ingredient("Aigua","L",false,14.0));
+        itemList.add(new Ingredient("Pebrot verd","g",false,500.0));
+        itemList.add(new Ingredient("Pomes","Kg",false,3.5));
+        itemList.add(new Ingredient("Arròs","Kg",false,2.0));
+        itemList.add(new Ingredient("Tomàquets","Kg",false,1.5));
+        itemList.add(new Ingredient("Iogurts naturals","u",false,6.0));
+        itemList.add(new Ingredient("Maduixes","g",false,800.0));
     }
-
-    protected void omplirLlista(ArrayList<Ingredient> llista) {
-        this.itemList = new ArrayList<IngrList>();
-        for(int i=0; i<llista.size(); i++){
-            IngrList ingr = new IngrList(llista.get(i).getNom(), "u", false, llista.get(i).getQuant());
-            itemList.add(ingr);
+    protected void omplirLlista(IngrList llista) {
+        for(Ingredient i: llista.getMapingr().values()){
+            itemList.add(i);
         }
     }
-    //Mètode que em troba la recepta que està clicada
-    protected ArrayList<Ingredient> find_concidence() {
-        for (int i = 0; i < ids_checkbox.length; i++) {
-            CheckBox check = (CheckBox) findViewById(ids_checkbox[i]);
-            if (check.isChecked() == true) {
-                TextView rec = (TextView) findViewById(ids_recipes[i]);
-                for (int j = 0; j < all_recipes.length; j++) {
-                    if (rec.getText().equals(receptari[j].getNom())) {
-                        return receptari[j].getIngr_list();
-                    };
-                }
-            }
-        }
-        return null;
-    }
+
 
     //MÈTODE QUE PERMET CANVIAR D'ACTIVITAT
     protected void init(){
@@ -265,15 +220,6 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         });
     }
 
-    private void crearLlista(){
-        this.itemList = new ArrayList<IngrList>();
-        for (int i=0; i<all_ingr.length; i++){
-            String r = this.all_ingr[i];
-            String[] parts = r.split(";");
-            IngrList ingr = new IngrList(parts[0], parts[1]);
-            itemList.add(ingr);
-        }
-    }
 
     /*
     private void maybeRemoveItem(final int pos) {
@@ -314,7 +260,7 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         });*/
         if (!prod_text.isEmpty() && !quant_text.isEmpty() && !units_text.isEmpty()) {
             double quant_num = Double.parseDouble(quant_text);
-            itemList.add(new IngrList(prod_text,units_text,false,quant_num));
+            itemList.add(new Ingredient(prod_text,units_text,false,quant_num));
             adapter.notifyDataSetChanged();
             add_prod.setText("");
             add_quant.setText("");
@@ -329,14 +275,11 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         }
     }
 
-
-    @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
 
     }
 
-    @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
     }

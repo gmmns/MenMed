@@ -23,22 +23,22 @@ public class Recepta {
     private String elaboracio;
         public String getElaboracio() {return elaboracio;}
         public void setElaboracio(String elaboracio) {this.elaboracio = elaboracio;}
-    private ArrayList<Ingredient> ingr_list = new ArrayList<Ingredient>();
-        public ArrayList<Ingredient> getIngr_list(){return ingr_list;}
-        public void setIngr_list(ArrayList<Ingredient> ingr_list) {this.ingr_list = ingr_list;}
+    private IngrList llista;
+        public IngrList getLlista(){return llista;}
+        public void setLlista(IngrList llista){this.llista = llista;}
 
 
     //CONSTRUCTORS
     public Recepta (String[] parts) {
         this.nom = parts[0];
         this.elaboracio = parts[1];
-        this.ingr_list = new ArrayList<Ingredient>();
+        this.llista = new IngrList();
         String r = parts[2];
         String[] ingr = r.split("-");
         for(int i=0; i<ingr.length; i++){
             String s = ingr[i];
             String[] part = s.split("/");
-            ingr_list.add(new Ingredient(part));
+            llista.getMapingr().put(ingr[i], new Ingredient(part));
         }
     }
     public Recepta(String nom){
@@ -46,30 +46,27 @@ public class Recepta {
         this.nom = nom;
         this.fotografia = null;
         this.elaboracio = "";
-        this.ingr_list = new ArrayList<Ingredient>(){};
+        this.llista = new IngrList();
     }
     public Recepta(){
         super();
         this.nom = "";
         this.fotografia = null;
         this.elaboracio = "";
-        this.ingr_list = new ArrayList<Ingredient>(){};
+        this.llista = new IngrList();
     }
 
 
     //MÈTODES
     public String toString(){
-        String s = "Nom:\n" + nom + "\nElaboració:\n" + elaboracio + "\nIngredients:";
-        for(int x=0;x<ingr_list.size();x++) {
-            s = s + "\n- " + ingr_list.get(x).getQuant() + " de " + ingr_list.get(x).getNom();
-        }
+        String s = "Nom:\n" + nom + "\nElaboració:\n" + elaboracio + "\nIngredients:" + toStringIngr();
         return s;
     }
 
     public String toStringIngr(){
         String s = "";
-        for(int x=0;x<ingr_list.size();x++) {
-            s = s + "\n- " + ingr_list.get(x).getQuant() + " de " + ingr_list.get(x).getNom();
+        for(Ingredient i: llista.getMapingr().values()){
+            s = s + "\n- " + i.getQuant() + " de " + i.getNom();
         }
         return s;
     }

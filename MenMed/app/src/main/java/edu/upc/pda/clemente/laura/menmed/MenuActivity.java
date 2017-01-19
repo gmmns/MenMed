@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.content.res.Resources;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -49,9 +50,15 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
     private Recepta[] receptes;
         public Recepta[] getReceptes() {return receptes;}
         public void setReceptes(Recepta[] receptes) {this.receptes = receptes;}
-    private Map<String, IngrList> mapingr = new TreeMap<String, IngrList>();
-        public Map<String, IngrList> getMapingr() {return mapingr;}
-        public void setMapingr (Map<String, IngrList> mapingr) {this.mapingr = mapingr;}
+
+    private IngrList tots_ingr;
+    private IngrList llista_ingr = new IngrList();
+
+    private Intent intent;
+
+    //private ArrayList<IngrList> itemList = new ArrayList<>();
+
+
     private int ids_recipes[] = {R.id.esm_recept, R.id.mig_recept, R.id.dinar_recept1, R.id.dinar_recept2, R.id.dinar_recept3, R.id.ber_recept, R.id.sopar_recept1, R.id.sopar_recept2, R.id.sopar_recept3};
     private TextView TVEsm, TVMig, TVDin1, TVDin2, TVDin3, TVBer, TVSop1, TVSop2, TVSop3;
     private int ids_checkbox[] = {R.id.esm_check, R.id.mig_check, R.id.dinar_check1, R.id.dinar_check2, R.id.dinar_check3, R.id.ber_check, R.id.sopar_check1, R.id.sopar_check2, R.id.sopar_check3};
@@ -76,70 +83,19 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         all_ingr = getResources().getStringArray(R.array.all_ingr);
         crearMenu();
         crearReceptari();
-        crearLlista();
+        crearLlistaIngredients();
         init();
         calendar();
-        mostrarLlista();
-        //mostrarRecepta();
         //EP!!! NO TANCA AMB EL BOTÓ "OFF", S'HA DE FER
-
-
-        TVEsm = (TextView) findViewById(R.id.esm_recept);
-        TVEsm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {mostrarRecepta(trobarRecepta(TVEsm.getText().toString()));}
-        });
-        TVMig = (TextView) findViewById(R.id.mig_recept);
-        TVMig.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {mostrarRecepta(trobarRecepta(TVMig.getText().toString()));}
-        });
-        TVDin1 = (TextView) findViewById(R.id.dinar_recept1);
-        TVDin1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {mostrarRecepta(trobarRecepta(TVDin1.getText().toString()));}
-        });
-        TVDin2 = (TextView) findViewById(R.id.dinar_recept2);
-        TVDin2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {mostrarRecepta(trobarRecepta(TVDin2.getText().toString()));}
-        });
-        TVDin3 = (TextView) findViewById(R.id.dinar_recept3);
-        TVDin3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {mostrarRecepta(trobarRecepta(TVDin3.getText().toString()));}
-        });
-        TVBer = (TextView) findViewById(R.id.ber_recept);
-        TVBer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {mostrarRecepta(trobarRecepta(TVBer.getText().toString()));}
-        });
-        TVSop1 = (TextView) findViewById(R.id.sopar_recept1);
-        TVSop1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {mostrarRecepta(trobarRecepta(TVSop1.getText().toString()));}
-        });
-        TVSop2 = (TextView) findViewById(R.id.sopar_recept2);
-        TVSop2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {mostrarRecepta(trobarRecepta(TVSop2.getText().toString()));}
-        });
-        TVSop3 = (TextView) findViewById(R.id.sopar_recept3);
-        TVSop3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {mostrarRecepta(trobarRecepta(TVSop3.getText().toString()));}
-        });
-
-        Intent intent = new Intent(this, ListActivity.class);
-        intent.putExtra("receptari", receptes);
-        //startActivity(intent);
+        intent = new Intent(MenuActivity.this, ListActivity.class);
+        intent.putExtra("llista_sencera", tots_ingr);
     }
 
     //MÈTODES
     //Llegir recursos i obtenir la informació
     private void crearMenu(){
         this.menu = new Menu(all_menu);
-        showDay(menu.getMenu()[2]);
+        //mostrarDia(menu.getMenu()[2]);
     }
     private void crearReceptari(){
         this.receptes = new Recepta[all_recipes.length];
@@ -149,29 +105,47 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
             this.receptes[i] = new Recepta(parts);
         }
     }
-    private void crearLlista(){
-        this.mapingr = new TreeMap<String, IngrList>();
+    private void crearLlistaIngredients(){
+        tots_ingr = new IngrList();
         for (int i=0; i<all_ingr.length; i++){
             String r = this.all_ingr[i];
             String[] parts = r.split(";");
-            IngrList ingr = new IngrList(parts[0], parts[1]);
-            mapingr.put(ingr.getNom(), ingr);
+            Ingredient ingr = new Ingredient(parts[0], parts[1]);
+            tots_ingr.getMapingr().put(ingr.getNom(), ingr);
         }
     }
-
     //MÈTODE QUE PERMET CANVIAR D'ACTIVITAT
     protected void init(){
+        btn_compr = (ImageButton) findViewById(R.id.btn_compr);
+            btn_compr.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {enviarALlista();}});
+
+        TVEsm = (TextView) findViewById(R.id.esm_recept);
+            TVEsm.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {mostrarRecepta(trobarRecepta(TVEsm.getText().toString()));}});
+        TVMig = (TextView) findViewById(R.id.mig_recept);
+            TVMig.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {mostrarRecepta(trobarRecepta(TVMig.getText().toString()));}});
+        TVDin1 = (TextView) findViewById(R.id.dinar_recept1);
+            TVDin1.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {mostrarRecepta(trobarRecepta(TVDin1.getText().toString()));}});
+        TVDin2 = (TextView) findViewById(R.id.dinar_recept2);
+            TVDin2.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {mostrarRecepta(trobarRecepta(TVDin2.getText().toString()));}});
+        TVDin3 = (TextView) findViewById(R.id.dinar_recept3);
+            TVDin3.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {mostrarRecepta(trobarRecepta(TVDin3.getText().toString()));}});
+        TVBer = (TextView) findViewById(R.id.ber_recept);
+            TVBer.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {mostrarRecepta(trobarRecepta(TVBer.getText().toString()));}});
+        TVSop1 = (TextView) findViewById(R.id.sopar_recept1);
+            TVSop1.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {mostrarRecepta(trobarRecepta(TVSop1.getText().toString()));}});
+        TVSop2 = (TextView) findViewById(R.id.sopar_recept2);
+            TVSop2.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {mostrarRecepta(trobarRecepta(TVSop2.getText().toString()));}});
+        TVSop3 = (TextView) findViewById(R.id.sopar_recept3);
+            TVSop3.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {mostrarRecepta(trobarRecepta(TVSop3.getText().toString()));}});
+
         btn_list = (ImageButton) findViewById(R.id.btn_list);
-        btn_list.setOnClickListener(new View.OnClickListener() {
+            btn_list.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(MenuActivity.this, ListActivity.class);
-                startActivity(in);
+                startActivity(intent);
             }
         });
     }
-
-
     //CALENDARI SUPERIOR
     protected void calendar(){
 
@@ -208,7 +182,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
             @Override
             public void onSelectDate(LocalDateTime mSelectedDate) {
                 //callback when a date is selcted
-                showDay(menu.getMenu()[mSelectedDate.getDayOfMonth()]);
+                mostrarDia(menu.getMenu()[mSelectedDate.getDayOfMonth()]);
             }
         };
 
@@ -226,23 +200,57 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
 
     }
 
-    //MÈTODES
-    private void showDay(Dia dia){
+    //MÈTODES de MENÚ
+    private void mostrarDia(Dia dia){
         for (int i=0; i<ids_recipes.length; i++){
             TextView recept_text = (TextView) findViewById(ids_recipes[i]);
             recept_text.setText(dia.getDia()[i]);
         }
     }
 
+    //MÈTODES de LLISTA
     private void mostrarLlista(){
-        for(IngrList i: mapingr.values()){
-            System.out.println("- " + i.toString());
+        tots_ingr.toString();
+    }
+    private void enviarALlista() {
+        if (!trobarCheck()) {
+            Toast.makeText(MenuActivity.this, "No has sel·leccionat cap recepta", Toast.LENGTH_SHORT).show();
+        } else {
+            omplirLlista();
         }
     }
+    private boolean trobarCheck() {
+        boolean b = false;
+        for (int i = 0; i < ids_checkbox.length; i++) {
+            CheckBox check = (CheckBox) findViewById(ids_checkbox[i]);
+            if (check.isChecked() == true) {
+                b = true;
+            }
+        }
+        return b;
+    }
+    private void omplirLlista() {
+        for (int i = 0; i < ids_checkbox.length; i++) {
+            CheckBox check = (CheckBox) findViewById(ids_checkbox[i]);
+            if (check.isChecked() == true) {
+                TextView rec = (TextView) findViewById(ids_recipes[i]);
+                for (int j = 0; j < all_recipes.length; j++) {
+                    if (rec.getText().equals(receptes[j].getNom())) {
+                        //System.out.println(receptes[j].toStringIngr());
+                        for(Ingredient k: receptes[j].getLlista().getMapingr().values()){
+                            llista_ingr.getMapingr().put(k.getNom(), k);}
+                    }
+                }
+            }
+        }
+        intent.putExtra("llista_propia", llista_ingr);
+    }
+
+    //MÈTODES de RECEPTES
     private void mostrarRecepta(int i){
         if(i==-1){
             Toast.makeText(this, "Aquesta recepta no la tenim",
-                    Toast.LENGTH_LONG).show();
+                    Toast.LENGTH_SHORT).show();
 
         } else {
             AlertDialog.Builder mBuilder = new AlertDialog.Builder(MenuActivity.this);
@@ -253,7 +261,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
 
             mRec.setText(this.receptes[i].getNom());
             mElab.setText(this.receptes[i].getElaboracio());
-            mIngr.setText(this.receptes[i].toStringIngr());
+            mIngr.setText(afegirUnitats(this.receptes[i].getLlista()).toString());
 
             mBuilder.setView(mView);
             AlertDialog dialog = mBuilder.create();
@@ -271,12 +279,23 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         return i;
     }
 
-    private String unitats(Ingredient ingr){
-        if(!mapingr.containsKey(ingr.getNom())){
-            return mapingr.get(ingr.getNom()).getUnitats();
+
+    private String trobarUnitats(Ingredient ingr){
+        if(!tots_ingr.getMapingr().containsKey(ingr.getNom())){
+            return tots_ingr.getMapingr().get(ingr.getNom()).getUnitats();
         }
         return null;
     }
+
+    private IngrList afegirUnitats(IngrList llista){
+        for(Ingredient i: llista.getMapingr().values()){
+            if(!tots_ingr.getMapingr().containsKey(i.getNom())){
+                llista.getMapingr().get(i).setUnitats(trobarUnitats(i));
+            }
+        }
+        return llista;
+    }
+
 
 
 }

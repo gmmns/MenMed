@@ -16,7 +16,7 @@ import java.util.zip.Inflater;
  * Created by Laura on 14/1/2017.
  */
 
-public class ListActivityAdapter extends ArrayAdapter<IngrList> {
+public class ListActivityAdapter extends ArrayAdapter<Ingredient> {
     public ListActivityAdapter(Context context, int resource, List objects) {
         super(context, resource, objects);
     }
@@ -35,7 +35,7 @@ public class ListActivityAdapter extends ArrayAdapter<IngrList> {
         TextView quantity = (TextView) result.findViewById(R.id.quantity);
         TextView units = (TextView) result.findViewById(R.id.units);
 
-        IngrList item = getItem(position);
+        Ingredient item = getItem(position);
 
         product.setText(item.getNom());
         quantity.setText(item.getQuant().toString());

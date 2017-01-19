@@ -32,6 +32,12 @@
     <string name="confirm">Confirmation</string>
     <string name="remove">Remove</string>
     <string name="confirm_remove">Are you want to remove \'%1$s\'?</string>
+    <string name="quantity">Quantity</string>
+    <string name="edit_prod">Product</string>
+    <string name="edit_quant">Quantitat</string>
+    <string name="cannot_write">Couldn\'t write list</string>
+    <string name="cannot_read">couldn\'t read list</string>
+    <string name="data_missing">Completi tots els camps</string>
 
     <array name="all_menu">
         <item>"Cafè amb llet. Torrades amb oli d'oliva verge i sal.";"Iogurt de fruites.";"Amanida grega.";"Saltxixes de pavo a la planxa amb sofregit de ceba i tomàquet.";"Meló.";"Bastonets de pa. Suc natural de magrana.";"Espaguetis al pesto.";"Sardines al forn amb tomàquet rostit.";"Carpaccio de pinya."</item>
@@ -130,6 +136,12 @@
         <item>"cibulet";"u"</item>
         <item>"síndria;"g"</item>
     </array>
+
+    <string-array name="all_units">
+        <item>g</item>
+        <item>u</item>
+        <item>mL</item>
+    </string-array>
 
 
 

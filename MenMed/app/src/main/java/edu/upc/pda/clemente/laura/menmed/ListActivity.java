@@ -1,34 +1,84 @@
 package edu.upc.pda.clemente.laura.menmed;
 
 
-import android.content.DialogInterface;
+import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
+import android.widget.AutoCompleteTextView;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.TreeMap;
 
-public class ListActivity extends AppCompatActivity {
+public class ListActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
+    private static final String FILENAME = "shopping_list.txt";
+    private static final int MAX_BYTES = 10000;
 
     private ArrayList<IngrList> itemList = new ArrayList<IngrList>();
     private ListActivityAdapter adapter;
 
     private ListView list;
     private ImageButton btn_menu;
+
+    /*private void writeItemList(){
+
+        try {
+            FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+            for (int i=0; i<itemList.size(); i++){
+                IngrList in = itemList.get(i);
+                String line = String.format("%s;%s;%b;%d\n", in.getNom(), in.getUnitats(), in.isChecked(), in.getQuant());
+                fos.write(line.getBytes());
+            }
+            fos.close();
+        } catch (FileNotFoundException e) {
+            Log.e("Menmed", "writeItemList: FileNotFoundException");
+            Toast.makeText(this, R.string.cannot_write, Toast.LENGTH_SHORT).show();
+
+        } catch (IOException e) {
+            Log.e("Menmed", "writeItemList:IOException");
+            Toast.makeText(this, R.string.cannot_write, Toast.LENGTH_SHORT).show();
+        }
+    }
+    */
+
+    /*private void readItemList(){
+        itemList = new ArrayList<>();
+        try {
+            FileInputStream fis = openFileInput(FILENAME);
+            byte[] buffer = new byte[MAX_BYTES];
+            int nread = fis.read(buffer);
+            String content = new String(buffer, 0, nread);
+            String[] lines = content.split("\n");
+            for (int i=0; i<lines.length; i++){
+                String[] parts = lines[i].split(";");
+                itemList.add(new IngrList(parts[0], parts[1], parts[2].equals("true"), Double.parseDouble(parts[3])));
+            }
+        } catch (FileNotFoundException e){
+            Log.i("Menmed","readItemList: FileNotFoundException");
+        } catch (IOException e) {
+            Log.e("Menmed", "readItemList:IOException");
+            Toast.makeText(this, R.string.cannot_read, Toast.LENGTH_SHORT).show();
+        }
+    }
+    */
     /*
     private EditText edit_item;
     private Button btn_add;
@@ -42,8 +92,20 @@ public class ListActivity extends AppCompatActivity {
     private String[] all_recipes;
     private ImageButton btn_list;
     private ImageButton btn_compr;
+    private FloatingActionButton btn_add;
+    private EditText add_prod;
+    private EditText add_quant;
+    private Spinner add_units;
     Recepta[] receptari;
 
+
+    /*
+    @Override
+    protected void onStop() {
+        super.onStop();
+        writeItemList();
+    }
+    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,26 +117,38 @@ public class ListActivity extends AppCompatActivity {
         all_menu = getResources().getStringArray(R.array.all_menu);
         all_recipes = getResources().getStringArray(R.array.all_recipes);
         all_ingr = getResources().getStringArray(R.array.all_ingr);
+        add_prod = (EditText) findViewById(R.id.add_prod);
+        add_quant = (EditText) findViewById(R.id.add_quant);
+        add_units = (Spinner) findViewById(R.id.add_units);
 
-        Intent intent = new Intent(getBaseContext(), MenuActivity.class);
+        ArrayAdapter<CharSequence> adapt_spin = ArrayAdapter.createFromResource(this,R.array.all_units, android.R.layout.simple_spinner_item);
+        adapt_spin.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        add_units.setAdapter(adapt_spin);
+
+
+        /*Intent intent = new Intent(getBaseContext(), MenuActivity.class);
 
         itemList = new ArrayList<IngrList>();
         this.receptari = (Recepta[]) getIntent().getSerializableExtra("receptari");
+        */
+
         //send_to_list();
 
 
+        //readItemList();
 
         itemList = new ArrayList<IngrList>();
 
-        itemList.add(new IngrList("Patates","u",false,10.0));
-        itemList.add(new IngrList("Paper WC","u",true,20.0));
-        itemList.add(new IngrList("Patates","u",false,10.0));
-        itemList.add(new IngrList("Paper WC","u",false,20.0));
-        itemList.add(new IngrList("Patates","u",false,10.0));
-        itemList.add(new IngrList("Paper WC","u",false,20.0));
-        itemList.add(new IngrList("Patates","u",false,10.0));
-        itemList.add(new IngrList("Paper WC","u",false,20.0));
-        itemList.add(new IngrList("Paper WC","u",false,20.0));
+        itemList.add(new IngrList("Patates","Kg",false,10.0));
+        itemList.add(new IngrList("Paper WC","u",true,12.0));
+        itemList.add(new IngrList("Aigua","L",false,14.0));
+        itemList.add(new IngrList("Pebrot verd","g",false,500.0));
+        itemList.add(new IngrList("Pomes","Kg",false,3.5));
+        itemList.add(new IngrList("Arròs","Kg",false,2.0));
+        itemList.add(new IngrList("Tomàquets","Kg",false,1.5));
+        itemList.add(new IngrList("Iogurts naturals","u",false,6.0));
+        itemList.add(new IngrList("Maduixes","g",false,800.0));
+
 
 
 
@@ -85,8 +159,16 @@ public class ListActivity extends AppCompatActivity {
         );
 
         /*
-        edit_item = (EditText) findViewById(R.id.edit_item);
-        edit_item.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        add_prod = (EditText) findViewById(R.id.add_prod);
+        add_prod.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                addItem();
+                return true;
+            }
+        });
+        add_quant = (EditText) findViewById(R.id.add_quant);
+        add_quant.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 addItem();
@@ -95,18 +177,20 @@ public class ListActivity extends AppCompatActivity {
         });
         */
 
+
         list = (ListView) findViewById(R.id.list);
         list.setAdapter(adapter);
 
-        /*
-        btn_add = (Button) findViewById(R.id.btn_add);
+
+        btn_add = (FloatingActionButton) findViewById(R.id.btn_add);
+
         btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 addItem();
             }
         });
-        */
+
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -145,8 +229,6 @@ public class ListActivity extends AppCompatActivity {
 
         });
     }
-
-
 
     protected void omplirLlista(ArrayList<Ingredient> llista) {
         this.itemList = new ArrayList<IngrList>();
@@ -211,16 +293,52 @@ public class ListActivity extends AppCompatActivity {
     }
     */
 
-    /*
+
     private void addItem() {
-        String item_text = edit_item.getText().toString();
-        if (!item_text.isEmpty() !item_text.equals("") ) {
-            itemList.add(item_text);
+        String prod_text = add_prod.getText().toString();
+        String quant_text = add_quant.getText().toString();
+        String units_text = add_units.getSelectedItem().toString();
+        /*
+        add_units.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String quant_text = parent.getItemAtPosition(position).toString();
+
+                //String units_text = add_units.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });*/
+        if (!prod_text.isEmpty() && !quant_text.isEmpty() && !units_text.isEmpty()) {
+            double quant_num = Double.parseDouble(quant_text);
+            itemList.add(new IngrList(prod_text,units_text,false,quant_num));
             adapter.notifyDataSetChanged();
-            edit_item.setText("");
+            add_prod.setText("");
+            add_quant.setText("");
+            list.smoothScrollToPosition(itemList.size()-1);
+        }
+
+        else {
+            Toast.makeText(this, R.string.data_missing, Toast.LENGTH_SHORT).show();
+            //Snackbar avis = Snackbar.make(View view, "Omple tots els camps obligatoris!", Snackbar.LENGTH_LONG);
+            //avis.show();
+
         }
     }
-    */
-}
 
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+}
 

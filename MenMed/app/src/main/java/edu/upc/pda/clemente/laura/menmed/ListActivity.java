@@ -37,6 +37,7 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private static final String FITXER = "llista.obj";
     private static final int MAX_BYTES = 10000;
+    private Intent intent;
 
     private ArrayList<Ingredient> itemList = new ArrayList<>();
     private IngrList llista_ingr;
@@ -61,12 +62,13 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
     private Spinner add_units;
 
 
-    //protected void onStop() {super.onStop();writeItemList();}
+    protected void onStop() {super.onStop();escriureIngredient();}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+        intent = new Intent(ListActivity.this, MenuActivity.class);
 
         try {
             recuperar();
@@ -139,23 +141,16 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         return llista;
     }
     private String trobarUnitats(Ingredient ingr){
-        if(!tots_ingr.getMapingr().containsKey(ingr.getNom())){
+        if(tots_ingr.getMapingr().containsKey(ingr.getNom())){
             return tots_ingr.getMapingr().get(ingr.getNom()).getUnitats();
         }
         return null;
     }
 
-
     //MÈTODE QUE PERMET CANVIAR D'ACTIVITAT
     protected void init(){
         btn_menu = (ImageButton) findViewById(R.id.btn_menu);
-        btn_menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent in = new Intent(ListActivity.this, MenuActivity.class);
-                startActivity(in);
-            }
-        });
+        btn_menu.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {startActivity(intent);}});
     }
 
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {}
@@ -201,7 +196,7 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
             FileOutputStream fos = openFileOutput(FITXER, Context.MODE_PRIVATE);
             for (int i=0; i<itemList.size(); i++){
                 Ingredient in = itemList.get(i);
-                String line = String.format("%s;%s;%b;%d\n", in.getNom(), in.getUnitats(), in.isChecked(), in.getQuant());
+                String line = String.format("%s;%s;%b;%f\n", in.getNom(), in.getUnitats(), in.isChecked(), in.getQuant());
                 fos.write(line.getBytes());
             }
             fos.close();
@@ -261,7 +256,6 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
             Log.e("Llista", "guardar: IOException");
         }
     }
-
     private void recuperar() throws IOException {
         try {
             FileInputStream fis = openFileInput(FITXER);
@@ -275,7 +269,6 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
             Log.e("Llista", "Recuperar: StreamCorruptedException");
         }
     }
-
     private void dataChanged() {
         adapter.notifyDataSetChanged();
         guardar();

@@ -92,6 +92,28 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         all_menu = getResources().getStringArray(R.array.all_menu);
         all_recipes = getResources().getStringArray(R.array.all_recipes);
         all_ingr = getResources().getStringArray(R.array.all_ingr);
+
+        btn_compr = (ImageButton) findViewById(R.id.btn_compr);
+        btn_compr.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {enviarALlista();}});
+
+        for (int i=0; i<TV_recipes.length; i++){
+            final int j = i;
+            TV_recipes[i] = (TextView) findViewById(ids_recipes[i]);
+            TV_recipes[i].setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {mostrarRecepta(trobarRecepta(TV_recipes[j].getText().toString()));}});}
+        for (int i=0; i<ids_comensals.length; i++){
+            TV_com[i] = (TextView) findViewById(ids_comensals[i]);}
+        for (int i=0; i<ids_less.length; i++){
+            final int j = i;
+            btn_less[i] = (ImageButton) findViewById(ids_less[i]);
+            btn_less[i].setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {restarComensals(TV_com[j]);}});}
+        for (int i=0; i<ids_more.length; i++){
+            final int j = i;
+            btn_more[i] = (ImageButton) findViewById(ids_more[i]);
+            btn_more[i].setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {sumarComensals(TV_com[j]);}});}
+
         crearMenu();
         crearReceptari();
         crearLlistaIngredients();
@@ -125,33 +147,10 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
     }
     //MÈTODE QUE PERMET CANVIAR D'ACTIVITAT
     protected void init(){
-        btn_compr = (ImageButton) findViewById(R.id.btn_compr);
-            btn_compr.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {enviarALlista();}});
         btn_list = (ImageButton) findViewById(R.id.btn_list);
-            btn_list.setOnClickListener(new View.OnClickListener() {
-            @Override
+        btn_list.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                startActivity(intent);
-            }
-        });
-        for (int i=0; i<TV_recipes.length; i++){
-            final int j = i;
-            TV_recipes[i] = (TextView) findViewById(ids_recipes[i]);
-            TV_recipes[i].setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {mostrarRecepta(trobarRecepta(TV_recipes[j].getText().toString()));}});}
-        for (int i=0; i<ids_comensals.length; i++){
-            TV_com[i] = (TextView) findViewById(ids_comensals[i]);}
-        for (int i=0; i<ids_less.length; i++){
-            final int j = i;
-            btn_less[i] = (ImageButton) findViewById(ids_less[i]);
-            btn_less[i].setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {restarComensals(TV_com[j]);}});}
-        for (int i=0; i<ids_more.length; i++){
-            final int j = i;
-            btn_more[i] = (ImageButton) findViewById(ids_more[i]);
-            btn_more[i].setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {sumarComensals(TV_com[j]);}});}
-
+            startActivity(intent);}});
     }
     //CALENDARI SUPERIOR
     protected void calendar(){

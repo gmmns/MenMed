@@ -27,11 +27,15 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OptionalDataException;
+import java.io.StreamCorruptedException;
 import java.util.ArrayList;
 
 public class ListActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private static final String FILENAME = "shopping_list.txt";
+    private static final String FITXER = "llista.obj";
     private static final int MAX_BYTES = 10000;
 
     private ArrayList<Ingredient> itemList = new ArrayList<>();
@@ -49,9 +53,6 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
     private int ids_checkbox[] = {R.id.esm_check, R.id.mig_check, R.id.dinar_check1, R.id.dinar_check2, R.id.dinar_check3, R.id.ber_check, R.id.sopar_check1, R.id.sopar_check2, R.id.sopar_check3};
     private int ids_recipes[] = {R.id.esm_recept, R.id.mig_recept, R.id.dinar_recept1, R.id.dinar_recept2, R.id.dinar_recept3, R.id.ber_recept, R.id.sopar_recept1, R.id.sopar_recept2, R.id.sopar_recept3};
 
-    private String[] all_menu;
-    private String[] all_ingr;
-    private String[] all_recipes;
     private ImageButton btn_list;
     private ImageButton btn_compr;
     private FloatingActionButton btn_add;
@@ -66,49 +67,45 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
+        try {
+            recuperar();
+        } catch (IOException e) {
+            llista_ingr = new IngrList();
+        }
+
+        //inicialitzar i relacionar layout i codi
         init();
-        all_ingr = getResources().getStringArray(R.array.all_ingr);
-        all_menu = getResources().getStringArray(R.array.all_menu);
-        all_recipes = getResources().getStringArray(R.array.all_recipes);
-        all_ingr = getResources().getStringArray(R.array.all_ingr);
         add_prod = (EditText) findViewById(R.id.add_prod);
         add_quant = (EditText) findViewById(R.id.add_quant);
         add_units = (Spinner) findViewById(R.id.add_units);
-        adapter = new ListActivityAdapter(this, R.layout.shopping_item, itemList);
-        tots_ingr = (IngrList) getIntent().getExtras().getSerializable("tots_ingr");
+
+        //Omplir dades amb informació MenuActivity
+        tots_ingr = (IngrList) getIntent().getExtras().getSerializable("llista_sencera");
         llista_ingr = (IngrList) getIntent().getExtras().getSerializable("llista_propia");
-            //mostrarLlista();
             omplirLlista(llista_ingr);
+
+        //accions llista de la compra
+        adapter = new ListActivityAdapter(this, R.layout.shopping_item, itemList);
         ArrayAdapter<CharSequence> adapt_spin = ArrayAdapter.createFromResource(this,R.array.all_units, android.R.layout.simple_spinner_item);
         adapt_spin.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         add_units.setAdapter(adapt_spin);
 
-
-        /*
         add_prod = (EditText) findViewById(R.id.add_prod);
-        add_prod.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            add_prod.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
-            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                addItem();
-                return true;
-            }
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {afegirIngredient();return true;}
         });
         add_quant = (EditText) findViewById(R.id.add_quant);
-        add_quant.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            add_quant.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
-            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
-                addItem();
-                return true;
-            }
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {afegirIngredient();return true;}
         });
-        */
 
         list = (ListView) findViewById(R.id.list);
         list.setAdapter(adapter);
-
-
         btn_add = (FloatingActionButton) findViewById(R.id.btn_add);
-        btn_add.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {
+            btn_add.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {
             //afegirIngredient();
         }});
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -126,22 +123,26 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-    protected void mostrarLlista() {
-        itemList.add(new Ingredient("Patates","Kg",false,10.0));
-        itemList.add(new Ingredient("Paper WC","u",true,12.0));
-        itemList.add(new Ingredient("Aigua","L",false,14.0));
-        itemList.add(new Ingredient("Pebrot verd","g",false,500.0));
-        itemList.add(new Ingredient("Pomes","Kg",false,3.5));
-        itemList.add(new Ingredient("Arròs","Kg",false,2.0));
-        itemList.add(new Ingredient("Tomàquets","Kg",false,1.5));
-        itemList.add(new Ingredient("Iogurts naturals","u",false,6.0));
-        itemList.add(new Ingredient("Maduixes","g",false,800.0));
-    }
     protected void omplirLlista(IngrList llista) {
         if(llista == null){}
-        else {for(Ingredient i: llista.getMapingr().values()){
-            itemList.add(i);
-        }}
+        else {for(Ingredient i: llista.getMapingr().values()){itemList.add(i);}
+            afegirUnitats(llista);
+        }
+
+    }
+    private IngrList afegirUnitats(IngrList llista){
+        for(Ingredient i: llista.getMapingr().values()){
+            if(!tots_ingr.getMapingr().containsKey(i.getNom())){
+                llista.getMapingr().get(i).setUnitats(trobarUnitats(i));
+            }
+        }
+        return llista;
+    }
+    private String trobarUnitats(Ingredient ingr){
+        if(!tots_ingr.getMapingr().containsKey(ingr.getNom())){
+            return tots_ingr.getMapingr().get(ingr.getNom()).getUnitats();
+        }
+        return null;
     }
 
 
@@ -157,12 +158,11 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         });
     }
 
-
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {}
     public void onNothingSelected(AdapterView<?> parent) {}
 
     //INTERACCIÓ A LA LLISTA
-    /*private void afegirIngredient() {
+    private void afegirIngredient() {
         String prod_text = add_prod.getText().toString();
         String quant_text = add_quant.getText().toString();
         String units_text = add_units.getSelectedItem().toString();
@@ -197,9 +197,8 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         }
     }
     private void escriureIngredient(){
-
         try {
-            FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+            FileOutputStream fos = openFileOutput(FITXER, Context.MODE_PRIVATE);
             for (int i=0; i<itemList.size(); i++){
                 Ingredient in = itemList.get(i);
                 String line = String.format("%s;%s;%b;%d\n", in.getNom(), in.getUnitats(), in.isChecked(), in.getQuant());
@@ -218,7 +217,7 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
     private void llegirIngredient(){
         itemList = new ArrayList<>();
         try {
-            FileInputStream fis = openFileInput(FILENAME);
+            FileInputStream fis = openFileInput(FITXER);
             byte[] buffer = new byte[MAX_BYTES];
             int nread = fis.read(buffer);
             String content = new String(buffer, 0, nread);
@@ -234,8 +233,6 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
             Toast.makeText(this, R.string.cannot_read, Toast.LENGTH_SHORT).show();
         }
     }
-    */
-
     private void eliminarIngredient(final int pos) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.confirm);
@@ -250,6 +247,38 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         });
         builder.setNegativeButton(android.R.string.cancel, null);
         builder.create().show();
+    }
+
+  //GUARDAR DADES
+    private void guardar() {
+        try {
+            FileOutputStream fos = openFileOutput(FITXER, Context.MODE_PRIVATE);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(llista_ingr);
+        } catch (FileNotFoundException e) {
+            Log.e("Llista", "guardar: FileNotFoundException");
+        } catch (IOException e) {
+            Log.e("Llista", "guardar: IOException");
+        }
+    }
+
+    private void recuperar() throws IOException {
+        try {
+            FileInputStream fis = openFileInput(FITXER);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            llista_ingr = (IngrList)ois.readObject();
+        } catch (ClassNotFoundException e) {
+            Log.e("Llista", "Recuperar: ClassNotFoundException");
+        } catch (OptionalDataException e) {
+            Log.e("Llista", "Recuperar: OptionalDataException");
+        } catch (StreamCorruptedException e) {
+            Log.e("Llista", "Recuperar: StreamCorruptedException");
+        }
+    }
+
+    private void dataChanged() {
+        adapter.notifyDataSetChanged();
+        guardar();
     }
 
 }

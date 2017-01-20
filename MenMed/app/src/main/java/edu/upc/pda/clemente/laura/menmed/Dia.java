@@ -6,18 +6,15 @@ import java.util.TreeMap;
 
 public class Dia {
     //ATRIBUTS
-    private String[] dia;
-        public String[] getDia(){return dia;}
+    private Plat[] dia;
+        public Plat[] getDia(){return dia;}
         //public void setDia(String[] dia) {this.dia = dia;}
 
     //CONSTRUCTOR
     public Dia(String[] plats) {
-        this.dia = new String[plats.length];
+        this.dia = new Plat[plats.length];
         for (int i = 0; i < plats.length; i++) {
-            dia[i] = plats[i];
+            dia[i] = new Plat(plats[i]);
         }
     }
-
-
-
 }

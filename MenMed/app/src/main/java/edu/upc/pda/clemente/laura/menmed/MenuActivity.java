@@ -53,11 +53,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
 
     private IngrList tots_ingr;
     private IngrList llista_ingr = new IngrList();
-
     private Intent intent;
-
-    //private ArrayList<IngrList> itemList = new ArrayList<>();
-
 
     private int ids_recipes[] = {R.id.esm_recept, R.id.mig_recept, R.id.dinar_recept1, R.id.dinar_recept2, R.id.dinar_recept3, R.id.ber_recept, R.id.sopar_recept1, R.id.sopar_recept2, R.id.sopar_recept3};
     private TextView TVEsm, TVMig, TVDin1, TVDin2, TVDin3, TVBer, TVSop1, TVSop2, TVSop3;
@@ -236,9 +232,10 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
                 TextView rec = (TextView) findViewById(ids_recipes[i]);
                 for (int j = 0; j < all_recipes.length; j++) {
                     if (rec.getText().equals(receptes[j].getNom())) {
-                        //System.out.println(receptes[j].toStringIngr());
                         for(Ingredient k: receptes[j].getLlista().getMapingr().values()){
-                            llista_ingr.getMapingr().put(k.getNom(), k);}
+                            llista_ingr.getMapingr().put(k.getNom(), k);
+                            afegirUnitats(llista_ingr);
+                        }
                     }
                 }
             }
@@ -286,7 +283,6 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         }
         return null;
     }
-
     private IngrList afegirUnitats(IngrList llista){
         for(Ingredient i: llista.getMapingr().values()){
             if(!tots_ingr.getMapingr().containsKey(i.getNom())){

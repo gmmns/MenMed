@@ -63,7 +63,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
     private static final String FITXER = "llista.obj";
 
     private IngrList tots_ingr;
-    private IngrList llista_ingr = new IngrList();
+    private IngrList llista_ingr;
     private Intent intent;
 
     private int ids_recipes[] = {R.id.esm_recept, R.id.mig_recept, R.id.dinar_recept1, R.id.dinar_recept2, R.id.dinar_recept3, R.id.ber_recept, R.id.sopar_recept1, R.id.sopar_recept2, R.id.sopar_recept3};
@@ -105,8 +105,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         btn_compr = (ImageButton) findViewById(R.id.btn_compr);
         btn_compr.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {enviarALlista();}});
 
-        try {
-            recuperar();
+        try {recuperar();
         } catch (IOException e) {
             llista_ingr = new IngrList();
             omplirLlista(llista_ingr);
@@ -159,7 +158,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
             String r = this.all_ingr[i];
             String[] parts = r.split(";");
             Ingredient ingr = new Ingredient(parts[0], parts[1]);
-            tots_ingr.getMapingr().put(ingr.getNom(), ingr);
+            tots_ingr.getMapingr().put(ingr.getNom().toString(), ingr);
         }
     }
     //MÈTODE QUE PERMET CANVIAR D'ACTIVITAT
@@ -239,7 +238,8 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
     }
 
     //MÈTODES de LLISTA
-    private void mostrarLlista(){tots_ingr.toString();}
+    private void mostrarLlista(){
+        System.out.println(tots_ingr.toString());}
     private void enviarALlista() {
         if (!trobarCheck()) {
             Toast.makeText(MenuActivity.this, "No has sel·leccionat cap recepta", Toast.LENGTH_SHORT).show();
@@ -275,7 +275,9 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
                 TextView rec = (TextView) findViewById(ids_recipes[i]);
                 for (int j = 0; j < all_recipes.length; j++) {
                     if (rec.getText().equals(receptes[j].getNom())) {
+                        int com = Integer.parseInt(TV_com[i].getText().toString());
                         for(Ingredient k: receptes[j].getLlista().getMapingr().values()){
+                            k.setQuant(k.getQuant()*(com));
                             llista_ingr.getMapingr().put(k.getNom(), k);
                             //afegirUnitats(llista_ingr);
                         }
@@ -289,8 +291,8 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         if(llista == null){
             llista_ingr = new IngrList();
         }
-        else {for(Ingredient i: llista.getMapingr().values()){llista_ingr.getMapingr().put(i.getNom()
-                ,i);}
+        else {
+            for(Ingredient i: llista.getMapingr().values()){llista_ingr.getMapingr().put(i.getNom(),i);}
             //afegirUnitats(llista);
         }
         guardar();
@@ -328,22 +330,20 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         return i;
     }
 
-
+/*
     private String trobarUnitats(Ingredient ingr){
-        if(!tots_ingr.getMapingr().containsKey(ingr.getNom())){
-            return tots_ingr.getMapingr().get(ingr.getNom()).getUnitats();
+        if(tots_ingr.getMapingr().containsKey(ingr.getNom())){
+            return tots_ingr.getMapingr().get(ingr.getNom()).getUnitats().toString();
         }
         return null;
     }
-    /*private IngrList afegirUnitats(IngrList llista){
-        for(Ingredient i: llista.getMapingr().values()){
-            if(tots_ingr.getMapingr().containsKey(i.getNom())){
-                llista.getMapingr().get(i).setUnitats(trobarUnitats(i));
-            }
+    private IngrList afegirUnitats(IngrList llista){
+        for(Ingredient i: llista.getMapingr().values()) {
+            llista.getMapingr().get(i).setUnitats(trobarUnitats(i));
         }
         return llista;
-    }*/
-
+    }
+*/
     //PERSISTÈNCIA
     //recuperar i crear l'arxiu extern
     protected void onStop() {super.onStop();guardar();}

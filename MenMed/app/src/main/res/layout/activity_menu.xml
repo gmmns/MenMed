@@ -99,7 +99,7 @@
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="70dp">
 
                         <Space
                             android:layout_height="match_parent"
@@ -114,7 +114,7 @@
                         <TextView
                             android:text="@string/breakfast_plate"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:id="@+id/esm_recept"
                             android:gravity="center_vertical"
@@ -188,7 +188,7 @@
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp">
+                        android:layout_height="70dp">
 
                         <Space
                             android:layout_height="match_parent"
@@ -196,7 +196,7 @@
 
                         <CheckBox
                             android:layout_width="30dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="70dp"
                             android:id="@+id/mig_check" />
 
                         <TextView
@@ -278,7 +278,7 @@
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp">
+                        android:layout_height="70dp">
 
                         <Space
                             android:layout_height="match_parent"
@@ -358,7 +358,7 @@
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp">
+                        android:layout_height="70dp">
 
                         <Space
                             android:layout_height="match_parent"
@@ -438,7 +438,7 @@
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp">
+                        android:layout_height="70dp">
 
                         <Space
                             android:layout_height="match_parent"
@@ -527,7 +527,7 @@
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp">
+                        android:layout_height="70dp">
 
                         <Space
                             android:layout_height="match_parent"
@@ -535,7 +535,7 @@
 
                         <CheckBox
                             android:layout_width="30dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="50dp"
                             android:id="@+id/ber_check" />
 
                         <TextView
@@ -616,7 +616,7 @@
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp">
+                        android:layout_height="70dp">
 
                         <Space
                             android:layout_height="match_parent"
@@ -624,12 +624,12 @@
 
                         <CheckBox
                             android:layout_width="30dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="50dp"
                             android:id="@+id/sopar_check1" />
 
                         <TextView
                             android:text="@string/dinner_plate1"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:id="@+id/sopar_recept1"
                             android:layout_weight="1"
@@ -696,7 +696,7 @@
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp">
+                        android:layout_height="70dp">
 
                         <Space
                             android:layout_height="match_parent"
@@ -704,7 +704,7 @@
 
                         <CheckBox
                             android:layout_width="30dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="50dp"
                             android:id="@+id/sopar_check2" />
 
                         <TextView
@@ -776,7 +776,7 @@
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp">
+                        android:layout_height="70dp">
 
                         <Space
                             android:layout_height="match_parent"
@@ -784,7 +784,7 @@
 
                         <CheckBox
                             android:layout_width="30dp"
-                            android:layout_height="match_parent"
+                            android:layout_height="50dp"
                             android:id="@+id/sopar_check3" />
 
                         <TextView

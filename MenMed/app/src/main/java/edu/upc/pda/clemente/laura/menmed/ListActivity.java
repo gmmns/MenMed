@@ -164,7 +164,6 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
 
                 //String units_text = add_units.getSelectedItem().toString();
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 

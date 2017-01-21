@@ -11,7 +11,7 @@ public class IngrList implements Serializable {
         public void setMapingr (Map<String, Ingredient> mapingr) {this.mapingr = mapingr;}
 
     public IngrList(){
-        this.mapingr = new TreeMap<String, Ingredient>();
+        this.mapingr = new TreeMap<>();
     }
 
 

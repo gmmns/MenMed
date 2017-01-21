@@ -1,6 +1,7 @@
 package edu.upc.pda.clemente.laura.menmed;
 
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,11 +26,14 @@ import android.widget.Toast;
 import org.w3c.dom.Text;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.OptionalDataException;
 import java.io.Serializable;
+import java.io.StreamCorruptedException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -56,6 +60,8 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         public Recepta[] getReceptes() {return receptes;}
         public void setReceptes(Recepta[] receptes) {this.receptes = receptes;}
 
+    private static final String FITXER = "llista.obj";
+
     private IngrList tots_ingr;
     private IngrList llista_ingr = new IngrList();
     private Intent intent;
@@ -65,6 +71,9 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         private TextView TV_recipes[] = {TVEsm, TVMig, TVDin1, TVDin2, TVDin3, TVBer, TVSop1, TVSop2, TVSop3};
 
     private int ids_checkbox[] = {R.id.esm_check, R.id.mig_check, R.id.dinar_check1, R.id.dinar_check2, R.id.dinar_check3, R.id.ber_check, R.id.sopar_check1, R.id.sopar_check2, R.id.sopar_check3};
+        private CheckBox esm_check, mig_check, dinar_check1, dinar_check2, dinar_check3, ber_check, sopar_check1, sopar_check2, sopar_check3;
+        private CheckBox[] checks = {esm_check, mig_check, dinar_check1, dinar_check2, dinar_check3, ber_check, sopar_check1, sopar_check2, sopar_check3};
+
     private int ids_comensals[] = {R.id.esm_com, R.id.mig_com, R.id.dinar_com1, R.id.dinar_com2, R.id.dinar_com3, R.id.ber_com, R.id.sopar_com1, R.id.sopar_com2, R.id.sopar_com3};
         private TextView comEsm, comMig, comDin1, comDin2, comDin3, comBer, comSop1, comSop2, comSop3;
         private TextView[] TV_com = {comEsm, comMig, comDin1, comDin2, comDin3, comBer, comSop1, comSop2, comSop3};
@@ -96,6 +105,13 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         btn_compr = (ImageButton) findViewById(R.id.btn_compr);
         btn_compr.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {enviarALlista();}});
 
+        try {
+            recuperar();
+        } catch (IOException e) {
+            llista_ingr = new IngrList();
+            omplirLlista(llista_ingr);
+        }
+
         for (int i=0; i<TV_recipes.length; i++){
             final int j = i;
             TV_recipes[i] = (TextView) findViewById(ids_recipes[i]);
@@ -103,6 +119,8 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
                 public void onClick(View view) {mostrarRecepta(trobarRecepta(TV_recipes[j].getText().toString()));}});}
         for (int i=0; i<ids_comensals.length; i++){
             TV_com[i] = (TextView) findViewById(ids_comensals[i]);}
+        for (int i=0; i<checks.length; i++){
+            checks[i] = (CheckBox) findViewById(ids_checkbox[i]);}
         for (int i=0; i<ids_less.length; i++){
             final int j = i;
             btn_less[i] = (ImageButton) findViewById(ids_less[i]);
@@ -120,9 +138,8 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         mostrarLlista();
         init();
         calendar();
-        intent = new Intent(MenuActivity.this, ListActivity.class);
+        intent = new Intent(getApplicationContext(), ListActivity.class);
         intent.putExtra("llista_sencera", tots_ingr);
-
     }
 
     //MÈTODES
@@ -150,7 +167,8 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         btn_list = (ImageButton) findViewById(R.id.btn_list);
         btn_list.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-            startActivity(intent);}});
+                esborrarCheck();
+                startActivity(intent);}});
     }
     //CALENDARI SUPERIOR
     protected void calendar(){
@@ -189,6 +207,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
             public void onSelectDate(LocalDateTime mSelectedDate) {
                 //callback when a date is selcted
                 mostrarDia(menu.getMenu()[mSelectedDate.getDayOfMonth()]);
+                esborrarCheck();
             }
         };
 
@@ -213,6 +232,11 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
             recept_text.setText(dia.getDia()[i].getRecepta());
         }
     }
+    private void esborrarCheck(){
+        for(int i=0; i<ids_checkbox.length; i++){
+            checks[i].setChecked(false);
+        }
+    }
 
     //MÈTODES de LLISTA
     private void mostrarLlista(){tots_ingr.toString();}
@@ -221,6 +245,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
             Toast.makeText(MenuActivity.this, "No has sel·leccionat cap recepta", Toast.LENGTH_SHORT).show();
         } else {
             omplirLlista();
+            esborrarCheck();
         }
     }
     private boolean trobarCheck() {
@@ -252,7 +277,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
                     if (rec.getText().equals(receptes[j].getNom())) {
                         for(Ingredient k: receptes[j].getLlista().getMapingr().values()){
                             llista_ingr.getMapingr().put(k.getNom(), k);
-                            afegirUnitats(llista_ingr);
+                            //afegirUnitats(llista_ingr);
                         }
                     }
                 }
@@ -260,7 +285,16 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         }
         intent.putExtra("llista_propia", llista_ingr);
     }
-
+    protected void omplirLlista(IngrList llista) {
+        if(llista == null){
+            llista_ingr = new IngrList();
+        }
+        else {for(Ingredient i: llista.getMapingr().values()){llista_ingr.getMapingr().put(i.getNom()
+                ,i);}
+            //afegirUnitats(llista);
+        }
+        guardar();
+    }
     //MÈTODES de RECEPTES
     private void mostrarRecepta(int i){
         if(i==-1){
@@ -276,7 +310,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
 
             mRec.setText(this.receptes[i].getNom());
             mElab.setText(this.receptes[i].getElaboracio());
-            mIngr.setText(afegirUnitats(this.receptes[i].getLlista()).toString());
+            mIngr.setText(this.receptes[i].getLlista().toString());
 
             mBuilder.setView(mView);
             AlertDialog dialog = mBuilder.create();
@@ -301,47 +335,43 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         }
         return null;
     }
-    private IngrList afegirUnitats(IngrList llista){
+    /*private IngrList afegirUnitats(IngrList llista){
         for(Ingredient i: llista.getMapingr().values()){
-            if(!tots_ingr.getMapingr().containsKey(i.getNom())){
+            if(tots_ingr.getMapingr().containsKey(i.getNom())){
                 llista.getMapingr().get(i).setUnitats(trobarUnitats(i));
             }
         }
         return llista;
-    }
+    }*/
 
     //PERSISTÈNCIA
-    //recuperar l'arxiu extern
-    public static IngrList recuperarLlista(String nomFitxer) {
-        IngrList llista;
+    //recuperar i crear l'arxiu extern
+    protected void onStop() {super.onStop();guardar();}
+    private void guardar() {
         try {
-            FileInputStream fis = new FileInputStream(nomFitxer);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            llista = (IngrList) ois.readObject();
-        } catch (IOException e) {llista = new IngrList();
-        } catch (ClassNotFoundException e) {
-            llista = new IngrList();
-        }
-        return llista;
-    }
-    public static Menu recuperarMenu(String nomFitxer) {
-        Menu menu;
-        try {
-            FileInputStream fis = new FileInputStream(nomFitxer);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            menu = (Menu) ois.readObject();
-        } catch (IOException e) {menu = new Menu();
-        } catch (ClassNotFoundException e) {menu = new Menu();}
-        return menu;
-    }
-    //Passar per consola l'arxiu extern
-    public void desar(String nomFitxer){
-        try {
-            FileOutputStream fos = new FileOutputStream(nomFitxer);
+            FileOutputStream fos = openFileOutput(FITXER, Context.MODE_PRIVATE);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(this);
+            oos.writeObject(llista_ingr);
+        } catch (FileNotFoundException e) {
+            Log.e("Llista", "guardar: FileNotFoundException");
+            Toast.makeText(this, R.string.cannot_write, Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.e("Llista", "guardar: IOException");
+            Toast.makeText(this, R.string.cannot_write, Toast.LENGTH_SHORT).show();
+        }
+    }
+    private void recuperar() throws IOException {
+        try {
+            FileInputStream fis = openFileInput(FITXER);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            llista_ingr = (IngrList)ois.readObject();
+            omplirLlista(llista_ingr);
+        } catch (ClassNotFoundException e) {
+            Log.e("Llista", "Recuperar: ClassNotFoundException");
+        } catch (OptionalDataException e) {
+            Log.e("Llista", "Recuperar: OptionalDataException");
+        } catch (StreamCorruptedException e) {
+            Log.e("Llista", "Recuperar: StreamCorruptedException");
         }
     }
 

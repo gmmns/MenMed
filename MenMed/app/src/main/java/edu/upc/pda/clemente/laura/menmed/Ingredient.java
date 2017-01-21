@@ -48,7 +48,6 @@ public class Ingredient implements Serializable {
 
 
     //MÈTODES
-
     public String toString(){
         return this.nom + "[" + this.quant + " " + this.unitats + "]";
     }

@@ -35,13 +35,12 @@ import java.util.ArrayList;
 
 public class ListActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    private static final String FITXER = "llista.obj";
-    private static final int MAX_BYTES = 10000;
-    private Intent intent;
-
     private ArrayList<Ingredient> itemList = new ArrayList<>();
     private IngrList llista_ingr;
     private IngrList tots_ingr;
+
+    private static final String FITXER = "llista.obj";
+
 
     private ListActivityAdapter adapter;
 
@@ -61,20 +60,10 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
     private EditText add_quant;
     private Spinner add_units;
 
-
-    protected void onStop() {super.onStop();escriureIngredient();}
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-        intent = new Intent(ListActivity.this, MenuActivity.class);
-
-        try {
-            recuperar();
-        } catch (IOException e) {
-            llista_ingr = new IngrList();
-        }
 
         //inicialitzar i relacionar layout i codi
         init();
@@ -89,6 +78,7 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
 
         //accions llista de la compra
         adapter = new ListActivityAdapter(this, R.layout.shopping_item, itemList);
+        adapter.notifyDataSetChanged();
         ArrayAdapter<CharSequence> adapt_spin = ArrayAdapter.createFromResource(this,R.array.all_units, android.R.layout.simple_spinner_item);
         adapt_spin.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         add_units.setAdapter(adapt_spin);
@@ -122,6 +112,7 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
                 return true;
             }
         });
+        guardar();
 
     }
 
@@ -130,7 +121,7 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         else {for(Ingredient i: llista.getMapingr().values()){itemList.add(i);}
             afegirUnitats(llista);
         }
-
+        guardar();
     }
     private IngrList afegirUnitats(IngrList llista){
         for(Ingredient i: llista.getMapingr().values()){
@@ -150,13 +141,17 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
     //MÈTODE QUE PERMET CANVIAR D'ACTIVITAT
     protected void init(){
         btn_menu = (ImageButton) findViewById(R.id.btn_menu);
-        btn_menu.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {startActivity(intent);}});
+        btn_menu.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                guardar();
+                finish();}});
     }
 
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {}
     public void onNothingSelected(AdapterView<?> parent) {}
 
     //INTERACCIÓ A LA LLISTA
+
     private void afegirIngredient() {
         String prod_text = add_prod.getText().toString();
         String quant_text = add_quant.getText().toString();
@@ -191,43 +186,6 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
 
         }
     }
-    private void escriureIngredient(){
-        try {
-            FileOutputStream fos = openFileOutput(FITXER, Context.MODE_PRIVATE);
-            for (int i=0; i<itemList.size(); i++){
-                Ingredient in = itemList.get(i);
-                String line = String.format("%s;%s;%b;%f\n", in.getNom(), in.getUnitats(), in.isChecked(), in.getQuant());
-                fos.write(line.getBytes());
-            }
-            fos.close();
-        } catch (FileNotFoundException e) {
-            Log.e("Menmed", "writeItemList: FileNotFoundException");
-            Toast.makeText(this, R.string.cannot_write, Toast.LENGTH_SHORT).show();
-
-        } catch (IOException e) {
-            Log.e("Menmed", "writeItemList:IOException");
-            Toast.makeText(this, R.string.cannot_write, Toast.LENGTH_SHORT).show();
-        }
-    }
-    private void llegirIngredient(){
-        itemList = new ArrayList<>();
-        try {
-            FileInputStream fis = openFileInput(FITXER);
-            byte[] buffer = new byte[MAX_BYTES];
-            int nread = fis.read(buffer);
-            String content = new String(buffer, 0, nread);
-            String[] lines = content.split("\n");
-            for (int i=0; i<lines.length; i++){
-                String[] parts = lines[i].split(";");
-                itemList.add(new Ingredient(parts[0], parts[1], parts[2].equals("true"), Double.parseDouble(parts[3])));
-            }
-        } catch (FileNotFoundException e){
-            Log.i("Menmed","readItemList: FileNotFoundException");
-        } catch (IOException e) {
-            Log.e("Menmed", "readItemList:IOException");
-            Toast.makeText(this, R.string.cannot_read, Toast.LENGTH_SHORT).show();
-        }
-    }
     private void eliminarIngredient(final int pos) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.confirm);
@@ -244,7 +202,9 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         builder.create().show();
     }
 
-  //GUARDAR DADES
+    //PERSISTÈNCIA
+    //recuperar i crear l'arxiu extern
+    protected void onStop() {super.onStop();guardar();}
     private void guardar() {
         try {
             FileOutputStream fos = openFileOutput(FITXER, Context.MODE_PRIVATE);
@@ -252,27 +212,13 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
             oos.writeObject(llista_ingr);
         } catch (FileNotFoundException e) {
             Log.e("Llista", "guardar: FileNotFoundException");
+            Toast.makeText(this, R.string.cannot_write, Toast.LENGTH_SHORT).show();
         } catch (IOException e) {
             Log.e("Llista", "guardar: IOException");
+            Toast.makeText(this, R.string.cannot_write, Toast.LENGTH_SHORT).show();
         }
     }
-    private void recuperar() throws IOException {
-        try {
-            FileInputStream fis = openFileInput(FITXER);
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            llista_ingr = (IngrList)ois.readObject();
-        } catch (ClassNotFoundException e) {
-            Log.e("Llista", "Recuperar: ClassNotFoundException");
-        } catch (OptionalDataException e) {
-            Log.e("Llista", "Recuperar: OptionalDataException");
-        } catch (StreamCorruptedException e) {
-            Log.e("Llista", "Recuperar: StreamCorruptedException");
-        }
-    }
-    private void dataChanged() {
-        adapter.notifyDataSetChanged();
-        guardar();
-    }
+
 
 }
 

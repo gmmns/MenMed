@@ -41,8 +41,11 @@ public class Ingredient implements Serializable {
         this.quant = quant;
     }
     public Ingredient(String[] ingr){
-        this.quant = Double.parseDouble(ingr[0]);
-        this.nom = ingr[1];
+        if(ingr.length==2){
+            if(esDecimal(ingr[0])) this.quant = Double.parseDouble(ingr[0]);
+            if(ingr[1]!=null) this.nom = ingr[1];
+        }
+
     }
 
 
@@ -52,5 +55,16 @@ public class Ingredient implements Serializable {
         return this.nom + "[" + this.quant + " " + this.unitats + "]";
     }
 
-
+    public boolean esDecimal(String cad)
+    {
+        try
+        {
+            Double.parseDouble(cad);
+            return true;
+        }
+        catch(NumberFormatException nfe)
+        {
+            return false;
+        }
+    }
 }

@@ -41,20 +41,11 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private static final String FITXER = "llista.obj";
 
-
     private ListActivityAdapter adapter;
 
     private ListView list;
     private ImageButton btn_menu;
 
-    //private EditText edit_item;
-    //private Button btn_add;
-
-    private int ids_checkbox[] = {R.id.esm_check, R.id.mig_check, R.id.dinar_check1, R.id.dinar_check2, R.id.dinar_check3, R.id.ber_check, R.id.sopar_check1, R.id.sopar_check2, R.id.sopar_check3};
-    private int ids_recipes[] = {R.id.esm_recept, R.id.mig_recept, R.id.dinar_recept1, R.id.dinar_recept2, R.id.dinar_recept3, R.id.ber_recept, R.id.sopar_recept1, R.id.sopar_recept2, R.id.sopar_recept3};
-
-    private ImageButton btn_list;
-    private ImageButton btn_compr;
     private FloatingActionButton btn_add;
     private EditText add_prod;
     private EditText add_quant;
@@ -72,7 +63,7 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         add_units = (Spinner) findViewById(R.id.add_units);
 
         //Omplir dades amb informació MenuActivity
-        tots_ingr = (IngrList) getIntent().getExtras().getSerializable("llista_sencera");
+        this.tots_ingr = (IngrList) getIntent().getExtras().getSerializable("llista_sencera");
         llista_ingr = (IngrList) getIntent().getExtras().getSerializable("llista_propia");
             omplirLlista(llista_ingr);
 
@@ -98,7 +89,7 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         list.setAdapter(adapter);
         btn_add = (FloatingActionButton) findViewById(R.id.btn_add);
             btn_add.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {
-            //afegirIngredient();
+            afegirIngredient();
         }});
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
@@ -113,20 +104,22 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
         guardar();
-
     }
 
     protected void omplirLlista(IngrList llista) {
         if(llista == null){}
-        else {for(Ingredient i: llista.getMapingr().values()){itemList.add(i);}
-            afegirUnitats(llista);
+        else {for(Ingredient i: llista.getMapingr().values()){
+            itemList.add(i);
+            afegirUnitats(itemList);}
         }
         guardar();
     }
-    private IngrList afegirUnitats(IngrList llista){
-        for(Ingredient i: llista.getMapingr().values()){
-            if(!tots_ingr.getMapingr().containsKey(i.getNom())){
-                llista.getMapingr().get(i).setUnitats(trobarUnitats(i));
+
+
+    private ArrayList<Ingredient> afegirUnitats(ArrayList<Ingredient> llista){
+        for(int i=0; i<llista.size(); i++){
+            if(!tots_ingr.getMapingr().containsKey(llista.get(i).getNom())){
+                llista.get(i).setUnitats(trobarUnitats(llista.get(i)));
             }
         }
         return llista;
@@ -158,27 +151,18 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         String units_text = add_units.getSelectedItem().toString();
         Boolean sum_quant = false;
         add_units.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String quant_text = parent.getItemAtPosition(position).toString();
-
-                //String units_text = add_units.getSelectedItem().toString();
             }
-            @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
         });
+        /*
         if (!prod_text.isEmpty() && !quant_text.isEmpty() && !units_text.isEmpty()) {
             double quant_num = Double.parseDouble(quant_text);
-            llista_ingr.getMapingr().put(prod_text, new Ingredient(prod_text,units_text,false,quant_num));
-            /* Gemma, aquestes tres línies que venen ara, és com estava abans de que provés de sumar quantitats d'ingredients amb
-            el mateix nom. Jo crec que si s'ha d'intentar alguna cosa, el més fàcil és que provem de ni que sigui afegir un ingredient
-            que és amb aquestes tres línies que venen a continuació). Si volguessis provar lu de l'if, les has de borrar!! */
-            adapter.notifyDataSetChanged();
-            add_prod.setText("");
-            add_quant.setText("");
-            /*for (int i=0; i<itemList.size(); i++){
+            itemList.add(new Ingredient(prod_text,units_text,false,quant_num));
+            for (int i=0; i<itemList.size(); i++){
                 if (llista_ingr.getMapingr().get(i).getNom().equals(prod_text)){
                     sum_quant = true;
                     Double new_num = llista_ingr.getMapingr().get(i).getQuant();
@@ -195,7 +179,7 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
                 add_prod.setText("");
                 add_quant.setText("");
             }
-           */
+
 
         }
 
@@ -204,7 +188,7 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
             //Snackbar avis = Snackbar.make(View view, "Omple tots els camps obligatoris!", Snackbar.LENGTH_LONG);
             //avis.show();
 
-        }
+        }*/
     }
     private void eliminarIngredient(final int pos) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

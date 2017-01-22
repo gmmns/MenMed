@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MenMed</string>
+    <string name="breakfast_plate">Breakfast plate</string>
+    <string name="breakfast_title">Breakfast</string>
+    <string name="confirm">Confirmation</string>
+    <string name="confirm_erase">Do you want to delete ingredient?</string>
+    <string name="dinner_plate1">First dinner plate</string>
+    <string name="dinner_plate2">Second dinner plate</string>
+    <string name="dinner_title">Dinner</string>
+    <string name="edit_prod">Product</string>
+    <string name="edit_quant">Quantity</string>
+    <string name="fri">Fri</string>
+    <string name="lunch_plate1">First lunch plate</string>
+    <string name="lunch_plate2">Second lunch plate</string>
+    <string name="lunch_title">Lunch</string>
+    <string name="mon">Mon</string>
+    <string name="product">Product</string>
+    <string name="product_name">Product name</string>
+    <string name="quantity">Quantity</string>
+    <string name="sat">Sat</string>
+    <string name="sun">Sun</string>
+    <string name="thu">Thu</string>
+    <string name="today">Today</string>
+    <string name="today_menu">Today\'s menu</string>
+    <string name="tue">Tue</string>
+    <string name="wed">Wed</string>
+    <string name="snack_title">Snack</string>
+    <string name="elevenses_title">Elevenses</string>
+    <string name="remove">Delete</string>
+    <string name="elevenses_plate">Elevenses plate</string>
+    <string name="erase">Delete</string>
+    <string name="snack_plate">Snack plate</string>
+    <string name="confirm_message">Are you sure you want to delete ingredient?</string>
+    <string name="confirm_remove">Do you want to delete \'%1$s\'?</string>
+    <string name="data_missing">Complete all fields</string>
+    <string name="dinner_plate3">Dinner desserts</string>
+    <string name="lunch_plate3">Lunch desserts</string>
+
+    <array name="all_menu">
+        <item>"Milk. Homemade walnut and aniseed cake. Pear.";"Café latte. Vegetable sandwich.";"
+            Breaded leeks with epper sauce.";"Rabbit stew with white wine and chives.";"Orange.";"Apple with cinnamon.";"
+            Escarole salad, grated carrot and feta cheese.";"Eggplant omelette with bread and tomato.";"Fruit yogurt."</item>
+        <item>"Café latte. Wholegrain breakfast cereal.";"Melba toast with blue cheese and caramelized onion. Fresh lemon juice.";"
+            Endives with apple and tartar sauce.";"Stewed stuffed squid.";"Banana.";"Curd with pine nuts.";"
+            Cauliflower sauteed with spinach and tender garlic.";"Grilled chicken breast with fried green tomatoes.";"Pear compote."</item>
+        <item>"Tea. Mini serrano ham sandwich with virgin olive oil.";"Grapefruit segments with honey.";"
+            Couscous with carrot and fresh mint.";"Eggs Benedict with lamb's lettuce.";"Mandarins.";"Orange.";"
+            Star soup.";"Pisto with chickpeas.";"Grated apple with lemon juice."</item>
+        <item>"Café latte. Toast with arugula, fresh cheese and virgin olive oil.";"Yogurt. Muesli.";"
+            Rice with chopped tortilla and peas.";"Cod stew with artichokes.";"Applesauce.";"Yogurt.";"
+            Gazpachuelo.";"Pork tenderloin with mustard and baby carrots.";"Plain yogurt with hazelnuts and prunes."</item>
+        <item>"Milk with chocolate powder. Melba toast with apple marmalade.";"Mini tuna sandwich. Fresh orange juice.";"
+            Tomato and basil soup.";"Faba beans sauteed with blood sausage.";"Pear.";"Oats.";"
+            Thistles with almonds and pine nuts.";"Baked trout with Provencal tomatoes.";"Mandarins."</item>
+        <item>"Milk. Toast with virgin olive oil, garlic and oregano. Fresh pineapple.";"Appetizer: French or Italian bread.";"
+            Macaroni with diced salmon.";"Chicken in pepitoria.";"Cream of orange with chocolate chips.";"Tarta de Santiago.";"
+            Creamed spinach.";"Fried eggs with baked potatoes.";"Plain yogurt."</item>
+        <item>"Café latte. Croissant. Mandarins.";"Appetizer: fresh cheese macerated wtih pepper and olive oil.";"
+            Zucchini bread.";"Octopus and onions.";"Apple pie.";"Fresh fruit juice.";"
+            Cream of carrots.";"Cheese turnovers with red cabbage salad.";"Custard apple."</item>
+        <item>"Milk. Homemade walnut and aniseed cake. Pear.";"Café latte. Vegetable sandwich.";"
+            Breaded leeks with epper sauce.";"Rabbit stew with white wine and chives.";"Orange.";"Apple with cinnamon.";"
+            Escarole salad, grated carrot and feta cheese.";"Eggplant omelette with bread and tomato.";"Fruit yogurt."</item>
+        <item>"Café latte. Wholegrain breakfast cereal.";"Melba toast with blue cheese and caramelized onion. Fresh lemon juice.";"
+            Endives with apple and tartar sauce.";"Stewed stuffed squid.";"Banana.";"Curd with pine nuts.";"
+            Cauliflower sauteed with spinach and tender garlic.";"Grilled chicken breast with fried green tomatoes.";"Pear compote."</item>
+        <item>"Tea. Mini serrano ham sandwich with virgin olive oil.";"Grapefruit segments with honey.";"
+            Couscous with carrot and fresh mint.";"Eggs Benedict with lamb's lettuce.";"Mandarins.";"Orange.";"
+            Star soup.";"Pisto with chickpeas.";"Grated apple with lemon juice."</item>
+        <item>"Café latte. Toast with arugula, fresh cheese and virgin olive oil.";"Yogurt. Muesli.";"
+            Rice with chopped tortilla and peas.";"Cod stew with artichokes.";"Applesauce.";"Yogurt.";"
+            Gazpachuelo.";"Pork tenderloin with mustard and baby carrots.";"Plain yogurt with hazelnuts and prunes."</item>
+        <item>"Milk with chocolate powder. Melba toast with apple marmalade.";"Mini tuna sandwich. Fresh orange juice.";"
+            Tomato and basil soup.";"Faba beans sauteed with blood sausage.";"Pear.";"Oats.";"
+            Thistles with almonds and pine nuts.";"Baked trout with Provencal tomatoes.";"Mandarins."</item>
+        <item>"Milk. Toast with virgin olive oil, garlic and oregano. Fresh pineapple.";"Appetizer: French or Italian bread.";"
+            Macaroni with diced salmon.";"Chicken in pepitoria.";"Cream of orange with chocolate chips.";"Tarta de Santiago.";"
+            Creamed spinach.";"Fried eggs with baked potatoes.";"Plain yogurt."</item>
+        <item>"Café latte. Croissant. Mandarins.";"Appetizer: fresh cheese macerated wtih pepper and olive oil.";"
+            Zucchini bread.";"Octopus and onions.";"Apple pie.";"Fresh fruit juice.";"
+            Cream of carrots.";"Cheese turnovers with red cabbage salad.";"Custard apple."</item>
+        <item>"Milk. Homemade walnut and aniseed cake. Pear.";"Café latte. Vegetable sandwich.";"
+            Breaded leeks with epper sauce.";"Rabbit stew with white wine and chives.";"Orange.";"Apple with cinnamon.";"
+            Escarole salad, grated carrot and feta cheese.";"Eggplant omelette with bread and tomato.";"Fruit yogurt."</item>
+        <item>"Café latte. Wholegrain breakfast cereal.";"Melba toast with blue cheese and caramelized onion. Fresh lemon juice.";"
+            Endives with apple and tartar sauce.";"Stewed stuffed squid.";"Banana.";"Curd with pine nuts.";"
+            Cauliflower sauteed with spinach and tender garlic.";"Grilled chicken breast with fried green tomatoes.";"Pear compote."</item>
+        <item>"Tea. Mini serrano ham sandwich with virgin olive oil.";"Grapefruit segments with honey.";"
+            Couscous with carrot and fresh mint.";"Eggs Benedict with lamb's lettuce.";"Mandarins.";"Orange.";"
+            Star soup.";"Pisto with chickpeas.";"Grated apple with lemon juice."</item>
+        <item>"Café latte. Toast with arugula, fresh cheese and virgin olive oil.";"Yogurt. Muesli.";"
+            Rice with chopped tortilla and peas.";"Cod stew with artichokes.";"Applesauce.";"Yogurt.";"
+            Gazpachuelo.";"Pork tenderloin with mustard and baby carrots.";"Plain yogurt with hazelnuts and prunes."</item>
+        <item>"Milk with chocolate powder. Melba toast with apple marmalade.";"Mini tuna sandwich. Fresh orange juice.";"
+            Tomato and basil soup.";"Faba beans sauteed with blood sausage.";"Pear.";"Oats.";"
+            Thistles with almonds and pine nuts.";"Baked trout with Provencal tomatoes.";"Mandarins."</item>
+        <item>"Milk. Toast with virgin olive oil, garlic and oregano. Fresh pineapple.";"Appetizer: French or Italian bread.";"
+            Macaroni with diced salmon.";"Chicken in pepitoria.";"Cream of orange with chocolate chips.";"Tarta de Santiago.";"
+            Creamed spinach.";"Fried eggs with baked potatoes.";"Plain yogurt."</item>
+        <item>"Café latte. Croissant. Mandarins.";"Appetizer: fresh cheese macerated wtih pepper and olive oil.";"
+            Zucchini bread.";"Octopus and onions.";"Apple pie.";"Fresh fruit juice.";"
+            Cream of carrots.";"Cheese turnovers with red cabbage salad.";"Custard apple."</item>
+        <item>"Milk. Homemade walnut and aniseed cake. Pear.";"Café latte. Vegetable sandwich.";"
+            Breaded leeks with epper sauce.";"Rabbit stew with white wine and chives.";"Orange.";"Apple with cinnamon.";"
+            Escarole salad, grated carrot and feta cheese.";"Eggplant omelette with bread and tomato.";"Fruit yogurt."</item>
+        <item>"Café latte. Wholegrain breakfast cereal.";"Melba toast with blue cheese and caramelized onion. Fresh lemon juice.";"
+            Endives with apple and tartar sauce.";"Stewed stuffed squid.";"Banana.";"Curd with pine nuts.";"
+            Cauliflower sauteed with spinach and tender garlic.";"Grilled chicken breast with fried green tomatoes.";"Pear compote."</item>
+        <item>"Tea. Mini serrano ham sandwich with virgin olive oil.";"Grapefruit segments with honey.";"
+            Couscous with carrot and fresh mint.";"Eggs Benedict with lamb's lettuce.";"Mandarins.";"Orange.";"
+            Star soup.";"Pisto with chickpeas.";"Grated apple with lemon juice."</item>
+        <item>"Café latte. Toast with arugula, fresh cheese and virgin olive oil.";"Yogurt. Muesli.";"
+            Rice with chopped tortilla and peas.";"Cod stew with artichokes.";"Applesauce.";"Yogurt.";"
+            Gazpachuelo.";"Pork tenderloin with mustard and baby carrots.";"Plain yogurt with hazelnuts and prunes."</item>
+        <item>"Milk with chocolate powder. Melba toast with apple marmalade.";"Mini tuna sandwich. Fresh orange juice.";"
+            Tomato and basil soup.";"Faba beans sauteed with blood sausage.";"Pear.";"Oats.";"
+            Thistles with almonds and pine nuts.";"Baked trout with Provencal tomatoes.";"Mandarins."</item>
+        <item>"Milk. Toast with virgin olive oil, garlic and oregano. Fresh pineapple.";"Appetizer: French or Italian bread.";"
+            Macaroni with diced salmon.";"Chicken in pepitoria.";"Cream of orange with chocolate chips.";"Tarta de Santiago.";"
+            Creamed spinach.";"Fried eggs with baked potatoes.";"Plain yogurt."</item>
+        <item>"Café latte. Croissant. Mandarins.";"Appetizer: fresh cheese macerated wtih pepper and olive oil.";"
+            Zucchini bread.";"Octopus and onions.";"Apple pie.";"Fresh fruit juice.";"
+            Cream of carrots.";"Cheese turnovers with red cabbage salad.";"Custard apple."</item>
+    </array>
+
+</resources>
+
+
+
+
+
+

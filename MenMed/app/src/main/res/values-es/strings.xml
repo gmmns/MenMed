@@ -28,6 +28,450 @@
     <string name="today">Hoy</string>
     <string name="tue">Mar</string>
     <string name="wed">Mie</string>
+    <string name="confirm">Confirmación</string>
+    <string name="confirm_remove">¿Quieres borrar el ingrediente \'%1$s\'?</string>
+    <string name="data_missing">Complete todos los campos</string>
+    <string name="edit_prod">Producto</string>
+    <string name="edit_quant">Cantidad</string>
+    <string name="product">Producto</string>
+    <string name="product_name">Nombre producto</string>
+    <string name="quantity">Cantidad</string>
+    <string name="remove">Eliminar</string>
 
+
+    <array name="all_menu">
+        <item>"Coca casera de nueces y anís. Pera. Leche.";"Café con leche. Bocadillo vegetal.";"
+            Puerros rebozados con salsa de pimientos.";"Conejo guisado con vino blanco y cebolletas.";"Naranja.";"Manzana con canela.";"
+            Ensalada de escarola, zanahoria rallada y queso feta.";"Tortilla de berenjenas con pan con tomate.";"Yogur de frutas."</item>
+        <item>"Café con leche. Cereales integrales.";"Biscotes con queso azul y cebolla caramelizada. Zumo de limón natural.";"
+            Endibias con manzana y salsa tártara.";"Calamares rellenos guisados.";"Plátano.";"Yogur. Muesli.";"
+            Coliflor rehogada con espinacas y ajos tiernos.";"Pechuga de pollo a la plancha con rodajas de tomate verde frito.";"Compota de pera."</item>
+        <item>"Infusión. Mini-bocadillo de jamón serrano con aceite de oliva virgen.";"Gajos de pomelo con miel.";"
+            Cuscús con zanahoria y menta fresca.";"Huevos Benedict con canónigos.";"Mandarinas.";"Cuajada con piñones.";"
+            Sopa de estrellitas.";"Pisto con garbanzos.";"Manzana rallada con zumo de limón."</item>
+        <item>"Café con leche. Tostadas con rúcula, queso fresco y aceite de oliva virgen.";"Yogur. Muesli.";"
+            Arroz con tortilla troceada y guisantes (Arroz tres delicias).";"Bacalao guisado con alcachofas.";"Compota de manzana.";"Naranja.";"
+            Gazpachuelo.";"Lomo de cerdo a la mostaza con zanahorias pequeñas.";"Yogur natural con avellanas y ciruelas pasas."</item>
+        <item>"Leche con chocolate en polvo. Biscotes con mermelada de manzana.";"Mini-bocadillo de atún. Zumo de naranja natural.";"
+            Sopa de tomate y albahaca.";"Habitas verdes salteadas con morcilla.";"Pera.";"Yogur. Avena.";"
+            Cardos con almendras y piñones.";"Trucha al horno con tomates a la provenzal.";"Mandarinas."</item>
+        <item>"Leche. Tostadas con aceite de oliva virgen, ajo y orégano. Piña natural.";"Aperitivo: Pan francés o italiano.";"
+            Macarrones guisados con taquitos de salmón.";"Pollo en pepitoria.";"Crema de naranja con trocitos de chocolate.";"Tarta de Santiago.";"
+            Espinacas a la crema.";"Huevos fritos con patatas al horno.";"Yogur natural."</item>
+        <item>"Café con leche. Cruasán. Mandarinas.";"Aperitivo: tacos de queso fresco macerados con pimienta y aceite de oliva.";"
+            Pastel de calabacín.";"Pulpo encebollado.";"Pastel del manzana.";"Zumo de frutas natural.";"
+            Crema de zanahoria.";"Empanadillas de queso con ensalada de col lombarda.";"Chirimoya."</item>
+        <item>"Coca casera de nueces y anís. Pera. Leche.";"Café con leche. Bocadillo vegetal.";"
+            Puerros rebozados con salsa de pimientos.";"Conejo guisado con vino blanco y cebolletas.";"Naranja.";"Manzana con canela.";"
+            Ensalada de escarola, zanahoria rallada y queso feta.";"Tortilla de berenjenas con pan con tomate.";"Yogur de frutas."</item>
+        <item>"Café con leche. Cereales integrales.";"Biscotes con queso azul y cebolla caramelizada. Zumo de limón natural.";"
+            Endibias con manzana y salsa tártara.";"Calamares rellenos guisados.";"Plátano.";"Yogur. Muesli.";"
+            Coliflor rehogada con espinacas y ajos tiernos.";"Pechuga de pollo a la plancha con rodajas de tomate verde frito.";"Compota de pera."</item>
+        <item>"Infusión. Mini-bocadillo de jamón serrano con aceite de oliva virgen.";"Gajos de pomelo con miel.";"
+            Cuscús con zanahoria y menta fresca.";"Huevos Benedict con canónigos.";"Mandarinas.";"Cuajada con piñones.";"
+            Sopa de estrellitas.";"Pisto con garbanzos.";"Manzana rallada con zumo de limón."</item>
+        <item>"Café con leche. Tostadas con rúcula, queso fresco y aceite de oliva virgen.";"Yogur. Muesli.";"
+            Arroz con tortilla troceada y guisantes (Arroz tres delicias).";"Bacalao guisado con alcachofas.";"Compota de manzana.";"Naranja.";"
+            Gazpachuelo.";"Lomo de cerdo a la mostaza con zanahorias pequeñas.";"Yogur natural con avellanas y ciruelas pasas."</item>
+        <item>"Leche con chocolate en polvo. Biscotes con mermelada de manzana.";"Mini-bocadillo de atún. Zumo de naranja natural.";"
+            Sopa de tomate y albahaca.";"Habitas verdes salteadas con morcilla.";"Pera.";"Yogur. Avena.";"
+            Cardos con almendras y piñones.";"Trucha al horno con tomates a la provenzal.";"Mandarinas."</item>
+        <item>"Leche. Tostadas con aceite de oliva virgen, ajo y orégano. Piña natural.";"Aperitivo: Pan francés o italiano.";"
+            Macarrones guisados con taquitos de salmón.";"Pollo en pepitoria.";"Crema de naranja con trocitos de chocolate.";"Tarta de Santiago.";"
+            Espinacas a la crema.";"Huevos fritos con patatas al horno.";"Yogur natural."</item>
+        <item>"Café con leche. Cruasán. Mandarinas.";"Aperitivo: tacos de queso fresco macerados con pimienta y aceite de oliva.";"
+            Pastel de calabacín.";"Pulpo encebollado.";"Pastel del manzana.";"Zumo de frutas natural.";"
+            Crema de zanahoria.";"Empanadillas de queso con ensalada de col lombarda.";"Chirimoya."</item>
+        <item>"Coca casera de nueces y anís. Pera. Leche.";"Café con leche. Bocadillo vegetal.";"
+            Puerros rebozados con salsa de pimientos.";"Conejo guisado con vino blanco y cebolletas.";"Naranja.";"Manzana con canela.";"
+            Ensalada de escarola, zanahoria rallada y queso feta.";"Tortilla de berenjenas con pan con tomate.";"Yogur de frutas."</item>
+        <item>"Café con leche. Cereales integrales.";"Biscotes con queso azul y cebolla caramelizada. Zumo de limón natural.";"
+            Endibias con manzana y salsa tártara.";"Calamares rellenos guisados.";"Plátano.";"Yogur. Muesli.";"
+            Coliflor rehogada con espinacas y ajos tiernos.";"Pechuga de pollo a la plancha con rodajas de tomate verde frito.";"Compota de pera."</item>
+        <item>"Infusión. Mini-bocadillo de jamón serrano con aceite de oliva virgen.";"Gajos de pomelo con miel.";"
+            Cuscús con zanahoria y menta fresca.";"Huevos Benedict con canónigos.";"Mandarinas.";"Cuajada con piñones.";"
+            Sopa de estrellitas.";"Pisto con garbanzos.";"Manzana rallada con zumo de limón."</item>
+        <item>"Café con leche. Tostadas con rúcula, queso fresco y aceite de oliva virgen.";"Yogur. Muesli.";"
+            Arroz con tortilla troceada y guisantes (Arroz tres delicias).";"Bacalao guisado con alcachofas.";"Compota de manzana.";"Naranja.";"
+            Gazpachuelo.";"Lomo de cerdo a la mostaza con zanahorias pequeñas.";"Yogur natural con avellanas y ciruelas pasas."</item>
+        <item>"Leche con chocolate en polvo. Biscotes con mermelada de manzana.";"Mini-bocadillo de atún. Zumo de naranja natural.";"
+            Sopa de tomate y albahaca.";"Habitas verdes salteadas con morcilla.";"Pera.";"Yogur. Avena.";"
+            Cardos con almendras y piñones.";"Trucha al horno con tomates a la provenzal.";"Mandarinas."</item>
+        <item>"Leche. Tostadas con aceite de oliva virgen, ajo y orégano. Piña natural.";"Aperitivo: Pan francés o italiano.";"
+            Macarrones guisados con taquitos de salmón.";"Pollo en pepitoria.";"Crema de naranja con trocitos de chocolate.";"Tarta de Santiago.";"
+            Espinacas a la crema.";"Huevos fritos con patatas al horno.";"Yogur natural."</item>
+        <item>"Café con leche. Cruasán. Mandarinas.";"Aperitivo: tacos de queso fresco macerados con pimienta y aceite de oliva.";"
+            Pastel de calabacín.";"Pulpo encebollado.";"Pastel del manzana.";"Zumo de frutas natural.";"
+            Crema de zanahoria.";"Empanadillas de queso con ensalada de col lombarda.";"Chirimoya."</item>
+        <item>"Coca casera de nueces y anís. Pera. Leche.";"Café con leche. Bocadillo vegetal.";"
+            Puerros rebozados con salsa de pimientos.";"Conejo guisado con vino blanco y cebolletas.";"Naranja.";"Manzana con canela.";"
+            Ensalada de escarola, zanahoria rallada y queso feta.";"Tortilla de berenjenas con pan con tomate.";"Yogur de frutas."</item>
+        <item>"Café con leche. Cereales integrales.";"Biscotes con queso azul y cebolla caramelizada. Zumo de limón natural.";"
+            Endibias con manzana y salsa tártara.";"Calamares rellenos guisados.";"Plátano.";"Yogur. Muesli.";"
+            Coliflor rehogada con espinacas y ajos tiernos.";"Pechuga de pollo a la plancha con rodajas de tomate verde frito.";"Compota de pera."</item>
+        <item>"Infusión. Mini-bocadillo de jamón serrano con aceite de oliva virgen.";"Gajos de pomelo con miel.";"
+            Cuscús con zanahoria y menta fresca.";"Huevos Benedict con canónigos.";"Mandarinas.";"Cuajada con piñones.";"
+            Sopa de estrellitas.";"Pisto con garbanzos.";"Manzana rallada con zumo de limón."</item>
+        <item>"Café con leche. Tostadas con rúcula, queso fresco y aceite de oliva virgen.";"Yogur. Muesli.";"
+            Arroz con tortilla troceada y guisantes (Arroz tres delicias).";"Bacalao guisado con alcachofas.";"Compota de manzana.";"Naranja.";"
+            Gazpachuelo.";"Lomo de cerdo a la mostaza con zanahorias pequeñas.";"Yogur natural con avellanas y ciruelas pasas."</item>
+        <item>"Leche con chocolate en polvo. Biscotes con mermelada de manzana.";"Mini-bocadillo de atún. Zumo de naranja natural.";"
+            Sopa de tomate y albahaca.";"Habitas verdes salteadas con morcilla.";"Pera.";"Yogur. Avena.";"
+            Cardos con almendras y piñones.";"Trucha al horno con tomates a la provenzal.";"Mandarinas."</item>
+        <item>"Leche. Tostadas con aceite de oliva virgen, ajo y orégano. Piña natural.";"Aperitivo: Pan francés o italiano.";"
+            Macarrones guisados con taquitos de salmón.";"Pollo en pepitoria.";"Crema de naranja con trocitos de chocolate.";"Tarta de Santiago.";"
+            Espinacas a la crema.";"Huevos fritos con patatas al horno.";"Yogur natural."</item>
+        <item>"Café con leche. Cruasán. Mandarinas.";"Aperitivo: tacos de queso fresco macerados con pimienta y aceite de oliva.";"
+            Pastel de calabacín.";"Pulpo encebollado.";"Pastel del manzana.";"Zumo de frutas natural.";"
+            Crema de zanahoria.";"Empanadillas de queso con ensalada de col lombarda.";"Chirimoya."</item>
+    </array>
+
+
+    <array name="all_recipes">
+        <item>"Leche. Coca casera de nuevos y anís. Pera.";"
+        - ";"
+        50.0/leche-95.0/harina-55.0/agua-4.0/levadura-1.25/azúcar-6.25/aceite de oliva virgen-25.0/nueces-25.0/licor de anís-1.0/pera"</item>
+        <item>"Café con leche. Bocadillo vegetal.";"
+        - ";"
+        10.0/café-25.0/leche-50.0/pan-10.0/lechuga-0.5/tomate-5.0/aceite de oliva virgen-10.0/atún"</item>
+        <item>"Puerros rebozados con salsa de pimientos.";"
+        Elimina la parte verde y los filamentos de los puerros. Lavarlos para eliminar la tierra. Cocer en agua con sal durante 10 minutos. Escurrirlos.
+            		Calentar el aceite a temperatura moderada. Assaona'ls. Pasarlos por harina, huevo batido y pan rallado. Freír hasta que estén bien dorados y
+            		escurrirlos sobre papel de cocina. Servir bien calientes. Para hacer la salsa, escalivamos el pimiento y el pelamos y le quitamos las semillas. ponemos el
+            		pimiento limpio y pelado en un bol junto con la crema de leche sal y pimienta y lo pasamos por la batidora hasta que quede bien fina. ";"
+        250.0/puerros-0.5/huevo-100.0/crema de leche-0.25/pimiento rojo-25.0/harina-5.0/sal-5.0/pimienta-50.0/aceite de oliva virgen"</item>
+        <item>"Conejo guisado con vino blanco y cebolletas.";"
+        Para empezar, en un cazo con agua hirviendo escaldar las colmenillas durante un par de minutos, retirar las del cazo, escurrir y reservar.
+            		A continuación, en una sartén con un poco de aceite saltear las paletillas de conejo ya salpimentadas. Cuando estén doradas, retirar de la sartén y
+            		reservar. Luego, en la misma sartén sofreír las cebolletas cortadas por la mitad, los ajos tiernos, el laurel y el tomillo. cuando
+            		esté todo doradito, retirar y reservar. A continuación, en la misma sartén poner la harina y remover bien. Cuando esté dorada, añadir
+            		el vino blanco, remover bien durante un par de minutos, poner el agua, las paletillas de conejo, el laurel y el tomillo y dejar cocer todo
+            		junto a fuego suave durante 20 minutos. Seguidamente, poner la cebolleta y dejar cocer durante unos minutos más. Finalmente, coloque las paletillas y
+            		la cebolleta en otra sartén, colar la salsa, añadir a la sartén junto con los ajos tiernos y las colmenillas y dejar cocer todo junto
+            		durante 5 minutos más. Y ya para acabar, emplatar las paletillas, la cebolla y los ajos tiernos, salsear todo con el jugo de la cocción y adornar el
+            		plato con el tomillo.";"
+        4.0/hombros de conejo-25.0/agua-1.0/cebolleta-3.0/ajo tierno-1.0/hoja de laurel-1.0/rama tomillo-75.0/vino blanco-50.0/aceite de oliva virgen-
+            		5.0/sal-5.0/pimienta"</item>
+        <item>"Naranja.";"
+        -";"
+        1.0/naranja"</item>
+        <item>"Manzana con canela.";"
+        -";"
+        1.0/manzana-5.0/canela"</item>
+        <item>"Ensalada de escarola, zanahoria rallada y queso feta.";"
+        Desgranar las granadas eliminando las pieles blancas. Cortar el bacon en dados pequeños, lavar, secar y cortar la escarola en trozos. En un bol
+        mezclar la mostaza, una pizca de sal y pimienta y el vinagre. Una vez todo bien mezclado, poco a poco vamos añadiendo el aceite de oliva y reservar.
+        Calentar una cucharada de aceite en una sartén pequeña y saltear los dados de bacon removiendo con una cuchara de madera. Ponga la escarola en una bandeja
+        fonda, aliñar con la vinagreta preparada, esparcir por encima los granos de granada y el bacon salteado. ";"
+        0.25/escarola-0.5/granada-100.0/bacon-30.0/aceite de oliva virgen-10.0/mostaza-10.0/vinagre de Módena"</item>
+        <item>"Tortilla de berenjenas con pan con tomate.";"
+        Limpiamos las berenjenas, sacamos el capuchón y el culo, la cortamos en dados no muy pequeños. Los salamos y los dejamos 15 minutos en el escurridor. cortamos
+        la cebolla laminada. Ponemos un poco de aceite en la sartén para freír la cebolla. Hay que hacerlo a fuego lento para que no debe quedar cruda ya menudo se tuesta antes
+        no está cocida. Una vez frita la cebolla la retiramos de la sartén y la ponemos al escurridor para que suelte el aceite. Añadimos más aceite a la sartén y
+        cuando está caliente incorporamos los dados de berenjena que deben quedar fritos. Haga uso de espátula de madera para agitar. Una vez fritos
+        depositamos los dados de berenjena al escurridor de donde habremos retirado previamente la cebolla. En un tazón de vidrio rompemos los seis huevos enteros, pongamos
+        sal y los batimos. Deben quedar bien mezclados pero no demasiado espumosos. Al vuelo vertemos los dados de berenjena y la cebolla y lo mezclamos porque
+        quede todo integrado y uniforme. Tomamos la sartén donde haremos la tortilla, ponemos aceite y cuando está un poco caliente echamos el contenido del bol.
+        El repartimos uniformemente por todo el espacio y cocemos la tortilla a fuego no muy vivo. El reto es que no se pegue y no se nos tueste demasiado antes
+        esté cocida por dentro. Cuando vemos que el huevo ha tomado y no está crudo, retiramos la sartén del fuego, cogemos un plato un poco más grande que el tamaño de la
+        sartén y giramos la tortilla, ponemos un poco de aceite en la sartén y pasamos la tortilla del plato a la sartén, para que se acabe de hacer. El iremos pinchando para
+        comprobar que no queda cruda y nos ayudaremos de la espátula de madera para irla separando los lados y darle forma de canto redondeado. una
+        vez cocida ponemos la tortilla encima del plato y la dejamos enfriar. ";"
+        2.0/huevo-1.0/berenjena-0.25/cebolla-30.0/aceite de oliva virgen-5.0/sal-50.0/pa-0.5/tomate"</item>
+        <item>"Yogur de frutas.";"
+        -";"
+        1.0/yogur de frutas"</item>
+
+
+        <item>"Café con leche. Cereales integrales.";"
+        -";"
+        10.0/café-25.0/leche-25.0/cereales integrales"</item>
+        <item>"Biscotes con queso azul y cebolla caramelizada. Zumo de limón natural.";"
+        -";"
+        20.0/biscotas-5.0/queso azul-0.5/cebolla-1.0/limón"</item>
+        <item>"Endibias con manzana y salsa tártara.";"
+        Lavamos bien las endibias, las cortamos por la mitad de manera longitudinal y luego en juliana. Las saltamos con un poco de aceite y sal. Las ponemos en el
+        plato y, a continuación, añadimos el queso roquefort (al gusto), la manzana y las nueces. Aunque el plato de la fotografía lo vimos aliñar con aceite,
+        en realidad no necesita, porque la endibia está cocida y el queso y las nueces ya le aportan suficiente grasa. Si quiere, puede cambiar la manzana por
+        pera; con las dos frutas queda muy buena.";"
+        3.0/endibia-20.0/queso roquefort-10.0/nuevos-0.5/manzana-5.0/sal-15.0/aceite de oliva virgen extra"</item>
+        <item>"Calamares rellenos guisos.";"
+        Sacamos la piel de la morcilla y el esparraquem. Asamos en una cazuela, con un chorro de aceite, hasta que esté bien dorada. La sacamos y la reservamos.
+        Mientras tanto, sacamos la piel y esparraquem la butifarra de perol. En la misma cazuela doramos la butifarra de perol junto con las patas
+        y las aletas de los calamares. Lo retiramos y reservamos. En la misma cazuela, añadimos la cebolla confitada y dejamos que nos coja temperatura.
+        Añadimos todas las carnes que hemos dorado antes y lo cocemos todo junto, unos 10 '. Hacemos la picada con los ajos, pan frito, perejil y azafrán en el mortero.
+        La deshielo con el vino blanco. Añadimos la picada a la cazuela y dejamos que el líquido se reduzca por completo, unos 20 aproximadamente. rectificamos
+        de sal y pimienta. Lo apartamos del fuego y lo dejamos enfriar. Rellenamos los cuerpos de los calamares. Los cerramos con la ayuda de un palillo. Hacemos la salsa
+        de calamar: Picamos la cebolla. El doramos en una sartén, con los ajos sin pelar cortados por la mitad, hasta que sea bastante oscura. A fuego vivo, unos
+        10 min. Mientras, picamos los calamares previamente descongelados, con el cuchillo. Cortamos los ajos. Añadimos los ajos en la sartén de la cebolla, 2
+        minutos. Añadimos los calamares picados y lo dejamos cocer todo unos 5 minutos. Añadimos el vino blanco y dejamos reducir del todo, unos 5 minutos también.
+        Añadimos el caldo de pescado y dejar cocer 2 horas. Lo colamos. Lo volvemos a la sartén hasta que tenga la textura de salsa que queremos, unos 10
+        minutos aproximadamente. Lo reservamos en un lugar caliente. En una plancha o sartén, con un chorrito de aceite, bien caliente, doramos los calamares rellenos.
+        Los ponemos en la sartén de la salsa y lo dejamos cocer 3 minutos. Aliñamos las hojas de apio y perejil.";"
+        3.0/calamar fresco-50.0/morcilla-25.0/cebolla-5.0/sal-2.0/all-80.0/caldo de pescado-20.0/aceite de oliva virgen extra"</item>
+        <item>"Plátano.";"
+        -";"
+        1.0/plátano"</item>
+        <item>"Yogur. Muesli.";"
+        -";"
+        1.0/yogur-25.0/muesli"</item>
+        	<item>"Coliflor ahogada con espinacas y ajos tiernos.";"
+        Cocemos la coliflor con una cazuela con sal. En cuanto esté la reservamos. Por otra parte, cocemos las espinacas, con sal. En una sartén
+        con un poco de aceite, reofeguem la cebolla y el ajo. Añadimos una cucharada de pimentón e incorporamos un poco de agua de cocer la coliflor.
+        Dejamos que se reduzca todo un poco. Añadimos la coliflor y las espinacas y este es el reslutat.";"
+        80.0/coliflor-50.0/espinacas-1.0/all-0.5/cebolla-5.0/pimentón-5.0/sal-500.0/agua-20.0/aceite de oliva virgen extra"</item>
+        <item>"Pechuga de pollo a la plancha con rodajas de tomate verde frito.";"
+        Lavar y cortar en rodajas gruixides el tomate. Mezclar el queso fresco con la piel rallada de naranja y un hilo de aceite. salpimentar el
+        pollo y untarlo de aceite. Haga a la plancha a fuego medio para que se dore y no quede crudo. Aprovecha si tiene espacio en la plancha para hacer
+        las rodajas de tomate por las dos bandas. Ponga una pizca de sal.Traieu el pollo, servir con el tomate encima y poner un poco
+        de queso fresco batido por encima.
+        1.0/pechuga de pollo-1.0/tomate-25.0/queso fresco-0.25/naranja-10.0/aceite de oliva virgen extra-5.0/sal-5.0/pimienta"</item>
+        <item>"Compota de pera."
+        -";"
+        1.0/pera-10.0/azúcar-0.5/limón-5.0/agua"</item>
+
+
+        <item>"Infusión. Mini bocadillo de jamón serrano con aceite de oliva virgen.";"
+        -";"
+        50.0/agua-1.0/infusión de menta-50.0/pa-10.0/jamón serrano-5.0/aceite de oliva virgen"</item>
+        <item>"Grillos de pomelo con miel.";"
+        -";"
+        1.0/pomelo-5.0/miel"</item>
+        <item>"Cuscús con zanahoria y menta fresca.";"
+        Ponemos el cuscús precocido en un bol y le añadimos 150ml de agua hirviendo. Removemos con un tenedor. Tapamos con un paño limpio húmedo y lo dejamos reposar
+            		al menos 5 minutos. Lavamos con abundante agua los tomates, el pimiento rojo, el pepino y la zanahoria. Seguidamente, cortamos todos estos
+            		ingredientes en daditos. También cortamos el queso con la misma forma. Picamos el perejil. Ponemos las verduras en un bol grande y las mezclamos con el
+            		queso. Añadimos el cuscús, las aceitunas, el aceite de oliva, el perejil y el jugo de limón. Salpimentamos al gusto. Removemos todo bien y lo dejamos enfriar
+            		una hora antes de servir. ";"
+            		150.0/sémola de cuscús precocida-150.0/agua-2.0/tomates-1.0/pepino-1.0/pimiento rojo-1.0/zanahoria-50.0/aceitunas negras-100.0/queso semi curat-
+        1.0/rama de perejil-25.0/aceite de oliva virgen-1.0/limón-5.0/sal-5.0/pimienta"</item>
+        <item>"Huevos Benedict con canónigos.";"
+        Abriremos los muffins y los tostaremos. O utilizaremos las tostadas. Cortaremos el jamón por la mitad. Haremos la salsa holandesa. Para hacerla,
+        podemos seguir la manera tradicional: montando las yemas, el jugo, el agua y la sal en un baño maría suave. O la manera rápida: con el
+        túrmix. Calentaremos los huevos. Para ello necesitaremos agua caliente con vinagre que no llegue a hervir. Haremos un torbellino, pondremos los huevos
+        con mucho cuidado, los dejaremos cocer 4 ó 5 minutos, los sacaremos, en cortaremos las puntas y los tendremos listos para terminar el plato.
+        Pondremos las tostadas o los muffins en el plato, encima el jamón, luego los huevos escalfados y finalmente la salsa. ";"
+        50.0/pa-2.0/huevo-10.0/jamón cocido-1.0/limón-20.0/agua-40.0/mantequilla-5.0/sal"</item>
+        <item>"Mandarinas.";"
+        -";"
+        3.0/mandarina"</item>
+        <item>"Cuajada con piñones.";"
+        -";"
+        1.0/cuajada-20.0/piñones"</item>
+        <item>"Sopa de estrellitas.";"
+        Para el caldo, pone a calentar abundante agua en una cacerola grande. Agregar sal, una pizca de pimienta, un chorrito de aceite y los muslos de
+        pollo. Cuando rompa a hervir retira la espuma de la superficie con un cazo. Agregar el caldo los dientes de ajo, la parte blanca del
+        puerro, la zanahoria, la cebolla tierna cortada y los tallos enteras. Cocina la sopa durante 1 hora a fuego suave. Retirar el pollo, esmolla'l
+        y reservarlo. Triturar la verdura con el caldo. Agregar la pasta de estrellas y deja que se cocine durante 5-6 minutos. Una vez cocinada la
+        pasta, añade el pollo desmenuzado.";"
+        25.0/pasta de estrellas-0.5/muslo de pollo-0.25/zanahoria-0.25/cebolla-0.5/cebolleta-0:25/puerro-1.0/all-800.0/agua-
+        25.0/aceite de oliva virgen extra-20.0/sal"</item>
+        <item>"Pisto con garbanzos.";"
+        Cortamos todas las hortalizas en dados más o menos del mismo tamaño (para que tengan la misma cocción). En una sartén ponemos aceite y vamos
+        cociendo las hortalizas, primero las que tienen la cocción más larga, así que empezamos por los pimientos, la berenjena, el calabacín, y el
+        tomate, salpimentamos y ponemos la pizca de azúcar (para sacar la acidez del tomate). Dejemos que termine de cocerse, añadimos los garbanzos,
+        removemos con cuidado, y sólo queda añadir los huevos duros.
+        0.25/pimiento rojo-0.25/pimiento verde-0.25/berenjena-0.25/calabacín-100.0/tomate-20.0/sal-20.0/pimienta"</item>
+        <item>"Manzana rallada con zumo de limón."
+        -";"
+        1.0/manzana-1.0/limón"</item>
+
+
+        <item>"Café con leche. Tostadas con rúcula, queso fresco y aceite de oliva virgen.";"
+        -";"
+        10.0/café-25.0/leche-50.0/pan-5.0/rúcula-20.0/queso fresco-5.0/aceite de oliva virgen"</item>
+        <item>"Yogur. Muesli.";"
+        -";"
+        1.0/yogur-25.0/muesli"</item>
+        <item>"Arroz con tortilla troceada y guisantes (Arroz tres delicias).";"
+        Primero procedemos a hervir el arroz: Dos medidas de agua por cada medida de arroz, junto con un poco de sal, pimienta y un poco de aceite
+        y lo dejamos a fuego lento. Una vez hecho lo escurrimos en agua fría y lo reservamos en un bol. Con los huevos hacemos en otra sartén una tortilla
+        francesa y la dejamos enfriar un poco. Una vez templada la cortamos en cuadraditos. Cortamos la zanahoria y el jamón en trocitos
+        pequeños. En una sartén grande con un poco de aceite salteamos las gambas hasta que se doren un poco. Añadimos los guisantes, la zanahoria y el
+        jamón cocido a la sartén. Cocinamos durante 2 minutos mezclando bien, hasta que estén todos los ingredientes dorados. Añadimos el arroz y
+        el salteamos con el resto unos minutos. ";"
+        100.0/arroz-1.0/huevo-0.25/zanahoria-60.0/jamón cocido-40.0/gambas peladas-50.0/guisantes-50.0/aceite de oliva virgen extra-10.0/pimienta-10.0/sal"</item>
+        <item>"Bacalao guisado con alcachofas."; "
+        Enharinamos el bacalao y freírlo. Reservamos. Hervimos los huevos (10 minutos). Reservamos. Haremos un sofrito con las cebollas y los ajos, cuando
+        empiecen a tener color, añadimos el tomate, dejamos que se vaya haciendo. Tendremos las patatas peladas, añadimos las alcachofas cortadas, y
+        lo dejamos que se vaya Coen una media hora, yendo removiendo. Iremos añadiendo caldo, para que quede todo cubierto, tapamos. Mientras enharinamos
+        los huevos cortados a la mitad, y los freímos en una sartén con la mantequilla. Cuando las patatas estén casi cocidas añadimos los huevos y los
+        dejamos unos cinco minutos más, y apagamos el fuego. ";"
+        50.0/bacalao-1.0/alcachofa-1.0/patata-0.5/cebolla-1.0/tomate-1.0/all-100.0/harina-100.0/caldo-1.0/huevo-50.0/mantequilla"</item>
+        <item>"Compota de manzana.";"
+        -";"
+        1.0/manzana-10.0/azúcar-0.5/limón-5.0/agua"</item>
+        <item>"Naranja.";"
+        -";"
+        1.0/naranja"</item>
+        <item>"Gazpachuelo.";"
+        En un olla ponemos agua a hervir. Añadimos las patatas peladas y cortadas en gajos, y los huevos con cuidado de no romper la cáscara. mientras
+        hacemos mayonesa casera, si queremos darle sabor a ajo, añadimos un diente de ajo. Añadimos todos los ingredientes de la mayonesa (los huevos, la
+        limón, el aceite, la sal), metemos el brazo de la batidora a máxima potencia sin moverlo, cuando empiece a emulsionar vamos subiendo el brazo
+        hasta que esté hecha. Separamos una taza mayonesa, si nos gusta el sabor de limón podemos añadir un poco más, y la mezclamos con
+        agua hasta ponerla más líquida, que no esté espesa. Una vez que estén las patatas hervidas, separamos y reservamos los huevos.
+        Añadimos las gambas y el pescado y cocinamos unos cinco minutos. Apagamos el fuego, dejamos que la sopa se enfríe. Y vamos añadiendo la mayonesa
+        disuelta en agua poco a poco y mezclando bien. Calentamos la sopa a fuego suave, si vemos que espesa mucho, añadimos un poco de agua y mezclamos
+        bien.";"
+        100.0/patata-2.0/huevo-50.0/gambas-50.0/rap-1.0/limón-50.0/aceite de oliva virgen extra-30.0/sal"</item>
+        <item>"Lomo de cerdo a la mostaza con zanahorias pequeñas.";"
+        En una cazuela con aceite se dora el solomillo entero, salado y empebrat. Una vez rubio por las dos caras, se pone la cebolla, la zanahoria
+        y los ajos, todo bien picado. Se deja cocer un poco y luego se añaden los tomates cortados en dados y las hierbas. Se deja que
+        se vaya haciendo durante cinco minutos aproximadamente, hasta que las verduras se hayan bebido el jugo. Entonces se vierte el vino tinto y se deja
+        reducir. Una vez reducido, se retira el filete de la cazuela, se corta en rodajas y se reserva. Se pasan las verduras por el colador y se
+        vuelven a poner al fuego junto con el vinagre y la miel. Se baraja un par de minutos y se pone el caldo. Incorporamos nuevo la
+        carne a la cazuela y se deja que cueza todo junto unos diez minutos aproximadamente. ";"
+        120.0/solomillo de cerdo-0.25/cebolla-0.25/zanahoria-0.5/all-0.5/tomate-1.0/hoja de laurel-25.0/vino tinto-10.0/vinagre-20.0/mostaza-10.0/miel-
+        60.0/buey"</item>
+        <item>"Yogur natural con avellanas y ciruelas pasas."
+        -";"
+        1.0/yogur natural-10.0/avellanas-10.0/pasas"</item>
+
+
+        <item>"Leche con chocolate en polvo. Biscotes con mermelada de manzana.";"
+        -";"
+        50.0/leche-10.0/chocolate en polvo-5.0/mermelada de manzana-20.0/biscotes"</item>
+        <item>"Mini bocadillo de atún. Zumo de naranja natural.";"
+        -";"
+        50.0/pan-0.5/tomate-5.0/aceite de oliva virgen-10.0/atún-2.0/naranja"</item>
+        <item>"Sopa de tomate y albahaca.";"
+        Damos un corte pequeño en los tomates y los escaldamos en agua hirviendo medio minuto, así los podremos pelar muy fácilmente. Los pelamos y quitamos
+        las semillas si son muy gruesas. Picamos muy pequeño los pimientos asados. En una sartén hacemos calentar 2 cucharadas de aceite de oliva y
+        cuando esté un poco caliente añadimos los pimientos asados ??y picados y las guindillas, lo salamos y lo dejamos cocer unos 5 minutos a fuego
+        lento. Añadimos el ajo en láminas y lo cocemos 2 minutos más. Incorporamos los tomates picados, un poco más de sal y el vinagre y dejamos que se
+        haga todo deshaciéndose los tomates durante unos 10 minutos. Cuando el tomate ya esta frita y deshecha añadimos el caldo de pollo y dejar
+        cobre un cuarto de hora, por último rectificamos de sal. Picamos la albahaca con un poco de sal en el mortero o con una batidora, añadimos un
+        buen chorro de aceite y unas gotas de vinagre y en servimos una cucharada en cada plato de sopa. ";"
+        250.0 / tomates-1.0 / pimiento rojo-0.5 / all-10.0 / vinagre-25.0 / caldo de pollo-25.0 / aceite de oliva virgen extra-10.0 / sal-10.0 / pimienta "</ item>
+        <item> "Habitas tiernas salteadas con morcilla.";"
+        Para empezar, poner agua y menta fresca a hervir y luego echar las habas, que deben hervir durante 10 minutos. Mientras tanto, cortar
+        la panceta en trocitos y freír en una sartén con aceite. Pasados ??un par de minutos, cuando esté dorada, añadir los ajos
+        tiernos también cortados muy finos y dejar dorar un rato. Entonces incorporar las habas. Por otra parte, escaldar la morcilla
+        para quitarle la piel más fácilmente, cortarla en trozos pequeños, y colóquelo en la sartén junto con las habas y el sofrito.
+        Echar un poco de pimienta y ya podrá emplatar. ";"
+        250.0/habas-50.0/ajo tierno-100.0/butifarra de perol-50.0/tocino-50.0/aceite de oliva virgen extra-20.0/sal-20.0/pimienta"</item>
+        <item> "Pera.";"
+        -";"
+        1.0/pera"</item>
+        <item>"Yogur. Avena.";"
+        -";"
+        1.0/yogur-25.0/avena"</item>
+        <item>"Cardo con almendras y piñones.";"
+        Primeramente, limpiamos los cardos y los metemos a hervir en un cazo con agua y sal, hasta que son cocidos al "dente", los escurrimos y guardamos
+        el caldo de la cocción colado. Seguidamente, en una bandeja plana para el horno, ponemos las almendras laminadas esparcidas y las tostamos en
+        el horno a 180º hasta que vemos que son un poco doradas y las reservamos. A continuación, en una cazuela marinera metálica con un rayo
+        de aceite de oliva, sofreímos la cebolla picada y las almendras. Cuando la cebolla ya es transparente, añadimos un puñado de harina, un chorro de vino
+        blanco y dejamos que reduzca. A continuación, añadimos el caldo de cocer los cardos, lo mezclamos con el batidor de varillas y corregimos de sal. A
+        continuación añadimos los cardos, dejamos que cueza todo junto unos diez minutos, lo espolvoreamos con el perejil picado por encima, y ??ya lo tenemos
+        listo para servir a la mesa en la misma cazuela con un plato debajo. ";"
+        125.0/card-50.0/almendras-50.0/harina-40.0/aceite de oliva virgen extra-20.0/sal-50.0/vino blanco-50.0/agua-0.5/cebolleta"</item>
+        <item>"Trucha al horno con tomates a la provenzal.";"
+        Sacamos las tripas de las tortillas, las lavamos, hacemos unos cortes transversales en uno de los lados del pescado y las dejamos escurrir. Una vez bien
+        escurridas, ponemos media rodaja de limón dentro de los cortes de las tortillas. Pelamos y cortamos la cebolla en tiras finas y los ajos en láminas.
+        Ponemos aceite en una cazuela y sofreímos, a fuego suave, la cebolla y los ajos. Pelamos las patatas y las cortamos en láminas de unos 3 cm de espesor.
+        Cuando la cebolla esté transparente, añadimos las patatas, la hoja de laurel y el perejil picado. Lo cubrimos con agua, lo salamos lo
+        dejamos hervir unos 5 minutos. Trasladamos el sofrito en una bandeja de horno y colocamos encima las truchas, las rociamos con el zumo
+        de medio limón y un buen chorro de aceite. Incorporamos en la bandeja los tomates partidos por la mitad, echamos un poco de sal por encima
+        y ponemos la bandeja en el horno medio (180º) unos diez minutos. ";"
+        1.0/trucha-0.5/limón-75.0/patata-0.25/cebolla-1.0/hoja de laurel-0.5/all-1.0/tomate-10.0/sal-20.0/aceite de oliva virgen extra"</item>
+        <item>"Mandarinas".
+        -";"
+        3.0/mandarina"</item>
+
+        <item>"Leche. Tostadas con aceite de oliva virgen, ajo y orégano. Piña natural.";"
+        -";"
+        50.0/leche-50.0/pan-1.0/ajo-5.0/aceite de oliva virgen-5.0/orégano-0.25/piña"</item>
+        <item>"Aperitivo: Pan francés o italiano.";"
+        -";"
+        50.0/pan italiano"</item>
+        <item>"Macarrones guisados ??con dados de salmón.";"
+        Poner aceite en una cazuela de barro y freír los ajos hasta que queden dorados, retirarlos. En el mismo aceite freír ligeramente las
+        gambas y reservar. Incorporar el tomate rallado a la cazuela, condimentar con sal y pimienta al gusto y dejar cocer unos 15
+        minutos, removiendo de vez en cuando. Una vez el tomate está cocido, regar con el caldo, luego incorporar el salmón cortado en
+        dados y la nata líquida. Dejar cocer, todo junto, unos 8 minutos a fuego suave. Mientras tanto, hervir la pasta en abundante agua hasta que
+        esté al dente, escurrir y pasar a la cazuela junto con las gambas que tiene reservadas, mezclar bien y dejar
+        reposar unos minutos antes de servir. ";"
+        60.0/macarrones-30.0/gambas peladas-50.0/salmón-1.0/tomate-30.0/caldo-25.0/nata líquida-0.5/ajo-10.0/sal-10.0/pimienta"</item>
+        <item>"Pollo en pepitoria.";"
+        Para empezar podríamos preparar la picada, y así cuando la necesitaremos ya la tendremos a punto: En un mortero vertemos el diente de ajo frita,
+        las almendras sin piel y los 2 yemas de huevo duro. Lo machacan todo y añadimos un poquito de caldo para que se deshaga y tenga consistencia
+        de salsa espesa. Cortamos el pollo en trocitos, lo salpimentamos y lo pasamos ligeramente por harina. En una cazuela con un poquito de aceite
+        de oliva freímos el pollo hasta que quede bien dorado, y lo reservamos aparte. En la misma cazuela sofreímos a fuego suave el ajo y la cebolla
+        picados bien finos. Cuando empiece a coger color añadimos el pollo y seguidamente la copa de jerez. En hervir vertemos el
+        caldo, que haya suficiente para cubrir todo. Añadimos el perejil y el laurel y tapamos; dejamos cocer tranquilamente hasta que el pollo
+        esté bien tierno (aproximadamente 30 minutos). En la mitad de la cocción, sin embargo, añadiremos la picada. Cuando tendremos el pollo cocido el
+        retiraremos a un plato, dejando sólo la salsa al fuego, para continuar cociendo hasta que esté en su punto. Si nos queda demasiado
+        espesa podemos añadir un poco de caldo; si nos queda demasiado líquida añadimos un poquito de harina sin dejar de remover, por qué no
+        haga grumos. Antes de servir volveremos a añadir el pollo a la cazuela, para poder servirlo caliente. Buen provecho!
+        250.0/pollo-1.0/huevo-25.0/almendras-25.0/aceite de oliva virgen extra-0.5/ajo-0.25/cebolla-1.0/hoja de laurel-50.0/caldo de pollo-
+        50.0/harina-20.0/sal-20.0/pimienta"</item>
+        <item>"Crema de naranja con trocitos de chocolate.";"
+        -";"
+        1.0/naranja-25.0/azúcar-20.0/chocolate"</item>
+        <item>"Tarta de Santiago.";"
+        -";"
+        2.0/huevos-50.0/azúcar-50.0/almendras-1.0/limón"</item>
+         	<item>"Espinacas a la crema.";"
+        Primero, se hierven las espinacas con un poco de sal y se dejan escurrir el máximo posible. Se trocean con unas tijeras. Se deshace la
+        harina de maíz con un poco de leche, y el resto se calienta. Cuando hierva, se añade la harina de maíz, un poco de sal,
+        nuez moscada y un poco de mantequilla. Cuando empiece a espesar, se añaden las espinacas troceadas y se cuecen un par de minutos.
+        Se vierte la mezcla anterior en cazuelitas de barro, y s'empolsima con queso rallado. Se gratina en el horno. En una sartén, salteamos un
+        puñadito de piñones y se añaden encima. ";"
+        50.0/espinacas-125.0/leche-10.0/harina-5.0/sal-5.0/nuez moscada-50.0/mantequilla"</item>
+        <item>"Huevos fritos con patatas al horno.";"
+        -";"
+        1.0/huevo-50.0/patata-20.0/aceite de oliva virgen extra-10.0/sal"</item>
+        <item>"Yogur natural."
+        -";"
+        1.0/yogur natural"</item>
+
+        <item>"Café con leche. Croissant. Mandarinas.";"
+        -";"
+        10.0/café-25.0/leche-1.0/croissant-2.0/mandarinas"</item>
+        <item>"Aperitivo: dados de queso fresco macerados con pimienta y aceite de oliva.";"
+        -";"
+        25.0/queso fresco-15.0/aceite de oliva virgen-10.0/pimienta"</item>
+        <item>"Pastel de calabacín.";"
+        Para empezar cortaremos la cebolla y los calabacines en láminas, a ser posible con mandolina mejor, y lo pondremos en un recipiente apto para el
+        microondas. Pondremos por encima un poco de aceite de oliva y lo pondremos en el microondas unos 8 minutos a máxima potencia. Una vez pasado este
+        tiempo, con la ayuda de una cuchara lo mezclaremos todo, pondremos los piñones, la sal y la pimienta y seguiremos removiendo. En un bol batiremos
+        los huevos con la leche. Seguidamente tomaremos un molde, mejor que sea de silicona y iremos poniendo capas, primero de verdura, luego
+        de queso y así hasta terminar la mezcla de verduras. Lo pondremos en el horno previamente calentado entre 20 y 30 minutos a 200º o hasta que
+        vemos que haya cuajado el huevo. Una vez cocido sólo debemos desmoldar y servir, caliente, a temperatura ambiente o frío. ";"
+        50.0/calabacín-0.25/cebolla-1.0/huevo-50.0/queso-20.0/aceite de oliva virgen extra-10.0/sal-10.0/pimienta-20.0/leche"</item>
+        <item>Pop con cebolla.";"
+        Cortar la cebolla y ponerla en un bol. No poner en la nevera. Dorar los granos de pimienta blanca con un poco de aceite de oliva en una
+        cazuela. Añadir toda la cebolla, salar la un poco y bajar el fuego para que no se os queme. Espere a que la cebolla sude todo el agua. cuando
+        la cebolla sea ligeramente rubia y tenga una textura casi de confitura, añadir el vino y las dos hojas de laurel, luego los
+        clavos de olor. Dejar que evapore todo el acohol, y añadir los pulpitos salpimentados y salteados. Cocer a fuego suave, para que los pulpitos no
+        endurezcan. Picar en el mortero un diente de ajo alm sal, las almendras y las avellanas, las hojas de cilantro y un chorrito de anís, si
+        os gusta. Cuando los pulpitos ya sean cocidos y tiernos, añadir la picada diluida con un poco del caldo de cocción pre aprovecharla bien.
+        Cocer un par de minutos más, y listo. ";"
+        250.0/pulpitos-2.0/cebolla-50.0/frutos secos-25.0/vino tinto-25.0/aceite de oliva virgen extra-10.0/sal-10.0/pimienta-1.0/all"</item>
+        <item>"Tarta de manzana.";"
+        -";"
+        60.0/leche-25.0/azúcar-25.0/harina-1.0/huevo-1.0/manzana"</item>
+        <item>"Zumo de frutas naturales.";"
+        -";"
+        1.0/manzana-1.0/plátano-1.0/pera"</item>
+        <item>"Crema de zanahoria.";"
+        Limpiamos, raspamos y cortamos en trozos las zanahorias y las patatas. Cortamos la cebolla en trozos y la doramos en una olla con aceite de oliva.
+        Cuando esté añadimos la zanahoria y la patata troceada, un poco de sal, lo cubrimos con agua y lo hervimos hasta que esté cocido,
+        aproximadamente unos 15-20 minutos. Lo trituramos hasta conseguir una crema fina y añadimos un par de cucharadas de aceite y un poco de
+        pimienta. Comprobamos el punto de sal y rectificamos si hace falta. Pelamos la manzana, le quitamos el corazón y la cortamos en dados. Servimos la crema caliente
+        y con unos trocitos de manzana por encima. ";"
+        0.25/cebolla-125.0/zanahoria-0.5/patata-10.0/sal-10.0/pimienta-0.25/manzana-25.0/aceite de oliva virgen extra"</item>
+        <item>"Crestas de fomatge con ensalada de repollo."; "
+        Primero realizaremos la ensalada. Sacamos las hojas más externas de las coles y cortamos el resto en tiras finas. Lavamos las zanahorias y las
+        rallamos. Combinamos estos 3 ingredientes en un bol grande y los mezclamos. Ahora toca la vinagreta. Juntamos en el recipiente de la batidora de
+        mano, el vinagre, el azúcar, la sal, el pimentón dulce, la pimienta molida y la pimienta cayena. Los batimos a velocidad baja hasta que vemos
+        que se ha disuelto el azúcar. Sin dejar de batir, vamos añadiendo poco a poco el aceite de oliva para que se emulsiones completamente. vertemos la
+        vinagreta sobre la ensalada y lo mezclamos todo para que se impregnen de la salsa. El refrigeramos durante unas horas en la nevera hasta que
+        repose.";"
+        70.0/col Lombarda-20.0/zanahoria-50.0/vinagre-20.0/azúcar-10.0/sal-10.0/pimienta dulce-10.0/pimienta-25.0/aceite de oliva virgen extra"</item>
+        <item>"Chirimoya."
+        -";"
+        1.0/chirimoya"</item>
+    </array>
 
 </resources>

@@ -156,7 +156,7 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         String prod_text = add_prod.getText().toString();
         String quant_text = add_quant.getText().toString();
         String units_text = add_units.getSelectedItem().toString();
-
+        Boolean sum_quant = false;
         add_units.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -171,11 +171,32 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         });
         if (!prod_text.isEmpty() && !quant_text.isEmpty() && !units_text.isEmpty()) {
             double quant_num = Double.parseDouble(quant_text);
-            itemList.add(new Ingredient(prod_text,units_text,false,quant_num));
+            llista_ingr.getMapingr().put(prod_text, new Ingredient(prod_text,units_text,false,quant_num));
+            /* Gemma, aquestes tres línies que venen ara, és com estava abans de que provés de sumar quantitats d'ingredients amb
+            el mateix nom. Jo crec que si s'ha d'intentar alguna cosa, el més fàcil és que provem de ni que sigui afegir un ingredient
+            que és amb aquestes tres línies que venen a continuació). Si volguessis provar lu de l'if, les has de borrar!! */
             adapter.notifyDataSetChanged();
             add_prod.setText("");
             add_quant.setText("");
-            list.smoothScrollToPosition(itemList.size()-1);
+            /*for (int i=0; i<itemList.size(); i++){
+                if (llista_ingr.getMapingr().get(i).getNom().equals(prod_text)){
+                    sum_quant = true;
+                    Double new_num = llista_ingr.getMapingr().get(i).getQuant();
+                    llista_ingr.getMapingr().get(i).setQuant(new_num+quant_num);
+                    adapter.notifyDataSetChanged();
+                    add_prod.setText("");
+                    add_quant.setText("");
+                }
+
+            }
+            if (sum_quant.equals(false)){
+                itemList.add(new Ingredient(prod_text,units_text,false,quant_num));
+                adapter.notifyDataSetChanged();
+                add_prod.setText("");
+                add_quant.setText("");
+            }
+           */
+
         }
 
         else {

@@ -13,7 +13,6 @@
     <string name="lunch_plate2">Segon plat dinar</string>
     <string name="lunch_plate3">Postres dinar</string>
     <string name="snack_title">Berenar</string>
-    <string name="snack_plate">Plat berenar</string>
     <string name="dinner_title">Sopar</string>
     <string name="dinner_plate1">Primer plat sopar</string>
     <string name="dinner_plate2">Segon plat sopar</string>
@@ -29,16 +28,104 @@
     <string name="fri">Dv</string>
     <string name="sat">Dss</string>
     <string name="product">Producte</string>
-    <string name="confirm">Confirmation</string>
-    <string name="remove">Remove</string>
-    <string name="confirm_remove">Are you want to remove \'%1$s\'?</string>
-    <string name="quantity">Quantity</string>
-    <string name="edit_prod">Product</string>
+    <string name="confirm">Confirmació</string>
+    <string name="remove">Esborrar</string>
+    <string name="confirm_remove">Vols esborrar l\'ingredient \'%1$s\'?</string>
+    <string name="quantity">Quantitat</string>
+    <string name="edit_prod">Producte</string>
     <string name="edit_quant">Quantitat</string>
-    <string name="cannot_write">Couldn\'t write list</string>
-    <string name="cannot_read">couldn\'t read list</string>
     <string name="data_missing">Completi tots els camps</string>
 
+
+    <array name="all_menu">
+        <item>"Llet. Coca casolana de nous i anís. Pera.";"Cafè amb llet. Entrepà vegetal.";"
+            Porros arrebossats amb salsa de pebrots.";"Conill guisat amb vi blanc i cebes tendres.";"Taronja.";"Poma amb canyella.";"
+            Amanida d'escarola, pastanaga ratllada i formatge feta.";"Truita d'albergínies amb pa amb tomàquet.";"Iogurt de fruites."</item>
+        <item>"Cafè amb llet. Cereals integrals.";"Biscotes amb formatge blau i ceba caramel·litzada. Suc de llimona natural.";"
+            Endívies amb poma i salsa tàrtara.";"Calamars farcits guisats.";"Plàtan.";"Iogurt. Muesli.";"
+            Coliflor ofegada amb espinacs i alls tendres.";"Pit de pollastre a la planxa amb rodanxes de tomàquet verd fregit.";"Compota de pera."</item>
+        <item>"Infusió. Mini entrepà de pernil serrà amb oli d'oliva verge.";"Grills d'aranja amb mel.";"
+            Cuscús amb pastanaga i menta fresca.";"Ous Benedict amb canonges.";"Mandarines.";"Quallada amb pinyons.";"
+            Sopa d'estrelletes.";"Samfaina amb cigrons.";"Poma ratllada amb suc de llimona."</item>
+        <item>"Cafè amb llet. Torrades amb ruca, formatge fresc i oli d'oliva verge.";"Iogurt. Muesli.";"
+            Arròs amb truita trossejada i pèsols (Arròs tres delícies).";"Bacallà guisat amb carxofes.";"Compota de poma.";"Taronja.";"
+            Gazpachuelo.";"Llom de porc a la mostassa amb pastanagues petites.";"Iogurt natural amb avellanes i prunes panses."</item>
+        <item>"Llet amb xocolata en pols. Biscotes amb melmelada de poma.";"Mini entrepà de tonyina. Suc de taronja natural.";"
+            Sopa de tomàquet i alfàbrega.";"Favetes tendres saltades amb botifarra.";"Pera.";"Iogurt. Civada.";"
+            Card amb ametlles i pinyons.";"Truita al forn amb tomàquets a la provençal.";"Mandarines."</item>
+        <item>"Llet. Torrades amb oli d'oliva verge, all i orenga. Pinya natural.";"Aperitiu: Pa francès o italià.";"
+            Macarrons guisats amb daus de salmó.";"Pollastre en pepitòria.";"Crema de taronja amb trossets de xocolata.";"Pastís de Santiago.";"
+            Espinacs a la crema.";"Ous ferrats amb patates al forn.";"Iogurt natural."</item>
+        <item>"Cafè amb llet. Croissant. Mandarines.";"Aperitiu: daus de formatge fresc macerats amb pebre i oli d'oliva.";"
+            Pastís de carbassó.";"Pop amb ceba.";"Pastís de poma.";"Suc de fruites naturals.";"
+            Crema de pastanaga.";"Crestes de fomatge amb amanida de col llombarda.";"Xirimoia."</item>
+        //RECEPTES REPETIDES PER TENIR TOT EL MES
+        <item>"Llet. Coca casolana de nous i anís. Pera.";"Cafè amb llet. Entrepà vegetal.";"
+            Porros arrebossats amb salsa de pebrots.";"Conill guisat amb vi blanc i cebes tendres.";"Taronja.";"Poma amb canyella.";"
+            Amanida d'escarola, pastanaga ratllada i formatge feta.";"Truita d'albergínies amb pa amb tomàquet.";"Iogurt de fruites."</item>
+        <item>"Cafè amb llet. Cereals integrals.";"Biscotes amb formatge blau i ceba caramel·litzada. Suc de llimona natural.";"
+            Endívies amb poma i salsa tàrtara.";"Calamars farcits guisats.";"Plàtan.";"Iogurt. Muesli.";"
+            Coliflor ofegada amb espinacs i alls tendres.";"Pit de pollastre a la planxa amb rodanxes de tomàquet verd fregit.";"Compota de pera."</item>
+        <item>"Infusió. Mini entrepà de pernil serrà amb oli d'oliva verge.";"Grills d'aranja amb mel.";"
+            Cuscús amb pastanaga i menta fresca.";"Ous Benedict amb canonges.";"Mandarines.";"Quallada amb pinyons.";"
+            Sopa d'estrelletes.";"Samfaina amb cigrons.";"Poma ratllada amb suc de llimona."</item>
+        <item>"Cafè amb llet. Torrades amb ruca, formatge fresc i oli d'oliva verge.";"Iogurt. Muesli.";"
+            Arròs amb truita trossejada i pèsols (Arròs tres delícies).";"Bacallà guisat amb carxofes.";"Compota de poma.";"Taronja.";"
+            Gazpachuelo.";"Llom de porc a la mostassa amb pastanagues petites.";"Iogurt natural amb avellanes i prunes panses."</item>
+        <item>"Llet amb xocolata en pols. Biscotes amb melmelada de poma.";"Mini entrepà de tonyina. Suc de taronja natural.";"
+            Sopa de tomàquet i alfàbrega.";"Favetes tendres saltades amb botifarra.";"Pera.";"Iogurt. Civada.";"
+            Card amb ametlles i pinyons.";"Truita al forn amb tomàquets a la provençal.";"Mandarines."</item>
+        <item>"Llet. Torrades amb oli d'oliva verge, all i orenga. Pinya natural.";"Aperitiu: Pa francès o italià.";"
+            Macarrons guisats amb daus de salmó.";"Pollastre en pepitòria.";"Crema de taronja amb trossets de xocolata.";"Pastís de Santiago.";"
+            Espinacs a la crema.";"Ous ferrats amb patates al forn.";"Iogurt natural."</item>
+        <item>"Cafè amb llet. Croissant. Mandarines.";"Aperitiu: daus de formatge fresc macerats amb pebre i oli d'oliva.";"
+            Pastís de carbassó.";"Pop amb ceba.";"Pastís de poma.";"Suc de fruites naturals.";"
+            Crema de pastanaga.";"Crestes de fomatge amb amanida de col llombarda.";"Xirimoia."</item>
+        <item>"Llet. Coca casolana de nous i anís. Pera.";"Cafè amb llet. Entrepà vegetal.";"
+            Porros arrebossats amb salsa de pebrots.";"Conill guisat amb vi blanc i cebes tendres.";"Taronja.";"Poma amb canyella.";"
+            Amanida d'escarola, pastanaga ratllada i formatge feta.";"Truita d'albergínies amb pa amb tomàquet.";"Iogurt de fruites."</item>
+        <item>"Cafè amb llet. Cereals integrals.";"Biscotes amb formatge blau i ceba caramel·litzada. Suc de llimona natural.";"
+            Endívies amb poma i salsa tàrtara.";"Calamars farcits guisats.";"Plàtan.";"Iogurt. Muesli.";"
+            Coliflor ofegada amb espinacs i alls tendres.";"Pit de pollastre a la planxa amb rodanxes de tomàquet verd fregit.";"Compota de pera."</item>
+        <item>"Infusió. Mini entrepà de pernil serrà amb oli d'oliva verge.";"Grills d'aranja amb mel.";"
+            Cuscús amb pastanaga i menta fresca.";"Ous Benedict amb canonges.";"Mandarines.";"Quallada amb pinyons.";"
+            Sopa d'estrelletes.";"Samfaina amb cigrons.";"Poma ratllada amb suc de llimona."</item>
+        <item>"Cafè amb llet. Torrades amb ruca, formatge fresc i oli d'oliva verge.";"Iogurt. Muesli.";"
+            Arròs amb truita trossejada i pèsols (Arròs tres delícies).";"Bacallà guisat amb carxofes.";"Compota de poma.";"Taronja.";"
+            Gazpachuelo.";"Llom de porc a la mostassa amb pastanagues petites.";"Iogurt natural amb avellanes i prunes panses."</item>
+        <item>"Llet amb xocolata en pols. Biscotes amb melmelada de poma.";"Mini entrepà de tonyina. Suc de taronja natural.";"
+            Sopa de tomàquet i alfàbrega.";"Favetes tendres saltades amb botifarra.";"Pera.";"Iogurt. Civada.";"
+            Card amb ametlles i pinyons.";"Truita al forn amb tomàquets a la provençal.";"Mandarines."</item>
+        <item>"Llet. Torrades amb oli d'oliva verge, all i orenga. Pinya natural.";"Aperitiu: Pa francès o italià.";"
+            Macarrons guisats amb daus de salmó.";"Pollastre en pepitòria.";"Crema de taronja amb trossets de xocolata.";"Pastís de Santiago.";"
+            Espinacs a la crema.";"Ous ferrats amb patates al forn.";"Iogurt natural."</item>
+        <item>"Cafè amb llet. Croissant. Mandarines.";"Aperitiu: daus de formatge fresc macerats amb pebre i oli d'oliva.";"
+            Pastís de carbassó.";"Pop amb ceba.";"Pastís de poma.";"Suc de fruites naturals.";"
+            Crema de pastanaga.";"Crestes de fomatge amb amanida de col llombarda.";"Xirimoia."</item>
+        <item>"Llet. Coca casolana de nous i anís. Pera.";"Cafè amb llet. Entrepà vegetal.";"
+            Porros arrebossats amb salsa de pebrots.";"Conill guisat amb vi blanc i cebes tendres.";"Taronja.";"Poma amb canyella.";"
+            Amanida d'escarola, pastanaga ratllada i formatge feta.";"Truita d'albergínies amb pa amb tomàquet.";"Iogurt de fruites."</item>
+        <item>"Cafè amb llet. Cereals integrals.";"Biscotes amb formatge blau i ceba caramel·litzada. Suc de llimona natural.";"
+            Endívies amb poma i salsa tàrtara.";"Calamars farcits guisats.";"Plàtan.";"Iogurt. Muesli.";"
+            Coliflor ofegada amb espinacs i alls tendres.";"Pit de pollastre a la planxa amb rodanxes de tomàquet verd fregit.";"Compota de pera."</item>
+        <item>"Infusió. Mini entrepà de pernil serrà amb oli d'oliva verge.";"Grills d'aranja amb mel.";"
+            Cuscús amb pastanaga i menta fresca.";"Ous Benedict amb canonges.";"Mandarines.";"Quallada amb pinyons.";"
+            Sopa d'estrelletes.";"Samfaina amb cigrons.";"Poma ratllada amb suc de llimona."</item>
+        <item>"Cafè amb llet. Torrades amb ruca, formatge fresc i oli d'oliva verge.";"Iogurt. Muesli.";"
+            Arròs amb truita trossejada i pèsols (Arròs tres delícies).";"Bacallà guisat amb carxofes.";"Compota de poma.";"Taronja.";"
+            Gazpachuelo.";"Llom de porc a la mostassa amb pastanagues petites.";"Iogurt natural amb avellanes i prunes panses."</item>
+        <item>"Llet amb xocolata en pols. Biscotes amb melmelada de poma.";"Mini entrepà de tonyina. Suc de taronja natural.";"
+            Sopa de tomàquet i alfàbrega.";"Favetes tendres saltades amb botifarra.";"Pera.";"Iogurt. Civada.";"
+            Card amb ametlles i pinyons.";"Truita al forn amb tomàquets a la provençal.";"Mandarines."</item>
+        <item>"Llet. Torrades amb oli d'oliva verge, all i orenga. Pinya natural.";"Aperitiu: Pa francès o italià.";"
+            Macarrons guisats amb daus de salmó.";"Pollastre en pepitòria.";"Crema de taronja amb trossets de xocolata.";"Pastís de Santiago.";"
+            Espinacs a la crema.";"Ous ferrats amb patates al forn.";"Iogurt natural."</item>
+        <item>"Cafè amb llet. Croissant. Mandarines.";"Aperitiu: daus de formatge fresc macerats amb pebre i oli d'oliva.";"
+            Pastís de carbassó.";"Pop amb ceba.";"Pastís de poma.";"Suc de fruites naturals.";"
+            Crema de pastanaga.";"Crestes de fomatge amb amanida de col llombarda.";"Xirimoia."</item>
+    </array>
+
+    <!--
     <array name="all_menu">
         <item>"Cafè amb llet. Torrades amb oli d'oliva verge i sal.";"Iogurt de fruites.";"Amanida grega.";"Saltxixes de pavo a la planxa amb sofregit de ceba i tomàquet.";"Meló.";"Bastonets de pa. Suc natural de magrana.";"Espaguetis al pesto.";"Sardines al forn amb tomàquet rostit.";"Carpaccio de pinya."</item>
         <item>"Infusió. Pa de pessic casolà de taronja.";"Entrepà de tomàquet i formatge semicurat.";"Risotto de bolets.";"Mer a la planxa amb amanida de remolatxa.";"Troços de sindria amb menta fresca picada.";"Llet. Pa amb pernil dolç i oli d'oliva verge.";"Crema de pastanaga.";"Pollastre a la llimona amb patates forneres.";"Iogurt natural."</item>
@@ -77,28 +164,418 @@
         <item>"Cafè amb llet. Biscotes amb mermelada de prunes.";"Aperitiu: olives, ametlles salades i gambes cuites.";"Gaspatxo.";"Guatlla al forn amb rodantxes gruixudes de carbassó.";"Sindria.";"Quallada amb mel.";"Parrillada de verdures.";"Llom de porc a la planxa.";"Albercocs."</item>
         <item>"Batut de gerds. Pa amb oli d'oliva verge, all i orenga.";"Aperitiu: surtit de formatges amb torrades.";"Crudités de verdures amb puré de cigrons (Hummus).";"Xai guisat amb prunes i ceba.";"Broxeta de fruites fresques.";"Iogurt natural de pinyons.";"Amanida de tomaquet i orenga.";"Truita de patates.";"Plàtan."</item>
     </array>
+-->
+
 
     <array name="all_recipes">
-        <!--recepta per a 1 persones.--><item>"Torrades amb tomàquet i formatge curat. Suc natural de meló.";"-";
-                                        "100.0/pa-1.0/tomàquet-10.0/oli-20.0/formatge curat-50.0/meló"</item>
-        <!--recepta per a 1 persones.--><item>"Iogurt natural amb avellanes.";"-";
-                                        "1.0/iogurt-10.0/avellanes"</item>
-        <!--recepta per a 3 persones.--><item>"Sopa de carbassa.";"Posem al foc una olla amb aigua i una mica de sal. Mentre l'aigua s'escalfa i arrencar a bullir, pelem i rentem les patates. Després, les tallem en varis trossos (de mida mitjana) i reservem. Ara, fem el mateix amb els porros. A continuació toca eliminar l'escorça de la carbassa, que és ben dura. Un cop hem pelat la carbassa, tallem la polpa a daus de mida mitjana. El següent pas és comprovar que l'aigua de l'olla ja bull i, si és així, posar-hi els porros, les patates i la carbassa i deixar que coguin durant almenys 30 minuts. El temps de cocció pot variar segons la mida dels trossos de les verdures. Després colem les verdures i les posem de nou a l'olla. Afegim la nata líquida i una mica de nou moscada. Triturem les verdures amb la batedora elèctrica fins que no quedi cap tros ni cap grumoll. Ha de tenir una textura cremosa.";
-                                        "0.5/carbassa-2.0/porros-2.0/patates-200.0/nata liquida-10.0/sal-10.0/pebre-10.0/nou moscada"</item>
-        <!--recepta per a 1 persones.--><item>"Mitja alberginia farcida de carn picada de pollastre i blat de moro gratinada.";"Encenem el forn al màxim. Mentre s'escalfa partim l'albergínia de dalt a baix. En traiem part de la polpa amb un ganivet, anem resseguint la pell i només en deixem un gruix com de mig centímetre. Tallem aquesta polpa a daus petits. Pelem la ceba i la ratllem. En una paella hi posem una mica d'oli i la carn picada a foc baix. Un cop veiem que ja no és de color vermell hi posem la ceba ratllada i els daus d'albergínia. Ho amanim amb una mica de sal i d'orenga. Al cap d'uns 7 minuts, quan veiem tot plegat ben cuit, veureu que ha reduit de volum i que està ben tou, hi afegim el tomàquet i una mica de sal i sucre. Un cop el tomàquet ja és cuit, ho veurem perquè ha agafat un color més ataronjat i l'oli ja sura per sobre, hi posem la crema de llet. Farcim les albergínies amb tot això i les posem al forn a 150º durant mitja hora. Hi podem posar una mica de formatge ratllat per sobre si volem. Ja veureu que encara que l'albergínia sencera s'hagi de coure, com que te un gruix primet es fa en aquesta mitja hora i queda la mar de bé.";
-                                        "1.0/albergínia-75.0/carn picada-1.0/ceba petita-200.0/tomàquet triturat-100.0/crema de llet-10.0/orenga-10.0/oli-10.0/sal"</item>
-        <!--recepta per a 1 persones.--><item>"Préssec.";"-";
-                                        "1.0/préssec"</item>
-        <!--recepta per a 1 persones.--><item>"Llet. Muesli.";"-";
-                                        "100.0/llet-50.0/muesli"</item>
-        <!--recepta per a 4 persones.--><item>"Mongetes verdes saltejades.";"Bullim les mongetes amb força aigua i sal, i les escorrem. Posem oli i mantega en una paella i saltegem el pernil que haurem tallat a trossos petits. Afegirem les mongetes i ho deixarem 4 o 5 minutets que es cogui tot junt";
-                                        "1.0/mongeta tendre-200.0/pernil-100.0/mantega-10.0/sal-50.0/oli</item>
-        <!--recepta per a 4 persones.--><item>"Torrades de bolets saltats amb ou poché.";"";
-                                        "250.0/bolets variats-2.0/all-2.0/ceba tendra-10.0/herbes fresques-50.0/oli-50.0/vi negre-10.0/sal-10.0/pebre-4.0/ou-400.0/pa integral-1.0/cibulet"</item>
-        <!--recepta per a 1 persones.--><item>"Sindria.";"-";
-                                        "100.0/síndria"</item>
+
+        <item>"Llet. Coca casolana de nous i anís. Pera.";"
+        -";"
+        50.0/llet-95.0/farina-55.0/aigua-4.0/llevat-1.25/sucre-6.25/oli d'oliva verge-25.0/nous-25.0/licor d'anís-1.0/pera"</item>
+        <item>"Cafè amb llet. Entrepà vegetal.";"
+        -";"
+        10.0/cafè-25.0/llet-50.0/pa-10.0/enciam-0.5/tomàquet-5.0/oli d'oliva verge-10.0/tonyina"</item>
+        <item>"Porros arrebossats amb salsa de pebrots.";"
+        Elimina la part verda i els filaments dels porros. Renta'ls per tal d'eliminar la terra. Cou-los en aigua amb sal durant 10 minuts. Escorre'ls.
+        Escalfa l'oli a temperatura moderada. Assaona'ls. Passa'ls per farina, ou batut i farina de galeta. Fregeix-los fins que siguin ben rossos i
+        escorre'ls sobre paper de cuina. Serveix-los ben calents. Per fer la salsa, escalivem el pebrot i el pelem i li traiem les llavors. Posem el
+        pebrot net i pelat en un bol juntament amb la crema de llet la sal i el pebre i ho passem per la batedora fins que quedi ben fina.";"
+        250.0/alls porros-0.5/ou-100.0/crema de llet-0.25/pebrot vermell-25.0/farina-5.0/sal-5.0/pebre-50.0/oli d'oliva verge"</item>
+        <item>"Conill guisat amb vi blanc i cebes tendres.";"
+        Per començar, en un cassó amb aigua bullint escaldeu les múrgules durant un parell de minuts, retireu-les del cassó, escorreu-les i reserveu-les.
+        A continuació, en una paella amb una mica d'oli salteu les espatlletes de conill ja salpebrades. Quan estiguin rosses, retireu-les de la paella i
+        reserveu-les. Després, a la mateixa paella sofregiu les cebes tendres tallades per la meitat, els alls tendres, el llorer i la farigola. Quan
+        estigui tot dauradet, retireu-ho i reserveu-ho. Tot seguit, a la mateixa paella poseu-hi la farina i remeneu-la bé. Quan estigui rossa, afegiu-hi
+        el vi blanc, remeneu-ho bé durant un parell de minuts, poseu-hi l'aigua, les espatlletes de conill, el llorer i la farigola i deixeu-ho coure tot
+        junt a foc suau durant 20 minuts. Seguidament, poseu-hi la ceba tendra i deixeu-ho coure durant uns minuts més. Finalment, poseu les espatlletes i
+        la ceba tendra en una altra paella, coleu la salsa, afegiu-la a la paella juntament amb els alls tendres i les múrgules i deixeu-ho coure tot junt
+        durant 5 minuts més. I ja per acabar, emplateu les espatlletes, la ceba i els alls tendres, salseu-ho tot amb el suc de la cocció i guarniu el
+        plat amb la farigola.";"
+        4.0/espatlles de conill-25.0/aigua-1.0/ceba tendre-3.0/all tendre-1.0/fulla de llorer-1.0/branca farigola-75.0/vi blanc-50.0/oli d'oliva verge-
+        5.0/sal-5.0/pebre"</item>
+        <item>"Taronja.";"
+        -";"
+        1.0/taronja"</item>
+        <item>"Poma amb canyella.";"
+        -";"
+        1.0/poma-5.0/canyella"</item>
+        <item>"Amanida d'escarola, pastanaga ratllada i formatge feta.";"
+        Desgraneu les magranes eliminant les pells blanques. Talleu el bacó a daus ben petits, renteu, assequeu i talleu l’escarola a trossos. En un bol
+        barregeu la mostassa, un pessic de sal i pebre i el vinagre. Un cop tot ben barrejat, poc a poc aneu afegint l’oli d’oliva i reserveu-ho.
+        Escalfeu una cullerada d’oli en una paella petita i saltegeu els daus de bacó remenant amb una cullera de fusta. Poseu l’escarola en una safata
+        fonda, amaniu-la amb la vinagreta preparada, escampeu pel damunt els grans de magrana i el bacó saltejat.";"
+        0.25/escarola-0.5/magrana-100.0/bacó-30.0/oli d'oliva verge-10.0/mostassa-10.0/vinagre de Mòdena"</item>
+        <item>"Truita d'albergínies amb pa amb tomàquet.";"
+        Netegem les albergínies, en traiem el caputxó i el cul, la tallem a daus no massa petits. Els salem i els deixem 15 minuts a l’escorredor. Tallem
+        la ceba laminada. Posem una mica d’oli a la paella per fregir la ceba. Cal fer-ho a foc lent perquè no ha de quedar crua i sovint es torra abans
+        no està cuita. Una vegada fregida la ceba la retirem de la paella i la posem a l’escorredor perquè deixi anar l’oli. Afegim més oli a la paella i
+        quan està calent hi incorporem els daus d’albergínia que han de quedar fregits. Feu ús d’espàtula de fusta per a sacsejar-los. Una vegada fregits
+        dipositem els daus d’albergínia a l’escorredor d’on haurem retirat prèviament la ceba. En un bol de vidre trenquem els sis ous sencers, hi posem
+        sal i els batem. Han de quedar ben barrejats però no massa escumosos. Al vol hi aboquem els daus d’albergínia i la ceba i ho barregem perquè
+        quedi tot integrat i uniforme. Agafem la paella on farem la truita, hi posem oli i quan està una mica calent hi tirem el contingut del bol.
+        El repartim uniformement per tot l’espai i coem la truita a foc no massa viu. El repte és que no s’enganxi i no se’ns torri massa abans no
+        estigui cuita per dins. Quan veiem que l’ou ha pres i no està cru, retirem la paella del foc, agafem un plat una mica més gran que la mida de la
+        paella i girem la truita, posem una mica d’oli a la paella i passem la truita del plat a la paella, perquè s’acabi de fer. L’anirem punxant per
+        comprovar que no queda crua i ens ajudarem de l’espàtula de fusta per anar-la separant dels costats i donar-li forma de canto arrodonit. Una
+        vegada cuita posem la truita damunt del plat i la deixem refredar.";"
+        2.0/ou-1.0/alberginia-0.25/ceba-30.0/oli d'oliva verge-5.0/sal-50.0/pa-0.5/tomàquet"</item>
+        <item>"Iogurt de fruites.";"
+        -";"
+        1.0/iogurt de fruites"</item>
+
+        <item>"Cafè amb llet. Cereals integrals.";"
+        -";"
+        10.0/cafè-25.0/llet-25.0/cereals integrals"</item>
+        <item>"Biscotes amb formatge blau i ceba caramel·litzada. Suc de llimona natural.";"
+        -";"
+        20.0/biscotes-5.0/formatge blau-0.5/ceba-1.0/llimona"</item>
+        <item>"Endívies amb poma i salsa tàrtara.";"
+        Rentem bé les endívies, les tallem per la meitat de manera longitudinal i després en juliana. Les saltem amb un poc d'oli i sal. Les posem al
+        plat i, a continuació, hi afegim el formatge rocafort (al gust), la poma i les nous. Tot i que el plat de la fotografia el vam amanir amb oli,
+        en realitat no en necessita, perquè l'endívia està cuita i el formatge i les nous ja li aporten prou greix. Si voleu, podeu canviar la poma per
+        pera; amb les dues fruites queda molt bona.";"
+        3.0/endívia-20.0/formatge rocafort-10.0/nous-0.5/poma-5.0/sal-15.0/oli d'oliva verge extra"</item>
+        <item>"Calamars farcits guisats.";"
+        Traiem la pell de la botifarra i l'esparraquem. Rostim en una cassola, amb un raig d'oli, fins que sigui ben rossa. La traiem i la reservem.
+        Mentrestant, en traiem la pell i esparraquem la botifarra de perol. A la mateixa cassola enrossim la botifarra de perol juntament amb les potes
+        i les aletes dels calamars. Ho retirem i ho reservem. A la mateixa cassola, hi afegim la ceba confitada i deixem que ens agafi temperatura.
+        Afegim totes les carns que hem enrossit abans i ho coem tot junt, uns 10'. Fem la picada amb els alls, pa fregit, julivert i safrà al morter.
+        La desglacem amb el vi blanc. Afegim la picada a la cassola i deixem que el líquid es redueixi del tot, uns 20' aproximadament. Ho rectifiquem
+        de sal i pebre. Ho apartem del foc i ho deixem refredar. Farcim els cossos dels calamars. Els tanquem amb l'ajuda d'un escuradents. Fem la salsa
+        de calamar: Piquem la ceba. L'enrossim en una paella, amb els alls sense pelar tallats per la meitat, fins que sigui força fosca. A foc viu, uns
+        10 min. Mentrestant, piquem els calamars prèviament descongelats, amb el ganivet. Tallem els alls. Afegim els alls a la paella de la ceba, 2
+        minuts. Afegim els calamars picats i ho deixem coure tot uns 5 minuts. Hi afegim el vi blanc i ho deixem reduir del tot, uns 5 minuts també.
+        Hi afegim el fumet de peix i ho deixem coure 2 hores. Ho colem. Ho tornem a la paella fins que tingui la textura de salsa que volem, uns 10
+        minuts aproximadament. Ho reservem en un lloc calent. En una planxa o paella, amb un rajolí d'oli, ben calent, hi enrossim els calamars farcits.
+        Els posem a la paella de la salsa i ho deixem coure 3 minuts. Amanim les fulles d'api i julivert.";"
+        3.0/calamar fresc-50.0/botifarra-25.0/ceba-5.0/sal-2.0/all-80.0/fumet de peix-20.0/oli d'oliva verge extra"</item>
+        <item>"Plàtan.";"
+        -";"
+        1.0/plàtan"</item>
+        <item>"Iogurt. Muesli.";"
+        -";"
+        1.0/iogurt-25.0/muesli"</item>
+        <item>"Coliflor ofegada amb espinacs i alls tendres.";"
+        Coem la coliflor amb una cassola amb sal. Quant estigui la reservem. Per una altra banda, coem els espinacs, amb sal. En una paella
+        amb una mica d'oli, reofeguem la ceba i l'all. Afegim una cullerada de pebre vermell i incorporem una mica d'aigua de coure la coliflor.
+        Deixem que es redueixi tot una mica. Afegim la coliflor i els espinacs i aquest és el reslutat.";"
+        0.25/coliflor-50.0/espinacs-1.0/all-0.5/ceba-5.0/pebre vermell-5.0/sal-
+        0.25/aigua-20.0/oli d'oliva verge extra"</item>
+        <item>"Pit de pollastre a la planxa amb rodanxes de tomàquet verd fregit.";"
+        Renteu i talleu a rodanxes gruixides el tomàquet. Barregeu el formatge fresc amb la pell ratllada de taronja i un fil d'oli. Salpebreu el
+        pollastre i unteu-lo d'oli. Feu-lo a la planxa a foc mitjà per tal que es dauri i no quedi cru. Aprofiteu si teniu espai a la planxa per fer
+        les rodelles de tomàquet per les dues bandes. Poseu un polsim de sal.Traieu el pollastre, serviu-lo amb el tomàquet al damunt i poseu una mica
+        de formatge fresc batut per sobre.
+        1.0/pit de pollastre-1.0/tomàquet-25.0/formatge fresc-0.25/taronja-10.0/oli d'oliva verge extra-5.0/sal-5.0/pebre"</item>
+        <item>"Compota de pera."
+        -";"
+        1.0/pera-10.0/sucre-0.5/llimona-5.0/aigua"</item>
+
+        <item>"Infusió. Mini entrepà de pernil serrà amb oli d'oliva verge.";"
+        -";"
+        50.0/aigua-1.0/infusió de menta-50.0/pa-10.0/pernil serrà-5.0/oli d'oliva verge"</item>
+        <item>"Grills d'aranja amb mel.";"
+        -";"
+        1.0/aranja-5.0/mel"</item>
+        <item>"Cuscús amb pastanaga i menta fresca.";"
+        Posem el cuscús precuit en un bol i li afegim 150ml d’aigua bullint. Remenem amb una forquilla. Tapem amb un drap net humit i ho deixem reposar
+        almenys 5 minuts. Rentem amb abundant aigua els tomàquets, el pebrot vermell, el cogombre i la pastanaga. Seguidament, tallem tots aquests
+        ingredients a dauets. També tallem el formatge amb la mateixa forma. Piquem el julivert. Posem les verdures a un bol gran i les barregem amb el
+        formatge. Afegim el cuscús, les olives, l’oli d’oliva, el julivert i el suc de llimona. Salpebrem al gust. Remenem tot bé i ho deixem refredar
+        una hora abans de servir.";"
+        150.0/sèmola de cuscús precuita-150.0/aigua-2.0/tomàquets-1.0/cogombre-1.0/pebrot vermell-1.0/pastanaga-50.0/olives negres-100.0/formatge semi curat-
+        1.0/branca de julivert-25.0/oli d'oliva verge-1.0/llimona-5.0/sal-5.0/pebre"</item>
+        <item>"Ous Benedict amb canonges.";"
+        Obrirem els muffins i els torrarem. O farem servir les torrades. Tallarem el pernil per la meitat. Farem la salsa holandesa. Per fer-la,
+        podem seguir la manera tradicional: muntant els rovells, el suc, l’aigua i la sal en un bany maria suau. O la manera ràpida: amb el
+        túrmix. Escalfarem els ous. Per això necessitarem aigua calenta amb vinagre que no arribi a bullir. Farem un remolí, hi posarem els ous
+        amb molt de compte, els deixarem coure 4 o 5 minuts, els traurem, en tallarem les puntes i els tindrem a punt per acabar el plat.
+        Posarem les torrades o els muffins al plat, a sobre el pernil, després els ous escalfats i finalment la salsa.";"
+        50.0/pa-2.0/ou-10.0/pernil dolç-1.0/llimona-20.0/aigua-40.0/mantega-5.0/sal"</item>
+        <item>"Mandarines.";"
+        -";"
+        3.0/mandarina"</item>
+        <item>"Quallada amb pinyons.";"
+        -";"
+        1.0/quallada-20.0/pinyons"</item>
+        <item>"Sopa d'estrelletes.";"
+        Per al brou, posa a escalfar abundant aigua en una cassola gran. Afegeix sal, un pessic de pebre, un rajolí d'oli i les cuixes de
+        pollastre. Quan arrenqui el bull retira l'escuma de la superfície amb un cassó. Afegeix al brou les dents d'all, la part blanca del
+        porro, la pastanaga, la ceba tendra tallada i les tiges senceres. Cuina la sopa durant 1 hora a foc suau. Retira el pollastre, esmolla'l
+        i reserva'l. Tritura la verdura amb el brou. Afegeix la pasta d'estrelles i deixa que es cuini durant 5-6 minuts. Un cop cuinada la
+        pasta, afegeix el pollastre esmicolat.";"
+        25.0/pasta d'estrelles-0.5/cuixa de pollastre-0.25/pastanaga-0.25/ceba-0.5/ceba tendra-0.25/porro-1.0/all-800.0/aigua-
+        25.0/oli d'oliva verge extra-20.0/sal"</item>
+        <item>"Samfaina amb cigrons.";"
+        Tallem totes les hortalisses a daus més o menys de la mateixa mida (perquè tinguin la mateixa cocció). En una paella posem oli i anem
+        coent les hortalisses, primer les que tenen la cocció més llarga, així que comencem pels pebrots, l'esberginia, el carbassó, i el
+        tomàquet, salpebrem i posem la mica de sucre (per a traure l'acidesa del tomàquet). Deixem que acabi de coure's, hi afegim els cigrons,
+        remenem amb compte, i només queda afegir els ous durs.
+        0.25/pebrot vermell-0.25/pebrot verd-0.25/alberginia-0.25/carbassó-100.0/tomàquet-20.0/sal-20.0/pebre"</item>
+        <item>"Poma ratllada amb suc de llimona."
+        -";"
+        1.0/poma-1.0/llimona"</item>
+
+        <item>"Cafè amb llet. Torrades amb ruca, formatge fresc i oli d'oliva verge.";"
+        -";"
+        10.0/cafè-25.0/llet-50.0/pa-5.0/ruca-20.0/formatge fresc-5.0/oli d'oliva verge"</item>
+        <item>"Iogurt. Muesli.";"
+        -";"
+        1.0/iogurt-25.0/muesli"</item>
+        <item>"Arròs amb truita trossejada i pèsols (Arròs tres delícies).";"
+        Primer procedim a bullir l'arròs: Dues mesures d'aigua per cada mesura d'arròs, juntament amb una mica de sal, pebre i una mica d'oli
+        i ho deixem a foc lent. Un cop fet l'escorrem en aigua freda i el reservem en un bol. Amb els ous fem en una altra paella una truita
+        francesa i la deixem refredar una mica. Un cop temperada la tallem en quadradets. Tallem la pastanaga i el pernil dolç a trossets
+        petits. En una paella gran amb una mica d'oli saltegem les gambes fins que es daurin una mica. Afegim els pèsols, la pastanaga i el
+        pernil dolç a la paella. Cuinem durant 2 minuts barrejant-ho bé, fins que estiguin tots els ingredients daurats. Afegim l'arròs i
+        el saltegem amb la resta uns minuts.";"
+        100.0/arròs-1.0/ou-0.25/pastanaga-60.0/pernil dolç-40.0/gambes pelades-50.0/pèsols-50.0/oli d'oliva verge extra-10.0/pebre-10.0/sal"</item>
+        <item>"Bacallà guisat amb carxofes.";"
+        Enfarinem el bacallà i el fregim. Reservem. Bullim els ous (10 minuts). Reservem. Farem un sofregit amb les cebes i els alls, quan
+        comencin a tenir color, afegim el tomàquet, deixem que es vagi fent. Tindrem les patates pelades, afegim les carxofes tallades, i
+        ho deixem que es vagi coen una mitja hora, anant remenant. Anirem afegint fumet, perquè quedi tot cobert, tapem. Mentrestant enfarinem
+        els ous tallats a la meitat, i els fregim, en una paella amb la mantega. Quan les patates estiguin quasi cuites afegim els ous i els
+        deixem uns cinc minuts més, i apaguem el foc.";"
+        50.0/bacallà-1.0/carxofa-1.0/patata-0.5/ceba-1.0/tomàquet-1.0/all-100.0/farina-100.0/fumet-1.0/ou-50.0/mantega"</item>
+        <item>"Compota de poma.";"
+        -";"
+        1.0/poma-10.0/sucre-0.5/llimona-5.0/aigua"</item>
+        <item>"Taronja.";"
+        -";"
+        1.0/taronja"</item>
+        <item>"Gazpachuelo.";"
+        En un olla posem aigua a bullir. Afegim les patates pelades i tallades a grills, i els ous amb compte de no trencar la closca. Mentre
+        fem maionesa casolana, si volem donar-li gust a all, afegim un gra d'all. Afegim tots els ingredients de la maionesa (els ous, la
+        llimona, l'oli, la sal), fiquem el braç de la batedora a màxima potència sense moure'l, quan comenci a emulsionar anem pujant el braç
+        fins que estigui feta. Separem una tassa maionesa, si ens agrada el gust de llimona podem afegir-ne una mica més, i la barregem amb
+        aigua fins posar-la més líquida, que no estigui espessa. Una vegada que estiguin les patates bullides, separem i reservem els ous.
+        Afegim les gambes i el peix i cuinem uns cinc minuts. Apaguem el foc, deixem que la sopa es refredi. I anem afegint la maionesa
+        dissolta en aigua poc a poc i barrejant bé. Escalfem la sopa a foc suau, si veiem que espessa molt, afegim una mica d'aigua i barregem
+        bé.";"
+        100.0/patata-2.0/ou-50.0/gambes-50.0/rap-1.0/llimona-50.0/oli d'oliva verge extra-30.0/sal"</item>
+        <item>"Llom de porc a la mostassa amb pastanagues petites.";"
+        En una cassola amb oli s'hi rosseja el filet sencer, salat i empebrat. Un cop ros per les dues cares, s'hi posa la ceba, la pastanaga
+        i els alls, tot ben picat. Es deixa coure una mica i tot seguit s'hi afegeixen els tomàquets tallats a daus i les herbes. Es deixa que
+        es vagi fent durant cinc minuts aproximadament, fins que les verdures s'hagin begut el suc. Aleshores s'hi aboca el vi negre i es deixa
+        reduir. Un cop reduït, es retira el filet de la cassola, es talla a rodanxes i es reserva. Es passen les verdures pel colador i es
+        tornen a posar al foc juntament amb el vinagre i la mel. Es remena un parell de minuts i s'hi posa el brou. Incorporem altre cop la
+        carn a la cassola i es deixa que cogui tot plegat uns deu minuts aproximadament.";"
+        120.0/filet de porc-0.25/ceba-0.25/pastanaga-0.5/all-0.5/tomàquet-1.0/fulla de llorer-25.0/vi negre-10.0/vinagre-20.0/mostassa-10.0/mel-
+        60.0/bou"</item>
+        <item>"Iogurt natural amb avellanes i prunes panses."
+        -";"
+        1.0/iogurt natural-10.0/avellanes-10.0/panses"</item>
+
+        <item>"Llet amb xocolata en pols. Biscotes amb melmelada de poma.";"
+        -";"
+        50.0/llet-10.0/xocolata en pols-5.0/melmelada de poma-20.0/biscotes"</item>
+        <item>"Mini entrepà de tonyina. Suc de taronja natural.";"
+        -";"
+        50.0/pa-0.5/tomàquet-5.0/oli d'oliva verge-10.0/tonyina-2.0/taronja"</item>
+        <item>"Sopa de tomàquet i alfàbrega.";"
+        Donem un tall petit als tomàquets i els escaldem en aigua bullint mig minut, així els podrem pelar molt fàcilment. Els pelem i traiem
+        les llavors si són molt gruixudes. Piquem molt menut els pebrots escalivats. En una paella fem escalfar 2 cullerades d'oli d'oliva i
+        quan estigui una mica calent afegim els pebrots escalivats i picats i les guindilles, ho salem i ho deixem coure uns 5 minuts a foc
+        lent. Afegim l'all a làmines i ho coem 2 minuts més. Incorporem les tomates picades, una mica més de sal i el vinagre i deixem que es
+        faci tot desfent-se les tomates durant uns 10 minuts. Quan la tomata ja esta fregida i desfeta afegim el brou de pollastre i ho deixem
+        coure  un quart d'hora, per últim rectifiquem de sal. Piquem l'alfàbrega amb una mica de sal al morter o amb una batedora, afegim un
+        bon raig d'oli i unes gotes de vinagre i en servim una cullerada a cada plat de sopa.";"
+        250.0/tomàquets-1.0/pebrot vermell-0.5/all-10.0/vinagre-25.0/brou de pollastre-25.0/oli d'oliva verge extra-10.0/sal-10.0/pebre"</item>
+        <item>"Favetes tendres saltades amb botifarra.";"
+        Per començar, poseu aigua i menta fresca a bullir i després tireu-hi les faves, que han de bullir durant 10 minuts. Mentrestant, talleu
+        la cansalada viada a trossets i fregiu-la en una paella amb oli. Passats un parell de minuts, quan estigui rossa, afegiu-hi els alls
+        tendres també tallats ben finets i deixeu-ho enrossir una estona. Llavors incorporeu-hi les faves. D'altra banda, escaldeu la botifarra
+        per treure-li la pell més fàcilment, talleu-la a trossets petits, i poseu-la a la paella juntament amb les faves i el sofregit.
+        Tireu-hi un mica de pebre i ja podreu emplatar.";"
+        250.0/faves-50.0/all tendre-100.0/botifarra de perol-50.0/cansalada-50.0/oli doliva verge extra-20.0/sal-20.0/pebre"</item>
+        <item>"Pera.";"
+        -";"
+        1.0/pera"</item>
+        <item>"Iogurt. Civada.";"
+        -";"
+        1.0/iogurt-25.0/civada"</item>
+        <item>"Card amb ametlles i pinyons.";"
+        Primerament, netegem els cards i els fiquem a bullir en un cassó amb aigua i sal, fins que són cuits al "dente", els escorrem i guardem
+        el brou de la cocció colat. Seguidament, en una safata plana per anar al forn, fiquem les ametlles laminades escampades i les torrem en
+        el forn a 180º fins que veiem que són una mica daurades i les reservem. A continuació, en una cassola marinera metàl·lica amb un raig
+        d'oli d'oliva, sofregim la ceba picolada i les ametlles. Quan la ceba ja és transparent, afegim un grapat de farina, un raig de vi
+        blanc i deixem que redueixi. Tot seguit, afegim el brou de coure els cards, ho remenem amb el batedor de varetes i corregim de sal. A
+        continuació afegim els cards, deixem que cogui tot plegat uns deu minuts, ho espolsem amb el julivert picolat pel damunt, i ja ho tenim
+        llest per servir a taula en la mateixa cassola amb un plat a sota.";"
+        125.0/card-50.0/ametlles-50.0/farina-40.0/oli d'oliva verge extra-20.0/sal-50.0/vi blanc-50.0/aigua-0.5/ceba tendra"</item>
+        <item>"Truita al forn amb tomàquets a la provençal.";"
+        Traiem les tripes de les truites, les rentem, fem uns talls transversals en un dels costats del peix i les deixem escórrer. Un cop ben
+        escorregudes, posem mitja rodanxa de llimona dins els talls de les truites. Pelem i tallem la ceba a tires fines i els alls a làmines.
+        Posem oli en una cassola i hi sofregim, a foc suau, la ceba i els alls. Pelem les patates i les tallem a làmines d’uns 3 cm de gruix.
+        Quan la ceba estigui transparent, hi afegim les patates, la fulla de llorer i el julivert picat. Ho cobrim amb aigua, ho salemi ho
+        deixem bullir uns 5 minuts. Traslladem el sofregit a una safata de forn i hi col·loquem al damunt les truites, les ruixem amb el suc
+        de mitja llimona i un bon raig d’oli. Incorporem a la safata els tomàquets partits per la meitat, hi tirem una mica de sal pel damunt
+        i posem la safata a forn mitjà (180º) uns deu minuts.";"
+        1.0/truita de riu-0.5/llimona-75.0/patata-0.25/ceba-1.0/fulla de llorer-0.5/all-1.0/tomàquet-10.0/sal-20.0/oli d'oliva verge extra"</item>
+        <item>"Mandarines."
+        -";"
+        3.0/mandarina"</item>
+
+        <item>"Llet. Torrades amb oli d'oliva verge, all i orenga. Pinya natural.";"
+        -";"
+        50.0/llet-50.0/pa-1.0/all-5.0/oli d'oliva verge-5.0/orenga-0.25/pinya"</item>
+        <item>"Aperitiu: Pa francès o italià.";"
+        -";"
+        50.0/pa italià"</item>
+        <item>"Macarrons guisats amb daus de salmó.";"
+        Poseu oli en una cassola de fang i fregiu-hi els alls fins que quedin daurats, retireu-los. En el mateix oli fregiu lleugerament les
+        gambes i reserveu-les. Incorporeu el tomàquet ratllat a la cassola, condimenteu-lo amb sal i pebre al gust i deixeu-lo coure uns 15
+        minuts, remenant-lo de tant en tant. Un cop el tomàquet està cuit, regueu-lo amb el fumet, després incorporeu-hi el salmó tallat a
+        daus i la nata líquida. Deixeu-ho coure, tot junt, uns 8 minuts a foc suau. Mentrestant, bulliu la pasta en abundant aigua fins que
+        estigui al dente, escorreu-la i passeu-la a la cassola juntament amb les gambes que teniu reservades, barregeu-ho bé i deixeu-ho
+        reposar uns minuts abans de servir-ho.";"
+        60.0/macarrons-30.0/gambes pelades-50.0/salmó-1.0/tomàquet-30.0/fumet-25.0/nata líquida-0.5/all-10.0/sal-10.0/pebre"</item>
+        <item>"Pollastre en pepitòria.";"
+        Per començar podríem preparar la picada, i així quan la necessitarem ja la tindrem a punt: En un morter aboquem la dent d’all fregida,
+        les ametles sense pell i els 2 rovells d’ou dur. Ho matxaquem tot i hi afegim un poquet de brou per què es desfaça i tinga consistència
+        de salsa espessa. Tallem el pollastre a trossets, el salpebrem i el passem lleugerament per farina. En una cassola amb un poquet d’oli
+        d’oliva fregim el pollastre fins que quede ben daurat, i el reservem a part. A la mateixa cassola sofregim a foc suau l’all i la ceba
+        picats ben finets. Quan comence a agarrar color afegim el pollastre i seguidament la copa de xerès. En arrencar el bull aboquem el
+        brou, que hi haja suficient per cobrir-ho tot. Afegim el julivert i el llorer i tapem; deixem coure tranquilament fins que el pollastre
+        estiga ben tendre (aproximadament 30 minuts). A la meitat de la cocció, però, afegirem la picada. Quan tindrem el pollastre cuit el
+        retirarem a un plat, i deixarem només la salsa al foc, per tal de continuar coent-la fins que estiga al punt. Si ens queda massa
+        espessa hi podem afegir un poc de brou; si ens queda massa líquida hi afegim un poquet de farina sense parar de remenar, per què no
+        faça grumolls. Abans de servir tornarem a afegir el pollastre a la cassola, per poder servir-lo calent. Bon profit!
+        250.0/pollastre-1.0/ou-25.0/ametlles-25.0/oli d'oliva verge extra-0.5/all-0.25/ceba-1.0/fulla de llorer-50.0/bou de pollastre-
+        50.0/farina-20.0/sal-20.0/pebre"</item>
+        <item>"Crema de taronja amb trossets de xocolata.";"
+        -";"
+        1.0/taronja-25.0/sucre-20.0/xocolata"</item>
+        <item>"Pastís de Santiago.";"
+        -";"
+        2.0/ous-50.0/sucre-50.0/ametlles-1.0/llimona"</item>
+        <item>"Espinacs a la crema.";"
+        Primer, es bullen els espinacs amb una mica de sal i es deixen escórrer el màxim possible. Es trossegen amb unes tisores. Es desfà la
+        farina de blat de moro amb una mica de llet, i la resta s'escalfa. Quan bulli, s'hi afegeix la farina de blat de moro, un pols de sal,
+        nou moscada i un pèl de mantega. Quan comenci a espessir, s'hi afegeixen els espinacs trossejats i es couen un parell de minuts.
+        S'aboca la mescla anterior en cassoletes de fang, i s'empolsima amb formatge ratllat. Es gratina al forn. En una paella, saltegem un
+        grapadet de pinyons i s'hi afegeixen al damunt.";"
+        50.0/espinacs-125.0/llet-10.0/farina-5.0/sal-5.0/nou moscada-50.0/mantega"</item>
+        <item>"Ous ferrats amb patates al forn.";"
+        -";"
+        1.0/ou-50.0/patata-20.0/oli d'oliva verge extra-10.0/sal"</item>
+        <item>"Iogurt natural."
+        -";"
+        1.0/iogurt natural"</item>
+
+        <item>"Cafè amb llet. Croissant. Mandarines.";"
+        -";"
+        10.0/cafè-25.0/llet-1.0/croissant-2.0/mandarines"</item>
+        <item>"Aperitiu: daus de formatge fresc macerats amb pebre i oli d'oliva.";"
+        -";"
+        25.0/formatge fresc-15.0/oli d'oliva verge-10.0/pebre"</item>
+        <item>"Pastís de carbassó.";"
+        Per començar tallarem la ceba i els carbassons a làmines, si pot ser amb mandolina millor, i ho posarem en un recipient apte pel
+        microones. Hi posarem per sobre una mica d'oli d'oliva i ho posarem al microones uns 8 minuts a màxima potència. Un cop passat aquest
+        temps, amb l'ajuda d'una cullera ho barrejarem tot, hi posarem els pinyons, la sal i el pebre i seguirem remenant. En un bol batrem
+        els ous amb la llet. Seguidament agafarem un motlle, millor que sigui de silicona i anirem posant capes, primer de verdura, després
+        de formatge i així fins acabar la barreja de verdures. Ho posarem al forn prèviament escalfat entre 20 i 30 minuts a 200º o fins que
+        veiem que hagi quallat l'ou. Un cop cuit només ho hem de desmotllar i servir, calent, a temperatura ambient o fred.";"
+        50.0/carbassó-0.25/ceba-1.0/ou-50.0/formatge-20.0/oli d'oliva verge extra-10.0/sal-10.0/pebre-20.0/llet"</item>
+        <item>"Pop amb ceba.";"
+        Talleu la ceba i poseu-la en un bol. No la poseu a la nevera. Daureu els grans de pebre blanc amb una mica d'oli d'oliva en una
+        cassola. Afegiu-hi tota la ceba, saleu-la un xic i abaixeu el foc perquè no se us cremi. Espereu que la ceba suï tota l'aigua. Quan
+        la ceba sigui lleugerament rossa i tingui una textura gairebé de confitura, afegiu-hi el vi i les dues fulles de llorer, després els
+        claus d'olor. Deixeu que evapori tot l'acohol, i afegiu-hi els popets salpebrats i saltats. Coeu-ho a foc suau, perquè els popets no
+        s'endureixin. Piqueu al morter un gra d'all alm sal, les ametlles i les avellanes, les fulles de coriandre i un rajolinet d'anís, si
+        us agrada. Quan els popets ja siguin cuits i tendres, afegiu-hi la picada diluïda amb una mica del caldo de cocció pre aprofitar-la bé.
+        Coeu-ho un parell de minuts més, i llestos.";"
+        250.0/popets-2.0/ceba-50.0/fruits secs-25.0/vi negre-25.0/oli d'oliva verge extra-10.0/sal-10.0/pebre-1.0/all"</item>
+        <item>"Pastís de poma.";"
+        -";"
+        60.0/llet-25.0/sucre-25.0/farina-1.0/ou-1.0/poma"</item>
+        <item>"Suc de fruites naturals.";"
+        -";"
+        1.0/poma-1.0/plàtan-1.0/pera"</item>
+        <item>"Crema de pastanaga.";"
+        Netegem, raspem i tallem a trossos les pastanagues i les patates. Tallem la ceba a trossos i la daurem en una olla amb oli d'oliva.
+        Quan estigui hi afegim la pastanaga i la patata trossejada, una mica de sal, ho cobrim amb aigua i ho bullim fins que estigui cuit,
+        aproximadament uns 15-20 minuts. Ho triturem fins aconseguir una crema fina i hi afegim un parell de cullerades d'oli i una mica de
+        pebre. Comprovem el punt de sal i rectifiquem si fa falta. Pelem la poma, li traiem el cor i la tallem a daus. Servim la crema calenta
+        i amb uns trossets de poma per sobre.";"
+        0.25/ceba-125.0/pastanaga-0.5/patata-10.0/sal-10.0/pebre-0.25/poma-25.0/oli d'oliva verge extra"</item>
+        <item>"Crestes de fomatge amb amanida de col llombarda.";"
+        Primer realitzarem l'amanida. Traiem les fulles més externes de les cols i tallem la resta en tires fines. Rentem les pastanagues i les
+        ratllem. Combinem aquests 3 ingredients en un bol gran i els barregem. Ara toca la vinagreta. Ajuntem en el recipient de la batedora de
+        mà, el vinagre, el sucre, la sal, el pebre vermell dolç, el pebre mòlt i el pebre Caiena. Els batem a velocitat baixa fins que veiem
+        que s'ha dissolt el sucre. Sense deixar de batre, anem afegint a poc a poc l'oli d'oliva perquè es emulsions completament. Aboquem la
+        vinagreta sobre de l'amanida i ho barregem tot perquè s'impregnin de la salsa. El refrigerem durant unes hores a la nevera fins que
+        reposi.";"
+        70.0/col Lombarda-20.0/pastanaga-50.0/vinagre-20.0/sucre-10.0/sal-10.0/pebre dolç-10.0/pebre-25.0/oli d'oliva verge extra"</item>
+        <item>"Xirimoia."
+        -";"
+        1.0/xirimoia"</item>
     </array>
 
+
+
+    <!--
+    <array name="all_recipes">
+        <item>"Torrades amb tomàquet i formatge curat. Suc natural de meló.";"-";
+                                        "100.0/pa-1.0/tomàquet-10.0/oli-20.0/formatge curat-50.0/meló"</item>
+       <item>"Iogurt natural amb avellanes.";"-";
+                                        "1.0/iogurt-10.0/avellanes"</item>
+       <item>"Sopa de carbassa.";"Posem al foc una olla amb aigua i una mica de sal. Mentre l'aigua s'escalfa i arrencar a bullir, pelem i rentem les patates. Després, les tallem en varis trossos (de mida mitjana) i reservem. Ara, fem el mateix amb els porros. A continuació toca eliminar l'escorça de la carbassa, que és ben dura. Un cop hem pelat la carbassa, tallem la polpa a daus de mida mitjana. El següent pas és comprovar que l'aigua de l'olla ja bull i, si és així, posar-hi els porros, les patates i la carbassa i deixar que coguin durant almenys 30 minuts. El temps de cocció pot variar segons la mida dels trossos de les verdures. Després colem les verdures i les posem de nou a l'olla. Afegim la nata líquida i una mica de nou moscada. Triturem les verdures amb la batedora elèctrica fins que no quedi cap tros ni cap grumoll. Ha de tenir una textura cremosa.";
+                                        "0.5/carbassa-2.0/porros-2.0/patates-200.0/nata liquida-10.0/sal-10.0/pebre-10.0/nou moscada"</item>
+       <item>"Mitja alberginia farcida de carn picada de pollastre i blat de moro gratinada.";"Encenem el forn al màxim. Mentre s'escalfa partim l'albergínia de dalt a baix. En traiem part de la polpa amb un ganivet, anem resseguint la pell i només en deixem un gruix com de mig centímetre. Tallem aquesta polpa a daus petits. Pelem la ceba i la ratllem. En una paella hi posem una mica d'oli i la carn picada a foc baix. Un cop veiem que ja no és de color vermell hi posem la ceba ratllada i els daus d'albergínia. Ho amanim amb una mica de sal i d'orenga. Al cap d'uns 7 minuts, quan veiem tot plegat ben cuit, veureu que ha reduit de volum i que està ben tou, hi afegim el tomàquet i una mica de sal i sucre. Un cop el tomàquet ja és cuit, ho veurem perquè ha agafat un color més ataronjat i l'oli ja sura per sobre, hi posem la crema de llet. Farcim les albergínies amb tot això i les posem al forn a 150º durant mitja hora. Hi podem posar una mica de formatge ratllat per sobre si volem. Ja veureu que encara que l'albergínia sencera s'hagi de coure, com que te un gruix primet es fa en aquesta mitja hora i queda la mar de bé.";
+                                        "1.0/albergínia-75.0/carn picada-1.0/ceba petita-200.0/tomàquet triturat-100.0/crema de llet-10.0/orenga-10.0/oli-10.0/sal"</item>
+       <item>"Préssec.";"-";
+                                        "1.0/préssec"</item>
+       <item>"Llet. Muesli.";"-";
+                                        "100.0/llet-50.0/muesli"</item>
+      <item>"Mongetes verdes saltejades.";"Bullim les mongetes amb força aigua i sal, i les escorrem. Posem oli i mantega en una paella i saltegem el pernil que haurem tallat a trossos petits. Afegirem les mongetes i ho deixarem 4 o 5 minutets que es cogui tot junt";
+                                        "1.0/mongeta tendre-200.0/pernil-100.0/mantega-10.0/sal-50.0/oli</item>
+       <item>"Torrades de bolets saltats amb ou poché.";"";
+                                        "250.0/bolets variats-2.0/all-2.0/ceba tendra-10.0/herbes fresques-50.0/oli-50.0/vi negre-10.0/sal-10.0/pebre-4.0/ou-400.0/pa integral-1.0/cibulet"</item>
+        <item>"Sindria.";"-";
+                                        "100.0/síndria"</item>
+    </array>
+    -->
+
+    <array name="all_ingr">
+        <item>"pa";"g"</item>
+        <item>"aigua";"mL"</item>
+        <item>"alberginia";"u"</item>
+        <item>"all";"u"</item>
+        <item>"all tendre";"u"</item>
+        <item>"alls porros";"u"</item>
+        <item>"ametlles";"g"</item>
+        <item>"aranja";"u"</item>
+        <item>"arròs";"g"</item>
+        <item>"avellanes";"g"</item>
+        <item>"bacallà";"g"</item>
+        <item>"bacó";"g"</item>
+        <item>"biscotes";"g"</item>
+        <item>"botifarra";"g"</item>
+        <item>"botifarra de perol";"g"</item>
+        <item>"bou";"g"</item>
+        <item>"branca de julivert";"g"</item>
+        <item>"branca farigola";"u"</item>
+        <item>"brou de pollastre";"mL"</item>
+        <item>"cafè";"g"</item>
+        <item>"calamar fresc";"g"</item>
+        <item>"cansalada";"g"</item>
+        <item>"canyella";"g"</item>
+        <item>"carbassó";"u"</item>
+        <item>"card";"g"</item>
+        <item>"carxofa";"u"</item>
+        <item>"ceba";"u"</item>
+        <item>"ceba tendra";"u"</item>
+        <item>"cereals integrals";"g"</item>
+        <item>"civada";"g"</item>
+        <item>"cogombre";"u"</item>
+        <item>"coliflor";"g"</item>
+        <item>"col Lombarda";"g"</item>
+        <item>"crema de llet";"mL"</item>
+        <item>"croissant";"u"</item>
+    </array>
+
+    <!--
     <array name="all_ingr">
         <item>"pa";"g"</item>
         <item>"all";"u"</item>
@@ -136,13 +613,15 @@
         <item>"cibulet";"u"</item>
         <item>"síndria;"g"</item>
     </array>
+    -->
 
     <string-array name="all_units">
         <item>g</item>
         <item>u</item>
         <item>mL</item>
     </string-array>
-
+    <string name="snack_plate">Plat berenar</string>
+    <string name="cannot_write">QUÈ HE DE POSAR?</string>
 
 
 </resources>

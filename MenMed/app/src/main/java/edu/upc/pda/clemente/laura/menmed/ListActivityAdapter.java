@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.zip.Inflater;
 
@@ -36,12 +37,14 @@ public class ListActivityAdapter extends ArrayAdapter<Ingredient> {
         TextView units = (TextView) result.findViewById(R.id.units);
 
         Ingredient item = getItem(position);
-
+        Double quant = item.getQuant();
+        DecimalFormat format = new DecimalFormat("0.#");
         product.setText(item.getNom());
-        quantity.setText(item.getQuant().toString());
+        quantity.setText(format.format(quant));
         units.setText(item.getUnitats());
         prod_check.setChecked(item.isChecked());
 
         return result;
     }
+
 }

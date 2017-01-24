@@ -57,8 +57,6 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
     //ATRIBUTS
     private Menu menu;
     private Recepta[] receptes;
-        public Recepta[] getReceptes() {return receptes;}
-        public void setReceptes(Recepta[] receptes) {this.receptes = receptes;}
 
     private static final String FITXER = "llista.obj";
 
@@ -105,6 +103,7 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         btn_compr = (ImageButton) findViewById(R.id.btn_compr);
         btn_compr.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {enviarALlista();}});
 
+
         try {recuperar();
         } catch (IOException e) {
             llista_ingr = new IngrList();
@@ -134,11 +133,12 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         crearMenu();
         crearReceptari();
         crearLlistaIngredients();
-        mostrarLlista();
         init();
         calendar();
+
         intent = new Intent(getApplicationContext(), ListActivity.class);
         intent.putExtra("llista_sencera", tots_ingr);
+        intent.putExtra("llista_propia", llista_ingr);
     }
 
     //MÈTODES
@@ -167,6 +167,8 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         btn_list.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 esborrarCheck();
+                intent.putExtra("llista_propia", llista_ingr);
+                intent.putExtra("llista_sencera", tots_ingr);
                 startActivity(intent);}});
     }
     //CALENDARI SUPERIOR
@@ -238,8 +240,6 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
     }
 
     //MÈTODES de LLISTA
-    private void mostrarLlista(){
-        System.out.println(tots_ingr.toString());}
     private void enviarALlista() {
         if (!trobarCheck()) {
             Toast.makeText(MenuActivity.this, "No has sel·leccionat cap recepta", Toast.LENGTH_SHORT).show();
@@ -277,22 +277,33 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
                     if (rec.getText().equals(receptes[j].getNom())) {
                         int com = Integer.parseInt(TV_com[i].getText().toString());
                         for(Ingredient k: receptes[j].getLlista().getMapingr().values()){
-                            k.setQuant(k.getQuant()*(com));
-                            llista_ingr.getMapingr().put(k.getNom(), k);
-                            //afegirUnitats(llista_ingr);
+                            k.setQuant(k.getQuant()*com);
+                            llista_ingr.getMapingr().put(k.getNom(),k);
                         }
-                    }
+                            /*
+                            Double quant_com = (k.getQuant())*(com);
+                            for(Ingredient ingr: llista_ingr.getMapingr().values()){
+                                if(llista_ingr.getMapingr().containsKey(k.getNom())){
+                                    Double new_num = ingr.getQuant() + quant_com;
+                                    llista_ingr.getMapingr().put(k.getNom(), new Ingredient(k.getNom(), k.getUnitats(), k.isChecked(), new_num));
+                                } else {
+                                    llista_ingr.getMapingr().put(k.getNom(),k);}}
+                        }*/
+                        //afegirUnitats(llista_ingr);
+                        }
+
+                }
                 }
             }
-        }
-        intent.putExtra("llista_propia", llista_ingr);
+        guardar();
     }
     protected void omplirLlista(IngrList llista) {
         if(llista == null){
             llista_ingr = new IngrList();
         }
         else {
-            for(Ingredient i: llista.getMapingr().values()){llista_ingr.getMapingr().put(i.getNom(),i);}
+            for(Ingredient i: llista.getMapingr().values()){
+                llista_ingr.getMapingr().put(i.getNom(),i);}
             //afegirUnitats(llista);
         }
         guardar();
@@ -330,20 +341,19 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
         return i;
     }
 
-/*
+    private IngrList afegirUnitats(IngrList llista){
+        for(Ingredient i: llista.getMapingr().values()) {
+//            llista.getMapingr().get(i).setUnitats(trobarUnitats(i));
+        }
+        return llista;
+    }
     private String trobarUnitats(Ingredient ingr){
         if(tots_ingr.getMapingr().containsKey(ingr.getNom())){
             return tots_ingr.getMapingr().get(ingr.getNom()).getUnitats().toString();
         }
         return null;
     }
-    private IngrList afegirUnitats(IngrList llista){
-        for(Ingredient i: llista.getMapingr().values()) {
-            llista.getMapingr().get(i).setUnitats(trobarUnitats(i));
-        }
-        return llista;
-    }
-*/
+
     //PERSISTÈNCIA
     //recuperar i crear l'arxiu extern
     protected void onStop() {super.onStop();guardar();}

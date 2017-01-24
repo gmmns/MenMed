@@ -686,6 +686,7 @@
     </string-array>
     <string name="snack_plate">Plat berenar</string>
     <string name="cannot_write">QUÈ HE DE POSAR?</string>
+    <string name="no_checked">Cap ingredient comprat</string>
 
 
 </resources>

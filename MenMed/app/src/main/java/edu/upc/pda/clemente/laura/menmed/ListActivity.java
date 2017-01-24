@@ -1,6 +1,6 @@
 package edu.upc.pda.clemente.laura.menmed;
 
-
+import java.lang.Object;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -31,13 +31,16 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OptionalDataException;
 import java.io.StreamCorruptedException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class ListActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private ArrayList<Ingredient> itemList = new ArrayList<>();
     private IngrList llista_ingr;
     private IngrList tots_ingr;
+    private Intent intent;
 
     private static final String FITXER = "llista.obj";
 
@@ -45,11 +48,15 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private ListView list;
     private ImageButton btn_menu;
+    private ImageButton delete_all;
+    private ImageButton shopping_done;
 
     private FloatingActionButton btn_add;
+
     private EditText add_prod;
     private EditText add_quant;
     private Spinner add_units;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +69,16 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         add_quant = (EditText) findViewById(R.id.add_quant);
         add_units = (Spinner) findViewById(R.id.add_units);
 
-        //Omplir dades amb informació MenuActivity
-        this.tots_ingr = (IngrList) getIntent().getExtras().getSerializable("llista_sencera");
-        llista_ingr = (IngrList) getIntent().getExtras().getSerializable("llista_propia");
+        try {recuperar();
+        } catch (IOException e) {
+            llista_ingr = new IngrList();
             omplirLlista(llista_ingr);
+        }
+
+        //Omplir dades amb informació MenuActivity
+        tots_ingr = (IngrList) getIntent().getExtras().getSerializable("llista_sencera");
+        llista_ingr = (IngrList) getIntent().getExtras().getSerializable("llista_propia");
+        omplirLlista(llista_ingr);
 
         //accions llista de la compra
         adapter = new ListActivityAdapter(this, R.layout.shopping_item, itemList);
@@ -73,7 +86,6 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         ArrayAdapter<CharSequence> adapt_spin = ArrayAdapter.createFromResource(this,R.array.all_units, android.R.layout.simple_spinner_item);
         adapt_spin.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         add_units.setAdapter(adapt_spin);
-
         add_prod = (EditText) findViewById(R.id.add_prod);
             add_prod.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -86,10 +98,18 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         });
 
         list = (ListView) findViewById(R.id.list);
-        list.setAdapter(adapter);
+            list.setAdapter(adapter);
         btn_add = (FloatingActionButton) findViewById(R.id.btn_add);
             btn_add.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {
             afegirIngredient();
+        }});
+        delete_all = (ImageButton) findViewById(R.id.btn_delete_all);
+            delete_all.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {
+            esborraLlista();
+        }});
+        shopping_done = (ImageButton) findViewById(R.id.btn_shopping_done);
+            shopping_done.setOnClickListener(new View.OnClickListener() {public void onClick(View view) {
+            compraFeta();
         }});
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int pos, long id) {
@@ -98,21 +118,31 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
         list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            public boolean onItemLongClick(AdapterView<?> parent, View v, int pos, long id) {
-                eliminarIngredient(pos);
-                return true;
-            }
-        });
+            public boolean onItemLongClick(AdapterView<?> parent, View v, int pos, long id) {eliminarIngredient(pos);return true;}});
+
         guardar();
     }
-
     protected void omplirLlista(IngrList llista) {
         if(llista == null){}
         else {for(Ingredient i: llista.getMapingr().values()){
             itemList.add(i);
-            afegirUnitats(itemList);}
+            //afegirUnitats(itemList);
+            }
         }
         guardar();
+    }
+    private void esborraLlista() {
+        itemList.removeAll(itemList);
+        adapter.notifyDataSetChanged();
+
+    }
+    private void compraFeta() {
+        for(int i=0; i<itemList.size();i++){
+            if(itemList.get(i).isChecked()){
+                itemList.remove(i);
+                adapter.notifyDataSetChanged();
+            } else {}
+        }
     }
 
 
@@ -137,7 +167,9 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         btn_menu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 guardar();
-                finish();}});
+                finish();
+            }});
+
     }
 
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {}
@@ -150,6 +182,7 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
         String quant_text = add_quant.getText().toString();
         String units_text = add_units.getSelectedItem().toString();
         Boolean sum_quant = false;
+
         add_units.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String quant_text = parent.getItemAtPosition(position).toString();
@@ -158,20 +191,18 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
 
             }
         });
-        /*
+
         if (!prod_text.isEmpty() && !quant_text.isEmpty() && !units_text.isEmpty()) {
             double quant_num = Double.parseDouble(quant_text);
-            itemList.add(new Ingredient(prod_text,units_text,false,quant_num));
             for (int i=0; i<itemList.size(); i++){
-                if (llista_ingr.getMapingr().get(i).getNom().equals(prod_text)){
+                if (itemList.get(i).getNom().equals(prod_text)){
                     sum_quant = true;
-                    Double new_num = llista_ingr.getMapingr().get(i).getQuant();
-                    llista_ingr.getMapingr().get(i).setQuant(new_num+quant_num);
+                    Double new_num = itemList.get(i).getQuant();
+                    itemList.get(i).setQuant(new_num+quant_num);
                     adapter.notifyDataSetChanged();
                     add_prod.setText("");
                     add_quant.setText("");
                 }
-
             }
             if (sum_quant.equals(false)){
                 itemList.add(new Ingredient(prod_text,units_text,false,quant_num));
@@ -179,17 +210,11 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
                 add_prod.setText("");
                 add_quant.setText("");
             }
-
-
         }
+        else {Toast.makeText(this, R.string.data_missing, Toast.LENGTH_SHORT).show();}
 
-        else {
-            Toast.makeText(this, R.string.data_missing, Toast.LENGTH_SHORT).show();
-            //Snackbar avis = Snackbar.make(View view, "Omple tots els camps obligatoris!", Snackbar.LENGTH_LONG);
-            //avis.show();
-
-        }*/
     }
+
     private void eliminarIngredient(final int pos) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.confirm);
@@ -222,7 +247,20 @@ public class ListActivity extends AppCompatActivity implements AdapterView.OnIte
             Toast.makeText(this, R.string.cannot_write, Toast.LENGTH_SHORT).show();
         }
     }
-
+    private void recuperar() throws IOException {
+        try {
+            FileInputStream fis = openFileInput(FITXER);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            llista_ingr = (IngrList)ois.readObject();
+            omplirLlista(llista_ingr);
+        } catch (ClassNotFoundException e) {
+            Log.e("Llista", "Recuperar: ClassNotFoundException");
+        } catch (OptionalDataException e) {
+            Log.e("Llista", "Recuperar: OptionalDataException");
+        } catch (StreamCorruptedException e) {
+            Log.e("Llista", "Recuperar: StreamCorruptedException");
+        }
+    }
 
 }
 

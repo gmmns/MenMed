@@ -53,13 +53,6 @@
             <ImageButton
                 android:layout_width="52dp"
                 android:layout_height="match_parent"
-                android:id="@+id/btn_esb"
-                android:src="@drawable/ic_delete_indicators"
-                android:background="?attr/selectableItemBackgroundBorderless" />
-
-            <ImageButton
-                android:layout_width="52dp"
-                android:layout_height="match_parent"
                 android:id="@+id/btn_compr"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_add_to_list"

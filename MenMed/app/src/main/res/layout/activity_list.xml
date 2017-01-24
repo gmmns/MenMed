@@ -35,10 +35,6 @@
                 android:layout_width="52dp"
                 android:scaleType="centerInside" />
 
-            <Space
-                android:layout_width="50dp"
-                android:layout_height="match_parent" />
-
             <TextView
                 android:text="Llista de la compra"
                 android:textStyle="bold"
@@ -53,16 +49,17 @@
             <ImageButton
                 android:layout_width="52dp"
                 android:layout_height="match_parent"
-                android:id="@+id/btn_edit"
-                android:src="@drawable/ic_edit"
-                android:background="?attr/selectableItemBackgroundBorderless"  />
+                android:id="@+id/btn_shopping_done"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_shopping_done"
+                android:background="?attr/selectableItemBackgroundBorderless" />
 
             <ImageButton
                 android:layout_width="52dp"
                 android:layout_height="match_parent"
-                android:id="@+id/btn_shopping_done"
+                android:id="@+id/btn_delete_all"
                 android:scaleType="centerInside"
-                android:src="@drawable/ic_shopping_done"
+                android:src="@drawable/ic_delete_indicators"
                 android:background="?attr/selectableItemBackgroundBorderless" />
         </LinearLayout>
 

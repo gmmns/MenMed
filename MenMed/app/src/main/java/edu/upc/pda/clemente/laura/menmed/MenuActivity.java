@@ -207,8 +207,14 @@ public class MenuActivity extends AppCompatActivity implements DatePickerDialog.
             @Override
             public void onSelectDate(LocalDateTime mSelectedDate) {
                 //callback when a date is selcted
-                mostrarDia(menu.getMenu()[mSelectedDate.getDayOfMonth()]);
-                esborrarCheck();
+                int dia = mSelectedDate.getDayOfMonth();
+                Dia[] dies = menu.getMenu();
+                if (dia >= 0 && dia < dies.length) {
+                    mostrarDia(menu.getMenu()[mSelectedDate.getDayOfMonth()]);
+                    esborrarCheck();
+                } else {
+                    Log.e("mendmed", String.format("S'ha seleccionat el dia %d, que no està als menús...", dia));
+                }
             }
         };
 
